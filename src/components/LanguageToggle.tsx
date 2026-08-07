@@ -25,7 +25,7 @@ export function LanguageToggle({ tone = "light" }: { tone?: "light" | "dark" }) 
           <Link
             key={loc}
             to={target.startsWith(`/${loc}`) ? target : `/${loc}`}
-            hreflang={loc}
+            hrefLang={loc}
             aria-current={active ? "true" : undefined}
             className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
               active

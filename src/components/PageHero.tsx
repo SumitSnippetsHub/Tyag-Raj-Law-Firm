@@ -38,7 +38,7 @@ export function PageHero({
       <motion.div
         aria-hidden
         className="absolute inset-0 -z-10 will-change-transform"
-        style={reduced ? undefined : { y }}
+        {...(reduced ? {} : { style: { y } })}
       >
         <img
           src={image}
@@ -58,8 +58,7 @@ export function PageHero({
           {eyebrow ? (
             <motion.p
               className="eyebrow text-dark-text/70"
-              initial={reduced ? undefined : { opacity: 0, y: 12 }}
-              animate={reduced ? undefined : { opacity: 1, y: 0 }}
+              {...(reduced ? {} : { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 } })}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               {eyebrow}
@@ -67,8 +66,7 @@ export function PageHero({
           ) : null}
           <motion.h1
             className="mt-4 text-4xl leading-[1.05] text-dark-text sm:text-5xl md:text-6xl"
-            initial={reduced ? undefined : { opacity: 0, y: 18 }}
-            animate={reduced ? undefined : { opacity: 1, y: 0 }}
+            {...(reduced ? {} : { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 } })}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.06 }}
           >
             {title}
@@ -76,8 +74,7 @@ export function PageHero({
           {lead ? (
             <motion.p
               className="mt-6 max-w-2xl text-base leading-relaxed text-dark-text/80 md:text-lg"
-              initial={reduced ? undefined : { opacity: 0, y: 18 }}
-              animate={reduced ? undefined : { opacity: 1, y: 0 }}
+              {...(reduced ? {} : { initial: { opacity: 0, y: 18 }, animate: { opacity: 1, y: 0 } })}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
             >
               {lead}
