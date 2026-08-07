@@ -50,7 +50,7 @@ export function PageHero({
       </motion.div>
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-dark-bg/72"
+        className="hero-scrim absolute inset-0 -z-10"
       />
 
       <div className="container-page relative w-full pt-32 pb-16 md:pt-40 md:pb-20">
