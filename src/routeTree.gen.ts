@@ -13,6 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as LocaleRouteRouteImport } from './routes/$locale/route'
 import { Route as LocaleIndexRouteImport } from './routes/$locale/index'
 import { Route as LocaleAboutRouteImport } from './routes/$locale/about'
+import { Route as LocaleBookConsultationRouteImport } from './routes/$locale/book-consultation'
+import { Route as LocaleContactRouteImport } from './routes/$locale/contact'
+import { Route as LocaleTestimonialsRouteImport } from './routes/$locale/testimonials'
 import { Route as LocalePracticeAreasIndexRouteImport } from './routes/$locale/practice-areas/index'
 import { Route as LocalePracticeAreasSlugRouteImport } from './routes/$locale/practice-areas/$slug'
 
@@ -36,6 +39,21 @@ const LocaleAboutRoute = LocaleAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => LocaleRouteRoute,
 } as any)
+const LocaleBookConsultationRoute = LocaleBookConsultationRouteImport.update({
+  id: '/book-consultation',
+  path: '/book-consultation',
+  getParentRoute: () => LocaleRouteRoute,
+} as any)
+const LocaleContactRoute = LocaleContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => LocaleRouteRoute,
+} as any)
+const LocaleTestimonialsRoute = LocaleTestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
+  getParentRoute: () => LocaleRouteRoute,
+} as any)
 const LocalePracticeAreasIndexRoute =
   LocalePracticeAreasIndexRouteImport.update({
     id: '/practice-areas/',
@@ -52,6 +70,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$locale': typeof LocaleRouteRouteWithChildren
   '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/book-consultation': typeof LocaleBookConsultationRoute
+  '/$locale/contact': typeof LocaleContactRoute
+  '/$locale/testimonials': typeof LocaleTestimonialsRoute
   '/$locale/': typeof LocaleIndexRoute
   '/$locale/practice-areas/$slug': typeof LocalePracticeAreasSlugRoute
   '/$locale/practice-areas/': typeof LocalePracticeAreasIndexRoute
@@ -59,6 +80,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/book-consultation': typeof LocaleBookConsultationRoute
+  '/$locale/contact': typeof LocaleContactRoute
+  '/$locale/testimonials': typeof LocaleTestimonialsRoute
   '/$locale': typeof LocaleIndexRoute
   '/$locale/practice-areas/$slug': typeof LocalePracticeAreasSlugRoute
   '/$locale/practice-areas': typeof LocalePracticeAreasIndexRoute
@@ -68,6 +92,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$locale': typeof LocaleRouteRouteWithChildren
   '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/book-consultation': typeof LocaleBookConsultationRoute
+  '/$locale/contact': typeof LocaleContactRoute
+  '/$locale/testimonials': typeof LocaleTestimonialsRoute
   '/$locale/': typeof LocaleIndexRoute
   '/$locale/practice-areas/$slug': typeof LocalePracticeAreasSlugRoute
   '/$locale/practice-areas/': typeof LocalePracticeAreasIndexRoute
@@ -78,6 +105,9 @@ export interface FileRouteTypes {
     | '/'
     | '/$locale'
     | '/$locale/about'
+    | '/$locale/book-consultation'
+    | '/$locale/contact'
+    | '/$locale/testimonials'
     | '/$locale/'
     | '/$locale/practice-areas/$slug'
     | '/$locale/practice-areas/'
@@ -85,6 +115,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$locale/about'
+    | '/$locale/book-consultation'
+    | '/$locale/contact'
+    | '/$locale/testimonials'
     | '/$locale'
     | '/$locale/practice-areas/$slug'
     | '/$locale/practice-areas'
@@ -93,6 +126,9 @@ export interface FileRouteTypes {
     | '/'
     | '/$locale'
     | '/$locale/about'
+    | '/$locale/book-consultation'
+    | '/$locale/contact'
+    | '/$locale/testimonials'
     | '/$locale/'
     | '/$locale/practice-areas/$slug'
     | '/$locale/practice-areas/'
@@ -133,6 +169,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LocaleAboutRouteImport
       parentRoute: typeof LocaleRouteRoute
     }
+    '/$locale/book-consultation': {
+      id: '/$locale/book-consultation'
+      path: '/book-consultation'
+      fullPath: '/$locale/book-consultation'
+      preLoaderRoute: typeof LocaleBookConsultationRouteImport
+      parentRoute: typeof LocaleRouteRoute
+    }
+    '/$locale/contact': {
+      id: '/$locale/contact'
+      path: '/contact'
+      fullPath: '/$locale/contact'
+      preLoaderRoute: typeof LocaleContactRouteImport
+      parentRoute: typeof LocaleRouteRoute
+    }
+    '/$locale/testimonials': {
+      id: '/$locale/testimonials'
+      path: '/testimonials'
+      fullPath: '/$locale/testimonials'
+      preLoaderRoute: typeof LocaleTestimonialsRouteImport
+      parentRoute: typeof LocaleRouteRoute
+    }
     '/$locale/practice-areas/': {
       id: '/$locale/practice-areas/'
       path: '/practice-areas'
@@ -152,6 +209,9 @@ declare module '@tanstack/react-router' {
 
 interface LocaleRouteRouteChildren {
   LocaleAboutRoute: typeof LocaleAboutRoute
+  LocaleBookConsultationRoute: typeof LocaleBookConsultationRoute
+  LocaleContactRoute: typeof LocaleContactRoute
+  LocaleTestimonialsRoute: typeof LocaleTestimonialsRoute
   LocaleIndexRoute: typeof LocaleIndexRoute
   LocalePracticeAreasSlugRoute: typeof LocalePracticeAreasSlugRoute
   LocalePracticeAreasIndexRoute: typeof LocalePracticeAreasIndexRoute
@@ -159,6 +219,9 @@ interface LocaleRouteRouteChildren {
 
 const LocaleRouteRouteChildren: LocaleRouteRouteChildren = {
   LocaleAboutRoute: LocaleAboutRoute,
+  LocaleBookConsultationRoute: LocaleBookConsultationRoute,
+  LocaleContactRoute: LocaleContactRoute,
+  LocaleTestimonialsRoute: LocaleTestimonialsRoute,
   LocaleIndexRoute: LocaleIndexRoute,
   LocalePracticeAreasSlugRoute: LocalePracticeAreasSlugRoute,
   LocalePracticeAreasIndexRoute: LocalePracticeAreasIndexRoute,
