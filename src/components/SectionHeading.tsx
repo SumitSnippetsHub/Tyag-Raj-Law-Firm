@@ -1,21 +1,21 @@
 import { Reveal } from "./Reveal";
 
 export function SectionHeading({
-  text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase,
+  eyebrow,
   title,
   lead,
   tone = "light",
 }: {
-  text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase?: string;
+  eyebrow?: string;
   title: string;
   lead?: string;
   tone?: "light" | "dark";
 }) {
   return (
     <Reveal className="max-w-2xl">
-      {text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase ? (
+      {eyebrow ? (
         <p className={`text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase ${tone === "dark" ? "text-dark-text/50" : "text-primary"}`}>
-          {text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase}
+          {eyebrow}
         </p>
       ) : null}
       <h2

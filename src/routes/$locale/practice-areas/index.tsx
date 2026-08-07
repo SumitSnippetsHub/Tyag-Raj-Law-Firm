@@ -40,7 +40,7 @@ function PracticeAreasIndex() {
         priority
         image={IMAGES.lawBooks}
         alt="Antique law reports and legal statute books in a chamber bookcase"
-        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.practice}
+        eyebrow={t.nav.practice}
         title={t.practice.h1}
         lead={t.practice.lead}
       />
@@ -58,7 +58,7 @@ function PracticeAreasIndex() {
       <section className="border-t border-border bg-secondary py-20 lg:py-24">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading
-            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.book}
+            eyebrow={t.nav.book}
             title={t.book.h1}
             lead={t.book.lead}
           />

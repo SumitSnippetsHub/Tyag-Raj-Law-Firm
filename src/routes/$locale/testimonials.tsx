@@ -39,7 +39,7 @@ function Testimonials() {
         priority
         image={IMAGES.gavel}
         alt="Wooden gavel lit against a dark background, symbolising judicial outcomes"
-        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.testimonials}
+        eyebrow={t.nav.testimonials}
         title={t.testimonialsPage.h1}
         lead={t.testimonialsPage.lead}
       />

@@ -41,7 +41,7 @@ function Contact() {
         priority
         image={IMAGES.courtBuilding}
         alt="District court building entrance in Uttar Pradesh with advocates on the steps"
-        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.contact}
+        eyebrow={t.nav.contact}
         title={c.h1}
         lead={c.lead}
       />
@@ -49,7 +49,7 @@ function Contact() {
       <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <SectionHeading text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.contact} title={c.officeTitle} />
+            <SectionHeading eyebrow={t.nav.contact} title={c.officeTitle} />
             <Reveal delay={0.08}>
               <ul className="mt-10 divide-y divide-border border-y border-border">
                 <li className="flex gap-4 py-5">

@@ -4,7 +4,7 @@ import { useRef, type ReactNode } from "react";
 export function PageHero({
   image,
   alt,
-  text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase,
+  eyebrow,
   title,
   lead,
   children,
@@ -13,7 +13,7 @@ export function PageHero({
 }: {
   image: string;
   alt: string;
-  text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase?: string;
+  eyebrow?: string;
   title: ReactNode;
   lead?: string;
   children?: ReactNode;
@@ -55,13 +55,13 @@ export function PageHero({
 
       <div className="mx-auto w-full max-w-6xl px-5 md:px-10 relative w-full pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="max-w-3xl">
-          {text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase ? (
+          {eyebrow ? (
             <motion.p
               className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-dark-text/70"
               {...(reduced ? {} : { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 } })}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
-              {text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase}
+              {eyebrow}
             </motion.p>
           ) : null}
           <motion.h1

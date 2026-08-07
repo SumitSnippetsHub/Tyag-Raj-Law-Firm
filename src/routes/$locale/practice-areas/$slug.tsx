@@ -72,7 +72,7 @@ function PracticeAreaPage() {
         priority
         image={areaImage(area)}
         alt={`${area.title.en} legal practice — Advocate Sumit Tyagi, Ghaziabad`}
-        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.practice}
+        eyebrow={t.nav.practice}
         title={area.title[locale]}
         lead={area.short[locale]}
       />
@@ -155,7 +155,7 @@ function PracticeAreaPage() {
       <section className="border-t border-border bg-secondary py-20 lg:py-24">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading
-            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={area.title[locale]}
+            eyebrow={area.title[locale]}
             title={t.book.h1}
             lead={t.book.lead}
           />

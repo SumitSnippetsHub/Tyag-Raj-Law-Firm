@@ -38,7 +38,7 @@ function BookConsultation() {
         priority
         image={IMAGES.paDocuments}
         alt="Advocate reviewing a contract with a fountain pen beside a gavel and law books"
-        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.book}
+        eyebrow={t.nav.book}
         title={t.book.h1}
         lead={t.book.lead}
       />

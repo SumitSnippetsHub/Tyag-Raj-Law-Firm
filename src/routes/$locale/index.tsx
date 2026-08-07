@@ -75,7 +75,7 @@ function Home() {
         tall
         image={IMAGES.justiceStatue}
         alt="Bronze scales of justice statue representing legal practice in Delhi NCR"
-        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase}
+        eyebrow={home.eyebrow}
         title={
           <>
             {home.h1}
@@ -119,7 +119,7 @@ function Home() {
         </Reveal>
         <div>
           <SectionHeading
-            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.aboutEyebrow}
+            eyebrow={home.aboutEyebrow}
             title={home.aboutTitle}
             lead={home.aboutBody}
           />
@@ -155,7 +155,7 @@ function Home() {
       <section className="border-y border-border bg-secondary py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading
-            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.practiceEyebrow}
+            eyebrow={home.practiceEyebrow}
             title={home.practiceTitle}
           />
           <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -170,7 +170,7 @@ function Home() {
 
       {/* Why choose us */}
       <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
-        <SectionHeading text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.whyEyebrow} title={home.whyTitle} />
+        <SectionHeading eyebrow={home.whyEyebrow} title={home.whyTitle} />
         <ul className="mt-14 grid gap-10 sm:grid-cols-2">
           {home.why.map((item, i) => (
             <Reveal as="li" key={item.title} delay={(i % 2) * 0.08}>
@@ -194,7 +194,7 @@ function Home() {
       <section className="border-t border-border bg-secondary py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading
-            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.testimonialsEyebrow}
+            eyebrow={home.testimonialsEyebrow}
             title={home.testimonialsTitle}
             lead={home.sampleNote}
           />
@@ -211,7 +211,7 @@ function Home() {
       <section id="book" className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading
-            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={DICT[locale].nav.book}
+            eyebrow={DICT[locale].nav.book}
             title={DICT[locale].book.h1}
             lead={DICT[locale].book.lead}
           />
@@ -226,7 +226,7 @@ function Home() {
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
-              text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.areaEyebrow}
+              eyebrow={home.areaEyebrow}
               title={home.areaTitle}
               lead={home.areaBody}
             />

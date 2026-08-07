@@ -40,7 +40,7 @@ function About() {
         priority
         image={IMAGES.advocateDesk}
         alt="Advocate Sumit Tyagi at his desk in the chamber at Civil Court, Ghaziabad"
-        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={SITE.tagline}
+        eyebrow={SITE.tagline}
         title={a.h1}
         lead={a.lead}
       />
@@ -98,7 +98,7 @@ function About() {
       <section className="border-t border-border bg-secondary py-20 lg:py-24">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid items-center gap-12 lg:grid-cols-2">
           <SectionHeading
-            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.home.areaEyebrow}
+            eyebrow={t.home.areaEyebrow}
             title={t.home.areaTitle}
             lead={t.home.areaBody}
           />
