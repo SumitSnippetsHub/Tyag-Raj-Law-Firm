@@ -72,12 +72,12 @@ function PracticeAreaPage() {
         priority
         image={areaImage(area)}
         alt={`${area.title.en} legal practice — Advocate Sumit Tyagi, Ghaziabad`}
-        eyebrow={t.nav.practice}
+        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.practice}
         title={area.title[locale]}
         lead={area.short[locale]}
       />
 
-      <section className="container-page py-20 lg:py-28">
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <Link
           to={`/${locale}/practice-areas`}
           className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
@@ -133,7 +133,7 @@ function PracticeAreaPage() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="eyebrow mt-10 text-ink-soft">{t.practice.other}</h2>
+              <h2 className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase mt-10 text-ink-soft">{t.practice.other}</h2>
               <ul className="mt-4 divide-y divide-border border-y border-border">
                 {others.map((o) => (
                   <li key={o.slug}>
@@ -153,9 +153,9 @@ function PracticeAreaPage() {
       </section>
 
       <section className="border-t border-border bg-secondary py-20 lg:py-24">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading
-            eyebrow={area.title[locale]}
+            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={area.title[locale]}
             title={t.book.h1}
             lead={t.book.lead}
           />

@@ -18,7 +18,7 @@ export function Footer() {
         TYAGI RAJ
       </span>
 
-      <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
+      <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
         <div>
           <img
             src={IMAGES.logo}
@@ -35,7 +35,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-dark-text/50">{t.footer.quick}</h2>
+          <h2 className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-dark-text/50">{t.footer.quick}</h2>
           <ul className="mt-5 space-y-3 text-sm">
             {[
               { to: `/${locale}`, label: t.nav.home },
@@ -58,7 +58,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-dark-text/50">{t.footer.areas}</h2>
+          <h2 className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-dark-text/50">{t.footer.areas}</h2>
           <ul className="mt-5 space-y-3 text-sm">
             {PRACTICE_AREAS.map((a) => (
               <li key={a.slug}>
@@ -74,7 +74,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="eyebrow text-dark-text/50">{t.footer.reach}</h2>
+          <h2 className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-dark-text/50">{t.footer.reach}</h2>
           <ul className="mt-5 space-y-4 text-sm text-dark-text/70">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
@@ -101,7 +101,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="container-page border-t border-dark-text/10 py-8">
+      <div className="mx-auto w-full max-w-6xl px-5 md:px-10 border-t border-dark-text/10 py-8">
         <p className="text-xs leading-relaxed text-dark-text/45">
           {t.footer.disclaimer}
         </p>

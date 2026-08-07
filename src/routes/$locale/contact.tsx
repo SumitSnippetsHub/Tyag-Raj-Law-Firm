@@ -41,21 +41,21 @@ function Contact() {
         priority
         image={IMAGES.courtBuilding}
         alt="District court building entrance in Uttar Pradesh with advocates on the steps"
-        eyebrow={t.nav.contact}
+        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.contact}
         title={c.h1}
         lead={c.lead}
       />
 
-      <section className="container-page py-20 lg:py-28">
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <SectionHeading eyebrow={t.nav.contact} title={c.officeTitle} />
+            <SectionHeading text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.contact} title={c.officeTitle} />
             <Reveal delay={0.08}>
               <ul className="mt-10 divide-y divide-border border-y border-border">
                 <li className="flex gap-4 py-5">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="eyebrow text-ink-soft">{c.officeTitle}</p>
+                    <p className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">{c.officeTitle}</p>
                     <address className="mt-1.5 text-sm leading-relaxed text-ink not-italic">
                       {SITE.address}
                     </address>
@@ -64,7 +64,7 @@ function Contact() {
                 <li className="flex gap-4 py-5">
                   <Phone className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="eyebrow text-ink-soft">{c.phoneLabel}</p>
+                    <p className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">{c.phoneLabel}</p>
                     <p className="mt-1.5 flex flex-col text-sm text-ink">
                       <a href="tel:+918060603368" className="hover:text-primary">
                         {SITE.phonePrimary}
@@ -78,7 +78,7 @@ function Contact() {
                 <li className="flex gap-4 py-5">
                   <Mail className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="eyebrow text-ink-soft">{c.emailLabel}</p>
+                    <p className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">{c.emailLabel}</p>
                     <a
                       href={`mailto:${SITE.email}`}
                       className="mt-1.5 block text-sm text-ink hover:text-primary"
@@ -90,7 +90,7 @@ function Contact() {
                 <li className="flex gap-4 py-5">
                   <Clock className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
                   <div>
-                    <p className="eyebrow text-ink-soft">{c.hoursLabel}</p>
+                    <p className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">{c.hoursLabel}</p>
                     <p className="mt-1.5 text-sm text-ink">{c.hours}</p>
                   </div>
                 </li>

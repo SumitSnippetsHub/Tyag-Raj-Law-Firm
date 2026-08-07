@@ -47,7 +47,7 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <nav className="container-page flex h-20 items-center justify-between gap-6">
+      <nav className="mx-auto w-full max-w-6xl px-5 md:px-10 flex h-20 items-center justify-between gap-6">
         <Link
           to={`/${locale}`}
           className="flex shrink-0 items-center gap-3"
@@ -119,7 +119,7 @@ export function Navbar() {
             exit={{ opacity: 0, x: 24 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="container-page flex h-full flex-col gap-8 py-10">
+            <div className="mx-auto w-full max-w-6xl px-5 md:px-10 flex h-full flex-col gap-8 py-10">
               <ul className="flex flex-col gap-1">
                 {links.map((l) => (
                   <li key={l.to}>

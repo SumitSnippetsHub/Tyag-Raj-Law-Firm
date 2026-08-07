@@ -75,7 +75,7 @@ function Home() {
         tall
         image={IMAGES.justiceStatue}
         alt="Bronze scales of justice statue representing legal practice in Delhi NCR"
-        eyebrow={home.eyebrow}
+        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase}
         title={
           <>
             {home.h1}
@@ -107,7 +107,7 @@ function Home() {
       <TrustBar items={home.trust} />
 
       {/* About preview */}
-      <section className="container-page grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
         <Reveal>
           {/* Client-supplied photograph of Advocate Sumit Tyagi in chamber. */}
           <img
@@ -119,14 +119,14 @@ function Home() {
         </Reveal>
         <div>
           <SectionHeading
-            eyebrow={home.aboutEyebrow}
+            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.aboutEyebrow}
             title={home.aboutTitle}
             lead={home.aboutBody}
           />
           <Reveal delay={0.1}>
             <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-border pt-8">
               <div>
-                <dt className="eyebrow text-ink-soft">
+                <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
                   {locale === "hi" ? "अनुभव" : "Experience"}
                 </dt>
                 <dd className="mt-2 font-display text-3xl font-bold text-ink">
@@ -134,7 +134,7 @@ function Home() {
                 </dd>
               </div>
               <div>
-                <dt className="eyebrow text-ink-soft">
+                <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
                   {locale === "hi" ? "कार्यक्षेत्र" : "Practice areas"}
                 </dt>
                 <dd className="mt-2 font-display text-3xl font-bold text-ink">09</dd>
@@ -153,9 +153,9 @@ function Home() {
 
       {/* Practice areas */}
       <section className="border-y border-border bg-secondary py-20 lg:py-28">
-        <div className="container-page">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading
-            eyebrow={home.practiceEyebrow}
+            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.practiceEyebrow}
             title={home.practiceTitle}
           />
           <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -169,13 +169,13 @@ function Home() {
       </section>
 
       {/* Why choose us */}
-      <section className="container-page py-20 lg:py-28">
-        <SectionHeading eyebrow={home.whyEyebrow} title={home.whyTitle} />
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
+        <SectionHeading text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.whyEyebrow} title={home.whyTitle} />
         <ul className="mt-14 grid gap-10 sm:grid-cols-2">
           {home.why.map((item, i) => (
             <Reveal as="li" key={item.title} delay={(i % 2) * 0.08}>
               <div className="border-t border-border pt-6">
-                <span className="eyebrow text-primary">
+                <span className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 font-display text-xl font-semibold text-ink">
@@ -192,9 +192,9 @@ function Home() {
 
       {/* Testimonials */}
       <section className="border-t border-border bg-secondary py-20 lg:py-28">
-        <div className="container-page">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading
-            eyebrow={home.testimonialsEyebrow}
+            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.testimonialsEyebrow}
             title={home.testimonialsTitle}
             lead={home.sampleNote}
           />
@@ -202,16 +202,16 @@ function Home() {
         <div className="mt-14">
           <TestimonialMarquee locale={locale} />
         </div>
-        <div className="container-page mt-12 max-w-3xl">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 mt-12 max-w-3xl">
           <TestimonialCarousel locale={locale} />
         </div>
       </section>
 
       {/* Booking */}
-      <section id="book" className="container-page py-20 lg:py-28">
+      <section id="book" className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading
-            eyebrow={DICT[locale].nav.book}
+            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={DICT[locale].nav.book}
             title={DICT[locale].book.h1}
             lead={DICT[locale].book.lead}
           />
@@ -223,10 +223,10 @@ function Home() {
 
       {/* Local SEO / service area */}
       <section className="border-t border-border bg-surface py-20 lg:py-28">
-        <div className="container-page grid gap-12 lg:grid-cols-2">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
-              eyebrow={home.areaEyebrow}
+              text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={home.areaEyebrow}
               title={home.areaTitle}
               lead={home.areaBody}
             />

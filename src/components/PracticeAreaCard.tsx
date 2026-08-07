@@ -26,7 +26,7 @@ export function PracticeAreaCard({
         />
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <span className="eyebrow text-primary/70">
+        <span className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary/70">
           {String(index + 1).padStart(2, "0")}
         </span>
         <h3 className="mt-3 font-display text-lg font-semibold text-ink">

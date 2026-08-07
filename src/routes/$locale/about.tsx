@@ -40,12 +40,12 @@ function About() {
         priority
         image={IMAGES.advocateDesk}
         alt="Advocate Sumit Tyagi at his desk in the chamber at Civil Court, Ghaziabad"
-        eyebrow={SITE.tagline}
+        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={SITE.tagline}
         title={a.h1}
         lead={a.lead}
       />
 
-      <section className="container-page grid gap-14 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:py-28">
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-14 py-20 lg:grid-cols-[1.2fr_0.8fr] lg:py-28">
         <div>
           {a.body.map((para, i) => (
             <Reveal key={i} delay={i * 0.06}>
@@ -86,7 +86,7 @@ function About() {
             <dl className="mt-8 divide-y divide-border border-y border-border">
               {a.creds.map((c) => (
                 <div key={c.k} className="py-4">
-                  <dt className="eyebrow text-ink-soft">{c.k}</dt>
+                  <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">{c.k}</dt>
                   <dd className="mt-1.5 text-sm text-ink">{c.v}</dd>
                 </div>
               ))}
@@ -96,9 +96,9 @@ function About() {
       </section>
 
       <section className="border-t border-border bg-secondary py-20 lg:py-24">
-        <div className="container-page grid items-center gap-12 lg:grid-cols-2">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid items-center gap-12 lg:grid-cols-2">
           <SectionHeading
-            eyebrow={t.home.areaEyebrow}
+            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.home.areaEyebrow}
             title={t.home.areaTitle}
             lead={t.home.areaBody}
           />

@@ -38,23 +38,23 @@ function BookConsultation() {
         priority
         image={IMAGES.paDocuments}
         alt="Advocate reviewing a contract with a fountain pen beside a gavel and law books"
-        eyebrow={t.nav.book}
+        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.book}
         title={t.book.h1}
         lead={t.book.lead}
       />
 
-      <section className="container-page py-20 lg:py-28">
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <div className="border-t border-border pt-8">
-              <p className="eyebrow text-primary">{t.contact.phoneLabel}</p>
+              <p className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">{t.contact.phoneLabel}</p>
               <p className="mt-3 font-display text-2xl font-semibold text-ink">
                 {SITE.phonePrimary}
               </p>
               <p className="mt-1 text-sm text-ink-soft">{SITE.phoneSecondary}</p>
-              <p className="mt-8 eyebrow text-primary">{t.contact.hoursLabel}</p>
+              <p className="mt-8 text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">{t.contact.hoursLabel}</p>
               <p className="mt-3 text-sm text-ink">{t.contact.hours}</p>
-              <p className="mt-8 eyebrow text-primary">{t.contact.officeTitle}</p>
+              <p className="mt-8 text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">{t.contact.officeTitle}</p>
               <address className="mt-3 text-sm leading-relaxed text-ink not-italic">
                 {SITE.address}
               </address>

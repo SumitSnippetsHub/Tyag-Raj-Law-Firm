@@ -40,12 +40,12 @@ function PracticeAreasIndex() {
         priority
         image={IMAGES.lawBooks}
         alt="Antique law reports and legal statute books in a chamber bookcase"
-        eyebrow={t.nav.practice}
+        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.practice}
         title={t.practice.h1}
         lead={t.practice.lead}
       />
 
-      <section className="container-page py-20 lg:py-28">
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PRACTICE_AREAS.map((area, i) => (
             <Reveal as="li" key={area.slug} delay={(i % 3) * 0.08}>
@@ -56,9 +56,9 @@ function PracticeAreasIndex() {
       </section>
 
       <section className="border-t border-border bg-secondary py-20 lg:py-24">
-        <div className="container-page grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading
-            eyebrow={t.nav.book}
+            text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.book}
             title={t.book.h1}
             lead={t.book.lead}
           />

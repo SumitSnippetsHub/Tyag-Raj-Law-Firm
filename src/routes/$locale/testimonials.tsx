@@ -39,12 +39,12 @@ function Testimonials() {
         priority
         image={IMAGES.gavel}
         alt="Wooden gavel lit against a dark background, symbolising judicial outcomes"
-        eyebrow={t.nav.testimonials}
+        text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase={t.nav.testimonials}
         title={t.testimonialsPage.h1}
         lead={t.testimonialsPage.lead}
       />
 
-      <section className="container-page py-20 lg:py-28">
+      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <Reveal>
           <p className="max-w-2xl text-sm text-ink-soft">{t.home.sampleNote}</p>
         </Reveal>
