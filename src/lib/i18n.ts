@@ -1,0 +1,284 @@
+import { useParams } from "@tanstack/react-router";
+import { isLocale, type Locale } from "./site";
+
+export const DICT = {
+  en: {
+    nav: {
+      home: "Home",
+      about: "About",
+      practice: "Practice Areas",
+      testimonials: "Testimonials",
+      contact: "Contact",
+      book: "Book Consultation",
+    },
+    cta: {
+      whatsapp: "WhatsApp Us",
+      bookFree: "Book Free Consultation",
+      callNow: "Call Now",
+      readMore: "Read more",
+      viewAll: "View all practice areas",
+      learnMore: "Learn more",
+      submit: "Send on WhatsApp",
+    },
+    home: {
+      eyebrow: "Advocate & Legal Consultant · Ghaziabad",
+      h1: "Advocate Sumit Tyagi",
+      lead: "12+ years of legal excellence in Delhi NCR — criminal, civil, matrimonial and commercial litigation handled personally, from first hearing to final order.",
+      trust: [
+        "Ghaziabad · Noida · Delhi NCR",
+        "12+ Years Experience",
+        "Dedication · Integrity · Justice",
+        "District & Session Court, Ghaziabad",
+      ],
+      aboutEyebrow: "About the Advocate",
+      aboutTitle: "Straight advice, disciplined litigation",
+      aboutBody:
+        "Sumit Tyagi practises from the District & Session Court, Ghaziabad, appearing regularly before courts, tribunals and consumer forums across Ghaziabad, Noida and Delhi. Clients come for one reason: they are told exactly where they stand before any money is spent.",
+      practiceEyebrow: "Practice Areas",
+      practiceTitle: "Nine areas of focused litigation practice",
+      whyEyebrow: "Why Clients Stay",
+      whyTitle: "What working with this office looks like",
+      why: [
+        {
+          title: "12+ years at the bar",
+          body: "Over a decade of hearings in the same courts, before the same benches — experience that shows in preparation and timing.",
+        },
+        {
+          title: "Multi-forum litigation",
+          body: "Magistrate and Sessions Courts, RERA, consumer commissions, cyber cell and IP registries — one office for all of it.",
+        },
+        {
+          title: "Transparent process",
+          body: "Written scope, realistic timelines and clear fees before work starts. You always know the next date and the next step.",
+        },
+        {
+          title: "Personal attention",
+          body: "Your matter is argued by the advocate you met — not passed down to a junior on the day of hearing.",
+        },
+      ],
+      testimonialsEyebrow: "Client Voices",
+      testimonialsTitle: "What clients say",
+      sampleNote:
+        "Sample content — to be replaced with verified client reviews before launch.",
+      areaEyebrow: "Service Area",
+      areaTitle: "Serving Ghaziabad, Noida and Delhi NCR",
+      areaBody:
+        "The office is inside the District & Session Court complex in Ghaziabad, with regular appearances in Noida, Gautam Buddh Nagar and Delhi district courts, UP RERA, and consumer commissions. Same-day WhatsApp consultation is available for urgent bail and cheque bounce deadlines.",
+    },
+    about: {
+      h1: "About Advocate Sumit Tyagi",
+      lead: "An independent litigation practice built on preparation, plain speaking and steady presence in the courts of Delhi NCR.",
+      body: [
+        "Sumit Tyagi is an advocate and legal consultant with more than twelve years of courtroom practice, based at the District & Session Court, Ghaziabad. The practice began with criminal and civil trial work and now covers matrimonial disputes, NDPS defence, cheque bounce complaints, cyber matters, RERA, consumer commissions and intellectual property.",
+        "The approach is deliberately old-fashioned in one respect: every file is read personally before advice is given, and the client hears the weak points of their own case first. That single habit prevents most unpleasant surprises later.",
+        "Clients are individuals, families and small businesses across Ghaziabad, Noida and Delhi who want a lawyer they can actually reach — on the phone, on WhatsApp, and in court on the date of hearing.",
+      ],
+      valuesTitle: "Dedication · Integrity · Justice",
+      valuesBody:
+        "The three words on the firm's seal are also the working rules of the office: prepare completely, advise honestly, and pursue the matter to its end.",
+      creds: [
+        { k: "Experience", v: "12+ years in active litigation" },
+        { k: "Base court", v: "District & Session Court, Ghaziabad" },
+        { k: "Appears before", v: "District courts, RERA, consumer commissions, tribunals" },
+        { k: "Languages", v: "Hindi, English" },
+      ],
+    },
+    practice: {
+      h1: "Practice Areas",
+      lead: "Nine defined areas of practice across criminal, civil, family and commercial law — each handled personally in the courts of Delhi NCR.",
+      covers: "What this covers",
+      handled: "Matters commonly handled",
+      whyTitle: "Why work with Advocate Sumit Tyagi on this",
+      whyBody:
+        "Twelve-plus years of hearings in Ghaziabad, Noida and Delhi, direct familiarity with the local benches and registry practice, and one advocate responsible for your file from the first consultation to the final order.",
+      back: "All practice areas",
+      other: "Other practice areas",
+    },
+    testimonialsPage: {
+      h1: "Client Testimonials",
+      lead: "Experiences shared by clients across criminal, matrimonial, cheque bounce and RERA matters.",
+    },
+    contact: {
+      h1: "Contact the Office",
+      lead: "Chamber visits, phone calls and WhatsApp consultations — for urgent bail or notice deadlines, WhatsApp is fastest.",
+      officeTitle: "Chamber address",
+      hours: "Monday – Saturday, 10:00 – 18:00",
+      hoursLabel: "Office hours",
+      phoneLabel: "Phone / WhatsApp",
+      emailLabel: "Email",
+      mapTitle: "District & Session Court, Ghaziabad — office location map",
+    },
+    book: {
+      h1: "Book a Consultation",
+      lead: "Fill in the details below. It opens WhatsApp with your case summary ready to send — no account, no payment, no waiting.",
+      formTitle: "Consultation request",
+      name: "Full name",
+      phone: "Phone number",
+      area: "Practice area",
+      date: "Preferred date",
+      details: "Brief case description",
+      namePh: "e.g. Rajesh Kumar",
+      phonePh: "10-digit mobile number",
+      detailsPh: "Tell us briefly what happened, and any dates or notices involved.",
+      required: "Required",
+      invalidPhone: "Enter a valid 10-digit Indian mobile number.",
+      note: "Your details are only used to compose the WhatsApp message — nothing is stored on this website.",
+      msgTitle: "New Consultation Request",
+    },
+    footer: {
+      about:
+        "Advocate & Legal Consultant practising at the District & Session Court, Ghaziabad, with matters across Noida and Delhi NCR.",
+      quick: "Quick links",
+      areas: "Practice areas",
+      reach: "Reach us",
+      rights: "All rights reserved.",
+      disclaimer:
+        "Disclaimer: This website is for information only and does not constitute solicitation or advertisement under the Bar Council of India Rules. Nothing here is legal advice.",
+    },
+  },
+  hi: {
+    nav: {
+      home: "होम",
+      about: "परिचय",
+      practice: "कार्यक्षेत्र",
+      testimonials: "प्रशंसापत्र",
+      contact: "संपर्क",
+      book: "परामर्श बुक करें",
+    },
+    cta: {
+      whatsapp: "व्हाट्सएप करें",
+      bookFree: "नि:शुल्क परामर्श बुक करें",
+      callNow: "अभी कॉल करें",
+      readMore: "और पढ़ें",
+      viewAll: "सभी कार्यक्षेत्र देखें",
+      learnMore: "अधिक जानें",
+      submit: "व्हाट्सएप पर भेजें",
+    },
+    home: {
+      eyebrow: "अधिवक्ता एवं विधिक सलाहकार · गाज़ियाबाद",
+      h1: "अधिवक्ता सुमित त्यागी",
+      lead: "दिल्ली एनसीआर में 12+ वर्षों की विधिक सेवा — आपराधिक, सिविल, वैवाहिक एवं व्यावसायिक मुकदमे पहली सुनवाई से अंतिम आदेश तक स्वयं देखे जाते हैं।",
+      trust: [
+        "गाज़ियाबाद · नोएडा · दिल्ली एनसीआर",
+        "12+ वर्षों का अनुभव",
+        "समर्पण · ईमानदारी · न्याय",
+        "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद",
+      ],
+      aboutEyebrow: "अधिवक्ता का परिचय",
+      aboutTitle: "स्पष्ट सलाह, अनुशासित पैरवी",
+      aboutBody:
+        "सुमित त्यागी ज़िला एवं सेशन न्यायालय, गाज़ियाबाद से प्रैक्टिस करते हैं और गाज़ियाबाद, नोएडा व दिल्ली की अदालतों, अधिकरणों तथा उपभोक्ता फोरम में नियमित रूप से पेश होते हैं। मुवक्किल एक कारण से आते हैं: खर्च से पहले उन्हें उनकी वास्तविक स्थिति बता दी जाती है।",
+      practiceEyebrow: "कार्यक्षेत्र",
+      practiceTitle: "नौ केंद्रित विधिक कार्यक्षेत्र",
+      whyEyebrow: "क्यों चुनें",
+      whyTitle: "इस कार्यालय के साथ काम करना कैसा है",
+      why: [
+        {
+          title: "12+ वर्षों की वकालत",
+          body: "एक दशक से अधिक समय तक उन्हीं अदालतों में सुनवाई — जिसका असर तैयारी और समय-प्रबंधन में दिखता है।",
+        },
+        {
+          title: "बहु-मंच पैरवी",
+          body: "मजिस्ट्रेट व सेशन न्यायालय, रेरा, उपभोक्ता आयोग, साइबर सेल और आईपी रजिस्ट्री — सबके लिए एक ही कार्यालय।",
+        },
+        {
+          title: "पारदर्शी प्रक्रिया",
+          body: "काम शुरू होने से पहले स्पष्ट दायरा, वास्तविक समय-सीमा और तय फीस। अगली तारीख और अगला कदम सदैव पता रहता है।",
+        },
+        {
+          title: "व्यक्तिगत ध्यान",
+          body: "आपका मुकदमा वही अधिवक्ता लड़ते हैं जिनसे आप मिले — सुनवाई के दिन किसी जूनियर को नहीं सौंपा जाता।",
+        },
+      ],
+      testimonialsEyebrow: "मुवक्किलों की राय",
+      testimonialsTitle: "मुवक्किल क्या कहते हैं",
+      sampleNote:
+        "नमूना सामग्री — लॉन्च से पहले सत्यापित मुवक्किल समीक्षाओं से बदली जाएगी।",
+      areaEyebrow: "सेवा क्षेत्र",
+      areaTitle: "गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में सेवा",
+      areaBody:
+        "कार्यालय गाज़ियाबाद के ज़िला एवं सेशन न्यायालय परिसर में है, तथा नोएडा, गौतमबुद्ध नगर व दिल्ली की ज़िला अदालतों, यूपी रेरा और उपभोक्ता आयोगों में नियमित उपस्थिति रहती है। जमानत और चेक बाउंस की तात्कालिक समय-सीमा के लिए उसी दिन व्हाट्सएप परामर्श उपलब्ध है।",
+    },
+    about: {
+      h1: "अधिवक्ता सुमित त्यागी के बारे में",
+      lead: "तैयारी, स्पष्टवादिता और दिल्ली एनसीआर की अदालतों में लगातार उपस्थिति पर आधारित एक स्वतंत्र वकालत।",
+      body: [
+        "सुमित त्यागी बारह वर्षों से अधिक अदालती अनुभव वाले अधिवक्ता एवं विधिक सलाहकार हैं, जिनका कार्यालय ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में है। प्रैक्टिस की शुरुआत आपराधिक व सिविल ट्रायल कार्य से हुई और अब इसमें वैवाहिक विवाद, एनडीपीएस बचाव, चेक बाउंस शिकायत, साइबर मामले, रेरा, उपभोक्ता आयोग और बौद्धिक संपदा शामिल हैं।",
+        "दृष्टिकोण एक मामले में जान-बूझकर पुरानी शैली का है: सलाह देने से पहले हर फाइल स्वयं पढ़ी जाती है, और मुवक्किल को सबसे पहले उनके ही मुकदमे की कमजोरियाँ बताई जाती हैं। यही एक आदत बाद के अप्रिय आश्चर्यों को रोक देती है।",
+        "मुवक्किल गाज़ियाबाद, नोएडा और दिल्ली के वे व्यक्ति, परिवार और छोटे व्यवसाय हैं जिन्हें ऐसा वकील चाहिए जो वास्तव में उपलब्ध हो — फोन पर, व्हाट्सएप पर, और सुनवाई की तारीख पर अदालत में।",
+      ],
+      valuesTitle: "समर्पण · ईमानदारी · न्याय",
+      valuesBody:
+        "फर्म की मुहर पर अंकित ये तीन शब्द कार्यालय के कार्य-नियम भी हैं: पूरी तैयारी, ईमानदार सलाह, और मुकदमे को अंत तक ले जाना।",
+      creds: [
+        { k: "अनुभव", v: "12+ वर्ष सक्रिय पैरवी" },
+        { k: "मुख्य न्यायालय", v: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद" },
+        { k: "उपस्थिति", v: "ज़िला अदालतें, रेरा, उपभोक्ता आयोग, अधिकरण" },
+        { k: "भाषाएँ", v: "हिन्दी, अंग्रेज़ी" },
+      ],
+    },
+    practice: {
+      h1: "कार्यक्षेत्र",
+      lead: "आपराधिक, सिविल, पारिवारिक एवं व्यावसायिक विधि में नौ निर्धारित कार्यक्षेत्र — प्रत्येक दिल्ली एनसीआर की अदालतों में स्वयं देखा जाता है।",
+      covers: "इसमें क्या शामिल है",
+      handled: "सामान्यतः देखे जाने वाले मामले",
+      whyTitle: "इस मामले में अधिवक्ता सुमित त्यागी क्यों",
+      whyBody:
+        "गाज़ियाबाद, नोएडा और दिल्ली में बारह वर्षों से अधिक की सुनवाई, स्थानीय अदालतों व रजिस्ट्री प्रक्रिया की सीधी जानकारी, और पहली सलाह से अंतिम आदेश तक आपकी फाइल के लिए एक ही ज़िम्मेदार अधिवक्ता।",
+      back: "सभी कार्यक्षेत्र",
+      other: "अन्य कार्यक्षेत्र",
+    },
+    testimonialsPage: {
+      h1: "मुवक्किलों के प्रशंसापत्र",
+      lead: "आपराधिक, वैवाहिक, चेक बाउंस एवं रेरा मामलों के मुवक्किलों के अनुभव।",
+    },
+    contact: {
+      h1: "कार्यालय से संपर्क",
+      lead: "चैम्बर में मुलाक़ात, फोन कॉल एवं व्हाट्सएप परामर्श — जमानत या नोटिस की तात्कालिक समय-सीमा हेतु व्हाट्सएप सबसे तेज़ है।",
+      officeTitle: "चैम्बर का पता",
+      hours: "सोमवार – शनिवार, 10:00 – 18:00",
+      hoursLabel: "कार्यालय समय",
+      phoneLabel: "फोन / व्हाट्सएप",
+      emailLabel: "ईमेल",
+      mapTitle: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद — कार्यालय स्थान नक्शा",
+    },
+    book: {
+      h1: "परामर्श बुक करें",
+      lead: "नीचे विवरण भरें। व्हाट्सएप आपके मामले के सारांश के साथ खुल जाएगा — कोई खाता, भुगतान या प्रतीक्षा नहीं।",
+      formTitle: "परामर्श अनुरोध",
+      name: "पूरा नाम",
+      phone: "मोबाइल नंबर",
+      area: "कार्यक्षेत्र",
+      date: "पसंदीदा तारीख",
+      details: "मामले का संक्षिप्त विवरण",
+      namePh: "जैसे राजेश कुमार",
+      phonePh: "10 अंकों का मोबाइल नंबर",
+      detailsPh: "संक्षेप में बताएं क्या हुआ, तथा संबंधित तारीखें या नोटिस।",
+      required: "आवश्यक",
+      invalidPhone: "मान्य 10 अंकों का भारतीय मोबाइल नंबर दर्ज करें।",
+      note: "आपका विवरण केवल व्हाट्सएप संदेश बनाने के लिए उपयोग होता है — इस वेबसाइट पर कुछ भी संग्रहित नहीं होता।",
+      msgTitle: "नया परामर्श अनुरोध",
+    },
+    footer: {
+      about:
+        "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में कार्यरत अधिवक्ता एवं विधिक सलाहकार — नोएडा तथा दिल्ली एनसीआर के मामलों सहित।",
+      quick: "त्वरित लिंक",
+      areas: "कार्यक्षेत्र",
+      reach: "संपर्क करें",
+      rights: "सर्वाधिकार सुरक्षित।",
+      disclaimer:
+        "अस्वीकरण: यह वेबसाइट केवल जानकारी के लिए है और बार काउंसिल ऑफ इंडिया नियमों के अंतर्गत विज्ञापन या याचना नहीं है। यहाँ कुछ भी विधिक सलाह नहीं है।",
+    },
+  },
+} as const;
+
+export function useLocale(): Locale {
+  const params = useParams({ strict: false }) as { locale?: string };
+  const value = params.locale ?? "en";
+  return isLocale(value) ? value : "en";
+}
+
+export function useT() {
+  const locale = useLocale();
+  return { locale, t: DICT[locale] };
+}
