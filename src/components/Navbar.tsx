@@ -1,7 +1,8 @@
-import { AppLink } from "@/components/AppLink";
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
+import { AppLink } from "@/components/AppLink";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { IMAGES } from "@/lib/images";
 import { SITE, waLink } from "@/lib/site";
 import { useT } from "@/lib/i18n";
@@ -39,87 +40,127 @@ export function Navbar() {
       ? "नमस्ते, मुझे अधिवक्ता सुमित त्यागी से विधिक परामर्श चाहिए।"
       : "Hello, I would like a legal consultation with Advocate Sumit Tyagi.";
 
+  /* Solid when scrolled or menu open; dark translucent panel over the hero. */
+  const dark = !scrolled && !open;
+
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open
-          ? "border-b border-border bg-surface"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
-      <nav className="mx-auto w-full max-w-6xl px-5 md:px-10 flex h-20 items-center justify-between gap-6">
-        <AppLink
-          to={`/${locale}`}
-          className="flex shrink-0 items-center gap-3"
-          aria-label={`${SITE.firm} — home`}
-        >
-          <img
-            src={IMAGES.logo}
-            alt="Advocate Sumit Tyagi — Tyagi Raj Law Firm logo with scales of justice"
-            className={`h-9 w-auto rounded-sm ${scrolled || open ? "" : "bg-surface/95 px-1.5 py-1"}`}
-          />
-        </AppLink>
-
-        <ul className="hidden items-center gap-8 lg:flex">
-          {links.map((l) => (
-            <li key={l.to}>
-              <AppLink
-                to={l.to}
-                activeOptions={{ exact: l.to === `/${locale}` }}
-                className={`text-sm font-medium transition-colors ${
-                  scrolled
-                    ? "text-ink-soft hover:text-primary"
-                    : "text-dark-text/80 hover:text-dark-text"
-                }`}
-                activeProps={{
-                  className: scrolled ? "text-primary" : "text-dark-text",
-                }}
-              >
-                {l.label}
-              </AppLink>
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-3">
-          <div className="hidden sm:block">
-            <LanguageToggle tone={scrolled || open ? "light" : "dark"} />
+    <header className="fixed inset-x-0 top-0 z-50">
+      {/* Slim contact strip — hidden on the smallest screens */}
+      <div className="hidden bg-dark-bg text-dark-text sm:block">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5 py-2 md:px-10">
+          <p className="truncate text-[0.7rem] tracking-wide text-dark-text/70">
+            {SITE.address}
+          </p>
+          <div className="flex shrink-0 items-center gap-4 text-[0.7rem] font-semibold">
+            <a
+              href={`tel:${SITE.phonePrimary.replace(/\s/g, "")}`}
+              className="inline-flex items-center gap-1.5 text-dark-text/85 transition-colors hover:text-dark-text"
+            >
+              <Phone className="size-3.5" aria-hidden />
+              {SITE.phonePrimary}
+            </a>
+            <a
+              href={waLink(greeting)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-dark-text/85 transition-colors hover:text-dark-text"
+            >
+              <WhatsAppIcon className="size-3.5" />
+              WhatsApp
+            </a>
           </div>
-          <a
-            href={waLink(greeting)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-2 bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2 sm:inline-flex"
-          >
-            <MessageCircle className="size-4" aria-hidden />
-            {t.cta.whatsapp}
-          </a>
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            className={`inline-flex size-10 items-center justify-center border lg:hidden ${
-              scrolled || open
-                ? "border-border text-ink"
-                : "border-dark-text/30 text-dark-text"
-            }`}
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
         </div>
-      </nav>
+      </div>
+
+      <div
+        className={`border-b transition-colors duration-300 ${
+          dark
+            ? "border-dark-text/15 bg-dark-bg/80 backdrop-blur-md"
+            : "border-border bg-surface shadow-[0_1px_20px_-12px_oklch(0.2_0_0/0.5)]"
+        }`}
+      >
+        <nav className="mx-auto grid w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 md:px-10 lg:flex lg:justify-between lg:gap-6 lg:py-0 lg:h-20">
+          <AppLink
+            to={`/${locale}`}
+            className="flex min-w-0 shrink-0 items-center gap-3"
+            aria-label={`${SITE.firm} — home`}
+          >
+            <img
+              src={dark ? IMAGES.logoLight : IMAGES.logoPng}
+              alt="Advocate Sumit Tyagi — Tyagi Raj Law Firm logo with scales of justice"
+              className="h-9 w-auto sm:h-11"
+            />
+          </AppLink>
+
+          <ul className="hidden items-center gap-8 lg:flex">
+            {links.map((l) => (
+              <li key={l.to}>
+                <AppLink
+                  to={l.to}
+                  activeOptions={{ exact: l.to === `/${locale}` }}
+                  className={`text-sm font-semibold transition-colors ${
+                    dark
+                      ? "text-dark-text/85 hover:text-dark-text"
+                      : "text-ink-soft hover:text-primary"
+                  }`}
+                  activeProps={{
+                    className: dark
+                      ? "text-dark-text underline decoration-2 underline-offset-8"
+                      : "text-primary underline decoration-2 underline-offset-8",
+                  }}
+                >
+                  {l.label}
+                </AppLink>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <div className="hidden sm:block">
+              <LanguageToggle tone={dark ? "dark" : "light"} />
+            </div>
+            <a
+              href={waLink(greeting)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-2 bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2 sm:inline-flex"
+            >
+              <WhatsAppIcon className="size-4" />
+              {t.cta.whatsapp}
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              className={`inline-flex size-11 items-center justify-center border lg:hidden ${
+                dark
+                  ? "border-dark-text/30 text-dark-text"
+                  : "border-border bg-secondary text-ink"
+              }`}
+            >
+              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
+        </nav>
+      </div>
 
       <AnimatePresence>
         {open ? (
           <motion.div
-            className="fixed inset-x-0 top-20 bottom-0 z-40 bg-surface lg:hidden"
+            className="fixed inset-x-0 bottom-0 top-[var(--nav-h,4.25rem)] z-40 overflow-y-auto bg-surface lg:hidden"
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 24 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="mx-auto w-full max-w-6xl px-5 md:px-10 flex h-full flex-col gap-8 py-10">
+            <img
+              aria-hidden
+              alt=""
+              src={IMAGES.logoPng}
+              className="pointer-events-none absolute inset-x-0 bottom-10 mx-auto w-[120%] max-w-none opacity-[0.05]"
+            />
+            <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-8 md:px-10">
               <ul className="flex flex-col gap-1">
                 {links.map((l) => (
                   <li key={l.to}>
@@ -132,8 +173,17 @@ export function Navbar() {
                     </AppLink>
                   </li>
                 ))}
+                <li>
+                  <AppLink
+                    to={`/${locale}/book-consultation`}
+                    onClick={() => setOpen(false)}
+                    className="block border-b border-border py-4 font-display text-2xl font-semibold text-primary"
+                  >
+                    {t.nav.book}
+                  </AppLink>
+                </li>
               </ul>
-              <div className="mt-auto flex flex-col gap-4">
+              <div className="flex flex-col gap-4 pb-6">
                 <LanguageToggle />
                 <a
                   href={waLink(greeting)}
@@ -141,13 +191,14 @@ export function Navbar() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground"
                 >
-                  <MessageCircle className="size-4" aria-hidden />
+                  <WhatsAppIcon className="size-4" />
                   {t.cta.whatsapp}
                 </a>
                 <a
-                  href={`tel:${SITE.whatsapp}`}
-                  className="text-sm text-ink-soft"
+                  href={`tel:${SITE.phonePrimary.replace(/\s/g, "")}`}
+                  className="inline-flex items-center justify-center gap-2 border border-border px-5 py-3.5 text-sm font-semibold text-ink"
                 >
+                  <Phone className="size-4" aria-hidden />
                   {SITE.phonePrimary}
                 </a>
               </div>
