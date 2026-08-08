@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -63,13 +64,13 @@ function About() {
             </div>
           </Reveal>
           <Reveal delay={0.26}>
-            <Link
+            <AppLink
               to={`/${locale}/book-consultation`}
               className="mt-10 inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
             >
               {t.cta.bookFree}
               <ArrowRight className="size-4" aria-hidden />
-            </Link>
+            </AppLink>
           </Reveal>
         </div>
 

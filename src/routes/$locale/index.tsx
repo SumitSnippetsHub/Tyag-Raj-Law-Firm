@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { ArrowRight, Phone } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { TrustBar } from "@/components/TrustBar";
@@ -87,13 +88,13 @@ function Home() {
         lead={home.lead}
       >
         <div className="flex flex-wrap gap-4">
-          <Link
+          <AppLink
             to={`/${locale}/book-consultation`}
             className="inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
           >
             {t.cta.bookFree}
             <ArrowRight className="size-4" aria-hidden />
-          </Link>
+          </AppLink>
           <a
             href="tel:+918060603368"
             className="inline-flex items-center gap-2 border border-dark-text/30 px-6 py-3.5 text-sm font-semibold text-dark-text transition-colors hover:bg-dark-text/10"
@@ -140,13 +141,13 @@ function Home() {
                 <dd className="mt-2 font-display text-3xl font-bold text-ink">09</dd>
               </div>
             </dl>
-            <Link
+            <AppLink
               to={`/${locale}/about`}
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
             >
               {t.cta.readMore}
               <ArrowRight className="size-4" aria-hidden />
-            </Link>
+            </AppLink>
           </Reveal>
         </div>
       </section>
