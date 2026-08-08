@@ -1,4 +1,5 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -78,13 +79,13 @@ function PracticeAreaPage() {
       />
 
       <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
-        <Link
+        <AppLink
           to={`/${locale}/practice-areas`}
           className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
         >
           <ArrowLeft className="size-4" aria-hidden />
           {t.practice.back}
-        </Link>
+        </AppLink>
 
         <div className="mt-12 grid gap-14 lg:grid-cols-[1.15fr_0.85fr]">
           <div>
@@ -123,13 +124,13 @@ function PracticeAreaPage() {
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">
                   {t.practice.whyBody}
                 </p>
-                <Link
+                <AppLink
                   to={`/${locale}/book-consultation`}
                   className="mt-7 inline-flex w-full items-center justify-center gap-2 bg-primary px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
                 >
                   {t.cta.bookFree}
                   <ArrowRight className="size-4" aria-hidden />
-                </Link>
+                </AppLink>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
@@ -137,13 +138,13 @@ function PracticeAreaPage() {
               <ul className="mt-4 divide-y divide-border border-y border-border">
                 {others.map((o) => (
                   <li key={o.slug}>
-                    <Link
+                    <AppLink
                       to={`/${locale}/practice-areas/${o.slug}`}
                       className="flex items-center justify-between gap-3 py-4 text-sm text-ink hover:text-primary"
                     >
                       {o.title[locale]}
                       <ArrowRight className="size-4 shrink-0" aria-hidden />
-                    </Link>
+                    </AppLink>
                   </li>
                 ))}
               </ul>

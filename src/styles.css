@@ -26,6 +26,14 @@
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-surface: var(--surface);
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-text: var(--dark-text);
+  --color-accent-2: var(--accent-2);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
@@ -69,25 +77,32 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  /* Warm cream paper, charcoal ink, deep maroon accent */
+  --ink: oklch(0.24 0.012 60);
+  --ink-soft: oklch(0.475 0.014 60);
+  --surface: oklch(0.995 0.004 85);
+  --dark-bg: oklch(0.205 0.014 45);
+  --dark-text: oklch(0.965 0.008 85);
+  --accent-2: oklch(0.36 0.11 22);
+  --background: oklch(0.975 0.009 85);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: oklch(0.44 0.135 20);
+  --primary-foreground: oklch(0.985 0.006 85);
+  --secondary: oklch(0.955 0.011 82);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.94 0.012 82);
+  --muted-foreground: var(--ink-soft);
+  --accent: oklch(0.94 0.012 82);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.885 0.012 78);
+  --input: oklch(0.885 0.012 78);
+  --ring: oklch(0.44 0.135 20);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -146,6 +161,19 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
   }
 }
 
@@ -177,4 +205,87 @@
     oklch(0.185 0 0 / 0.74) 50%,
     oklch(0.185 0 0 / 0.6) 100%
   );
+}
+
+/* Stronger, layered scrim so headline text stays legible over any photo */
+.photo-scrim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      oklch(0.16 0.01 45 / 0.96) 0%,
+      oklch(0.16 0.01 45 / 0.86) 42%,
+      oklch(0.16 0.01 45 / 0.66) 72%,
+      oklch(0.16 0.01 45 / 0.55) 100%
+    ),
+    radial-gradient(
+      120% 90% at 15% 90%,
+      oklch(0.14 0.02 25 / 0.6) 0%,
+      transparent 70%
+    );
+}
+
+.text-shadow-hero {
+  text-shadow: 0 2px 18px oklch(0.14 0.01 45 / 0.7);
+}
+
+/* Section background photo, heavily washed so body copy stays readable */
+.section-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: oklch(0.16 0.01 45 / 0.9);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 48s linear infinite;
+}
+
+.marquee-track--fast {
+  animation-duration: 26s;
+}
+
+.marquee-track--reverse {
+  animation-direction: reverse;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Highlighted advocate name */
+.name-mark {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.name-mark--on-dark {
+  color: oklch(0.9 0.055 60);
 }

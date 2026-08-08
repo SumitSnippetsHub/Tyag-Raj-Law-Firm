@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { waLink } from "@/lib/site";
 import { useLocale } from "@/lib/i18n";
 
@@ -28,7 +28,7 @@ export function FloatingWhatsApp() {
             transition: { duration: 0.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] },
           })}
     >
-      <MessageCircle className="size-6" aria-hidden />
+      <WhatsAppIcon className="size-6" />
     </motion.a>
   );
 }

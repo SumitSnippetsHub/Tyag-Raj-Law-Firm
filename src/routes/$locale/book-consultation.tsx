@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
+import { TextMarquee } from "@/components/TextMarquee";
+import { COURTS, PROCESS, EXTRA_UI } from "@/lib/content-extra";
+import { SectionHeading } from "@/components/SectionHeading";
 import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 import { useT } from "@/lib/i18n";
@@ -37,11 +40,14 @@ function BookConsultation() {
       <PageHero
         priority
         image={IMAGES.paDocuments}
+        mobileImage={IMAGES.advocateOffice}
         alt="Advocate reviewing a contract with a fountain pen beside a gavel and law books"
         eyebrow={t.nav.book}
         title={t.book.h1}
         lead={t.book.lead}
       />
+
+      <TextMarquee items={COURTS.map((c) => c[locale])} />
 
       <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
@@ -63,6 +69,31 @@ function BookConsultation() {
           <Reveal delay={0.08}>
             <WhatsAppBookingForm locale={locale} />
           </Reveal>
+        </div>
+      </section>
+      <section className="border-t border-border bg-secondary py-20 lg:py-24">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={EXTRA_UI.processEyebrow[locale]}
+            title={EXTRA_UI.processTitle[locale]}
+          />
+          <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {PROCESS.map((step, i) => (
+              <Reveal as="li" key={step.title.en} delay={(i % 4) * 0.08}>
+                <div className="h-full border-t border-border pt-5">
+                  <span className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-primary uppercase">
+                    {step.step[locale]}
+                  </span>
+                  <h3 className="mt-3 font-display text-lg font-semibold text-ink">
+                    {step.title[locale]}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {step.body[locale]}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
         </div>
       </section>
     </>

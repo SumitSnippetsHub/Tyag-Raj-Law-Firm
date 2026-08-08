@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -105,7 +106,7 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
               >
-                <MessageCircle className="size-4" aria-hidden />
+                <WhatsAppIcon className="size-4" />
                 {t.cta.whatsapp}
               </a>
             </Reveal>

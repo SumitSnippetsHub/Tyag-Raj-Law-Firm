@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
@@ -46,12 +46,12 @@ export function Footer() {
               { to: `/${locale}/book-consultation`, label: t.nav.book },
             ].map((l) => (
               <li key={l.to}>
-                <Link
+                <AppLink
                   to={l.to}
                   className="text-dark-text/70 transition-colors hover:text-dark-text"
                 >
                   {l.label}
-                </Link>
+                </AppLink>
               </li>
             ))}
           </ul>
@@ -62,12 +62,12 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             {PRACTICE_AREAS.map((a) => (
               <li key={a.slug}>
-                <Link
+                <AppLink
                   to={`/${locale}/practice-areas/${a.slug}`}
                   className="text-dark-text/70 transition-colors hover:text-dark-text"
                 >
                   {a.title[locale]}
-                </Link>
+                </AppLink>
               </li>
             ))}
           </ul>

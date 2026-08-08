@@ -2,7 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Quote } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
-import { TestimonialCarousel } from "@/components/TestimonialMarquee";
+import {
+  TestimonialCarousel,
+  TestimonialMarquee,
+} from "@/components/TestimonialMarquee";
+import { TextMarquee } from "@/components/TextMarquee";
+import { AppLink } from "@/components/AppLink";
+import { ArrowRight } from "lucide-react";
+import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { TESTIMONIALS } from "@/lib/testimonials";
 import { useT } from "@/lib/i18n";
@@ -38,11 +45,18 @@ function Testimonials() {
       <PageHero
         priority
         image={IMAGES.gavel}
+        mobileImage={IMAGES.advocateStanding}
         alt="Wooden gavel lit against a dark background, symbolising judicial outcomes"
         eyebrow={t.nav.testimonials}
         title={t.testimonialsPage.h1}
         lead={t.testimonialsPage.lead}
       />
+
+      <TextMarquee items={COURTS.map((c) => c[locale])} />
+
+      <div className="border-b border-border bg-secondary py-12">
+        <TestimonialMarquee locale={locale} />
+      </div>
 
       <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <Reveal>
@@ -69,6 +83,16 @@ function Testimonials() {
         <div className="mt-16 max-w-3xl">
           <TestimonialCarousel locale={locale} />
         </div>
+
+        <Reveal delay={0.1}>
+          <AppLink
+            to={`/${locale}/book-consultation`}
+            className="mt-14 inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
+          >
+            {t.cta.bookFree}
+            <ArrowRight className="size-4" aria-hidden />
+          </AppLink>
+        </Reveal>
       </section>
     </>
   );

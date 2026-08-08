@@ -1,5 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Phone } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
+import { ArrowRight, Phone, Scale, ShieldCheck, Clock } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { TextMarquee } from "@/components/TextMarquee";
+import { highlightName } from "@/components/NameMark";
+import { COURTS, EXTRA_UI, FAQ, PROCESS, STATS } from "@/lib/content-extra";
 import { PageHero } from "@/components/PageHero";
 import { TrustBar } from "@/components/TrustBar";
 import { Reveal } from "@/components/Reveal";
@@ -70,15 +75,28 @@ function Home() {
         }}
       />
 
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map((f) => ({
+            "@type": "Question",
+            name: f.q[locale],
+            acceptedAnswer: { "@type": "Answer", text: f.a[locale] },
+          })),
+        }}
+      />
+
       <PageHero
         priority
         tall
         image={IMAGES.justiceStatue}
+        mobileImage={IMAGES.advocateStanding}
         alt="Bronze scales of justice statue representing legal practice in Delhi NCR"
         eyebrow={home.eyebrow}
         title={
           <>
-            {home.h1}
+            {highlightName(home.h1, "dark")}
             <span className="mt-4 block font-display text-lg font-semibold text-dark-text/60 md:text-xl">
               {SITE.tagline} · {home.trust[1]}
             </span>
@@ -87,13 +105,13 @@ function Home() {
         lead={home.lead}
       >
         <div className="flex flex-wrap gap-4">
-          <Link
+          <AppLink
             to={`/${locale}/book-consultation`}
             className="inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
           >
             {t.cta.bookFree}
             <ArrowRight className="size-4" aria-hidden />
-          </Link>
+          </AppLink>
           <a
             href="tel:+918060603368"
             className="inline-flex items-center gap-2 border border-dark-text/30 px-6 py-3.5 text-sm font-semibold text-dark-text transition-colors hover:bg-dark-text/10"
@@ -105,6 +123,32 @@ function Home() {
       </PageHero>
 
       <TrustBar items={home.trust} />
+
+      {/* Courts marquee */}
+      <TextMarquee items={COURTS.map((c) => c[locale])} />
+
+      {/* Stats */}
+      <section className="border-b border-border bg-surface py-14">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <p className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-primary uppercase">
+            {EXTRA_UI.statsEyebrow[locale]}
+          </p>
+          <dl className="mt-8 grid grid-cols-2 gap-8 lg:grid-cols-4">
+            {STATS.map((s, i) => (
+              <Reveal key={s.value} delay={(i % 4) * 0.06}>
+                <div className="border-t-2 border-primary/70 pt-4">
+                  <dd className="font-display text-3xl font-bold text-ink sm:text-4xl">
+                    {s.value}
+                  </dd>
+                  <dt className="mt-2 text-xs leading-relaxed text-ink-soft sm:text-sm">
+                    {s.label[locale]}
+                  </dt>
+                </div>
+              </Reveal>
+            ))}
+          </dl>
+        </div>
+      </section>
 
       {/* About preview */}
       <section className="mx-auto w-full max-w-6xl px-5 md:px-10 grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
@@ -140,13 +184,13 @@ function Home() {
                 <dd className="mt-2 font-display text-3xl font-bold text-ink">09</dd>
               </div>
             </dl>
-            <Link
+            <AppLink
               to={`/${locale}/about`}
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
             >
               {t.cta.readMore}
               <ArrowRight className="size-4" aria-hidden />
-            </Link>
+            </AppLink>
           </Reveal>
         </div>
       </section>
@@ -221,6 +265,83 @@ function Home() {
         </div>
       </section>
 
+      {/* Process */}
+      <section className="section-photo relative isolate overflow-hidden bg-dark-bg py-20 lg:py-28">
+        <img
+          aria-hidden
+          alt=""
+          src={IMAGES.lawBooks}
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        />
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-10">
+          <p className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-dark-text/70 uppercase">
+            {EXTRA_UI.processEyebrow[locale]}
+          </p>
+          <h2 className="mt-4 max-w-2xl text-3xl text-dark-text md:text-4xl">
+            {EXTRA_UI.processTitle[locale]}
+          </h2>
+          <ol className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {PROCESS.map((step, i) => (
+              <Reveal as="li" key={step.title.en} delay={(i % 4) * 0.08}>
+                <div className="h-full border-t border-dark-text/25 pt-5">
+                  <span className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-dark-text/60 uppercase">
+                    {step.step[locale]}
+                  </span>
+                  <h3 className="mt-3 font-display text-lg font-semibold text-dark-text">
+                    {step.title[locale]}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-dark-text/75">
+                    {step.body[locale]}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Assurances */}
+      <section className="mx-auto w-full max-w-6xl px-5 py-16 md:px-10 lg:py-20">
+        <ul className="grid gap-8 sm:grid-cols-3">
+          {[
+            { icon: ShieldCheck, text: home.why[0]!.title },
+            { icon: Scale, text: home.why[1]!.title },
+            { icon: Clock, text: home.why[2]!.title },
+          ].map((item, i) => (
+            <Reveal as="li" key={item.text} delay={i * 0.07}>
+              <div className="flex items-start gap-4 border border-border bg-surface p-5">
+                <item.icon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
+                <p className="font-display text-sm font-semibold text-ink">{item.text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </ul>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-y border-border bg-secondary py-20 lg:py-28">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={EXTRA_UI.faqEyebrow[locale]}
+            title={EXTRA_UI.faqTitle[locale]}
+          />
+          <div className="mt-12 grid gap-4 lg:grid-cols-2">
+            {FAQ.map((item, i) => (
+              <Reveal key={item.q.en} delay={(i % 2) * 0.07}>
+                <details className="group border border-border bg-surface p-5 open:border-primary/40">
+                  <summary className="cursor-pointer list-none font-display text-base font-semibold text-ink marker:hidden">
+                    {item.q[locale]}
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {item.a[locale]}
+                  </p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Local SEO / service area */}
       <section className="border-t border-border bg-surface py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-2">
@@ -248,8 +369,8 @@ function Home() {
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
               >
+                <WhatsAppIcon className="size-4" />
                 {t.cta.whatsapp}
-                <ArrowRight className="size-4" aria-hidden />
               </a>
             </Reveal>
           </div>
