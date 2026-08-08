@@ -2,6 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
+import { TextMarquee } from "@/components/TextMarquee";
+import { COURTS, PROCESS, EXTRA_UI } from "@/lib/content-extra";
+import { SectionHeading } from "@/components/SectionHeading";
 import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 import { useT } from "@/lib/i18n";
@@ -37,11 +40,14 @@ function BookConsultation() {
       <PageHero
         priority
         image={IMAGES.paDocuments}
+        mobileImage={IMAGES.advocateOffice}
         alt="Advocate reviewing a contract with a fountain pen beside a gavel and law books"
         eyebrow={t.nav.book}
         title={t.book.h1}
         lead={t.book.lead}
       />
+
+      <TextMarquee items={COURTS.map((c) => c[locale])} />
 
       <section className="mx-auto w-full max-w-6xl px-5 md:px-10 py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
@@ -67,4 +73,3 @@ function BookConsultation() {
       </section>
     </>
   );
-}
