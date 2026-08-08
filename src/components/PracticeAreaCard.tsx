@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import { } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { ArrowUpRight } from "lucide-react";
 import { areaImage, type PracticeArea } from "@/lib/practice-areas";
 import type { Locale } from "@/lib/site";
@@ -13,7 +14,7 @@ export function PracticeAreaCard({
   index: number;
 }) {
   return (
-    <Link
+    <AppLink
       to={`/${locale}/practice-areas/${area.slug}`}
       className="group flex h-full flex-col border border-border bg-surface transition-colors hover:border-primary"
     >
@@ -40,6 +41,6 @@ export function PracticeAreaCard({
           <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden />
         </span>
       </div>
-    </Link>
+    </AppLink>
   );
 }

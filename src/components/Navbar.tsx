@@ -1,4 +1,5 @@
-import { Link } from "@tanstack/react-router";
+import { } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -48,7 +49,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto w-full max-w-6xl px-5 md:px-10 flex h-20 items-center justify-between gap-6">
-        <Link
+        <AppLink
           to={`/${locale}`}
           className="flex shrink-0 items-center gap-3"
           aria-label={`${SITE.firm} — home`}
@@ -58,12 +59,12 @@ export function Navbar() {
             alt="Advocate Sumit Tyagi — Tyagi Raj Law Firm logo with scales of justice"
             className={`h-9 w-auto rounded-sm ${scrolled || open ? "" : "bg-surface/95 px-1.5 py-1"}`}
           />
-        </Link>
+        </AppLink>
 
         <ul className="hidden items-center gap-8 lg:flex">
           {links.map((l) => (
             <li key={l.to}>
-              <Link
+              <AppLink
                 to={l.to}
                 activeOptions={{ exact: l.to === `/${locale}` }}
                 className={`text-sm font-medium transition-colors ${
@@ -76,7 +77,7 @@ export function Navbar() {
                 }}
               >
                 {l.label}
-              </Link>
+              </AppLink>
             </li>
           ))}
         </ul>
@@ -123,13 +124,13 @@ export function Navbar() {
               <ul className="flex flex-col gap-1">
                 {links.map((l) => (
                   <li key={l.to}>
-                    <Link
+                    <AppLink
                       to={l.to}
                       onClick={() => setOpen(false)}
                       className="block border-b border-border py-4 font-display text-2xl font-semibold text-ink"
                     >
                       {l.label}
-                    </Link>
+                    </AppLink>
                   </li>
                 ))}
               </ul>

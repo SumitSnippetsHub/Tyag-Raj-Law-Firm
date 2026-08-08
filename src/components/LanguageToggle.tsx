@@ -1,4 +1,5 @@
-import { Link, useLocation } from "@tanstack/react-router";
+import { useLocation } from "@tanstack/react-router";
+import { AppLink } from "@/components/AppLink";
 import { LOCALES, type Locale } from "@/lib/site";
 import { useLocale } from "@/lib/i18n";
 
@@ -22,7 +23,7 @@ export function LanguageToggle({ tone = "light" }: { tone?: "light" | "dark" }) 
         const target = pathname.replace(/^\/(en|hi)/, `/${loc}`) || `/${loc}`;
         const active = loc === current;
         return (
-          <Link
+          <AppLink
             key={loc}
             to={target.startsWith(`/${loc}`) ? target : `/${loc}`}
             hrefLang={loc}
@@ -36,7 +37,7 @@ export function LanguageToggle({ tone = "light" }: { tone?: "light" | "dark" }) 
             }`}
           >
             {LABEL[loc]}
-          </Link>
+          </AppLink>
         );
       })}
     </div>
