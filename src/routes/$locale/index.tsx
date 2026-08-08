@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppLink } from "@/components/AppLink";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Scale, ShieldCheck, Clock } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { TextMarquee } from "@/components/TextMarquee";
+import { highlightName } from "@/components/NameMark";
+import { COURTS, EXTRA_UI, FAQ, PROCESS, STATS } from "@/lib/content-extra";
 import { PageHero } from "@/components/PageHero";
 import { TrustBar } from "@/components/TrustBar";
 import { Reveal } from "@/components/Reveal";
