@@ -1,4 +1,3 @@
-import { } from "@tanstack/react-router";
 import { AppLink } from "@/components/AppLink";
 import { ArrowUpRight } from "lucide-react";
 import { areaImage, type PracticeArea } from "@/lib/practice-areas";

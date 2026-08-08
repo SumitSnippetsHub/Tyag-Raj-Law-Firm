@@ -1,4 +1,3 @@
-import { } from "@tanstack/react-router";
 import { AppLink } from "@/components/AppLink";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { IMAGES } from "@/lib/images";
