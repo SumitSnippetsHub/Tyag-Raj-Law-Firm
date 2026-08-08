@@ -148,7 +148,7 @@ export function Navbar() {
       <AnimatePresence>
         {open ? (
           <motion.div
-            className="fixed inset-x-0 bottom-0 top-[var(--nav-h,4.25rem)] z-40 overflow-y-auto bg-surface lg:hidden"
+            className="fixed inset-x-0 bottom-0 top-[4.25rem] sm:top-[6.3rem] z-40 overflow-y-auto bg-surface lg:hidden"
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 24 }}
