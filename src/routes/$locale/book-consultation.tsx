@@ -71,8 +71,6 @@ function BookConsultation() {
           </Reveal>
         </div>
       </section>
-    </>
-  );
       <section className="border-t border-border bg-secondary py-20 lg:py-24">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading
