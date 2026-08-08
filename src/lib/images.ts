@@ -1,4 +1,6 @@
 import logo from "@/assets/logo.jpg.asset.json";
+import logoPng from "@/assets/logo.png.asset.json";
+import logoLight from "@/assets/logo-light.png.asset.json";
 import advocateStanding from "@/assets/advocate-standing.jpg.asset.json";
 import advocateDesk from "@/assets/advocate-desk.jpg.asset.json";
 import advocateOffice from "@/assets/advocate-office.jpg.asset.json";
@@ -15,6 +17,8 @@ import courtBuilding from "@/assets/court-building.jpg";
 
 export const IMAGES = {
   logo: logo.url,
+  logoPng: logoPng.url,
+  logoLight: logoLight.url,
   advocateStanding: advocateStanding.url,
   advocateDesk: advocateDesk.url,
   advocateOffice: advocateOffice.url,
