@@ -14,11 +14,11 @@ export const Route = createFileRoute("/$locale")({
 
 function LocaleLayout() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-background">
+    <div className="relative flex min-h-screen flex-col bg-background pb-16 sm:pb-0">
       {/* Logo watermark behind every page. */}
       <Watermark />
       <Navbar />
-      <main className="relative z-10 flex-1 pb-16 sm:pb-0">
+      <main className="relative z-10 flex-1">
         {/* Required: nested locale routes render here. */}
         <Outlet />
       </main>
