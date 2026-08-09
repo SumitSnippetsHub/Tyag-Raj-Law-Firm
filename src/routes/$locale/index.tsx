@@ -1,6 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppLink } from "@/components/AppLink";
-import { ArrowRight, Phone, Scale, ShieldCheck, Clock } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarDays,
+  Clock,
+  Mail,
+  MapPin,
+  Navigation,
+  Phone,
+  Scale,
+  ShieldCheck,
+} from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { TextMarquee } from "@/components/TextMarquee";
 import { highlightName } from "@/components/NameMark";
@@ -15,6 +25,7 @@ import {
   TestimonialMarquee,
 } from "@/components/TestimonialMarquee";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
+import { TeamGrid } from "@/components/TeamSection";
 import { JsonLd } from "@/components/JsonLd";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
