@@ -87,7 +87,7 @@ export function Navbar() {
             aria-label={`${SITE.firm} — home`}
           >
             <img
-              src={IMAGES.logoFirm}
+              src={dark ? IMAGES.logoLight : IMAGES.logoFirm}
               alt="Advocate Sumit Tyagi — Tyagi Raj Law Firm logo with scales of justice"
               className="h-10 w-auto sm:h-12"
             />
