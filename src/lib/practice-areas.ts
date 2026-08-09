@@ -52,9 +52,9 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     },
   },
   {
-    slug: "civil-law",
+    slug: "civil-litigation",
     image: "paDocuments",
-    title: { en: "Civil Law", hi: "सिविल कानून" },
+    title: { en: "Civil Litigation", hi: "सिविल मुकदमेबाज़ी" },
     short: {
       en: "Property disputes, injunctions, recovery suits and contract litigation.",
       hi: "संपत्ति विवाद, निषेधाज्ञा, वसूली वाद और अनुबंध मुकदमे।",
@@ -89,23 +89,26 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     },
   },
   {
-    slug: "matrimonial-law",
+    slug: "matrimonial-family-divorce",
     image: "paFamily",
-    title: { en: "Matrimonial Law", hi: "वैवाहिक कानून" },
+    title: {
+      en: "Matrimonial, Family & Divorce Law",
+      hi: "वैवाहिक, पारिवारिक एवं तलाक कानून",
+    },
     short: {
-      en: "Divorce, maintenance, custody, 498A and domestic violence matters.",
-      hi: "तलाक, भरण-पोषण, अभिरक्षा, 498A एवं घरेलू हिंसा मामले।",
+      en: "Divorce, family disputes, maintenance, 498A and domestic violence matters.",
+      hi: "तलाक, पारिवारिक विवाद, भरण-पोषण, 498A एवं घरेलू हिंसा मामले।",
     },
     intro: {
       en: [
-        "Matrimonial matters need a lawyer who protects your interests without escalating the conflict unnecessarily. Children, finances and dignity are all at stake at the same time.",
+        "Matrimonial, family and divorce matters need a lawyer who protects your interests without escalating the conflict unnecessarily. Children, finances and dignity are all at stake at the same time.",
+        "The practice covers contested and mutual-consent divorce, judicial separation, maintenance, family settlements, succession and inheritance disputes, and protection under the Domestic Violence Act.",
         "Representation is available for both petitioners and respondents in divorce, restitution, maintenance, custody, dowry-related complaints and Domestic Violence Act proceedings.",
-        "Mutual-consent settlements are handled quickly and confidentially where both sides are willing.",
       ],
       hi: [
-        "वैवाहिक मामलों में ऐसा वकील चाहिए जो आपके हितों की रक्षा करे पर विवाद को अनावश्यक रूप से न बढ़ाए। बच्चे, आर्थिक स्थिति और सम्मान — तीनों एक साथ दांव पर होते हैं।",
+        "वैवाहिक, पारिवारिक एवं तलाक के मामलों में ऐसा वकील चाहिए जो आपके हितों की रक्षा करे पर विवाद को अनावश्यक रूप से न बढ़ाए। बच्चे, आर्थिक स्थिति और सम्मान — तीनों एक साथ दांव पर होते हैं।",
+        "इसमें विवादित एवं आपसी सहमति से तलाक, न्यायिक पृथक्करण, भरण-पोषण, पारिवारिक समझौते, उत्तराधिकार विवाद तथा घरेलू हिंसा अधिनियम के तहत संरक्षण शामिल हैं।",
         "तलाक, दाम्पत्य अधिकार, भरण-पोषण, अभिरक्षा, दहेज संबंधी शिकायत एवं घरेलू हिंसा अधिनियम की कार्यवाही में दोनों पक्षों के लिए पैरवी उपलब्ध है।",
-        "जहाँ दोनों पक्ष तैयार हों, आपसी सहमति से तलाक शीघ्र और गोपनीय रूप से कराया जाता है।",
       ],
     },
     situations: {
@@ -122,6 +125,120 @@ export const PRACTICE_AREAS: PracticeArea[] = [
         "बच्चों की अभिरक्षा एवं मुलाक़ात अधिकार",
         "धारा 498A एवं दहेज शिकायत",
         "घरेलू हिंसा अधिनियम के तहत संरक्षण आदेश",
+      ],
+    },
+  },
+  {
+    slug: "child-custody",
+    image: "paFamily",
+    title: { en: "Child Custody", hi: "बच्चों की अभिरक्षा" },
+    short: {
+      en: "Custody, guardianship and visitation rights decided in the child's interest.",
+      hi: "अभिरक्षा, संरक्षकता एवं मुलाक़ात अधिकार — बच्चे के हित में।",
+    },
+    intro: {
+      en: [
+        "In custody matters the court asks one question above all others: what arrangement is genuinely in the welfare of the child. Everything filed should answer that question with evidence, not emotion.",
+        "Petitions are filed under the Guardians and Wards Act and the Hindu Minority and Guardianship Act for custody, interim custody, guardianship certificates and visitation schedules before Family Courts in Ghaziabad, Noida and Delhi.",
+        "Where parents can be brought to an agreed parenting plan, that route is pursued first — it is faster, cheaper and far less damaging for the child.",
+      ],
+      hi: [
+        "अभिरक्षा के मामलों में न्यायालय सबसे पहले यही देखता है कि कौन-सी व्यवस्था बच्चे के कल्याण में है। इसलिए हर दस्तावेज़ भावना के बजाय साक्ष्य से यह उत्तर देना चाहिए।",
+        "गाज़ियाबाद, नोएडा एवं दिल्ली के परिवार न्यायालयों में गार्जियन्स एंड वार्ड्स एक्ट तथा हिंदू अल्पवयस्कता एवं संरक्षकता अधिनियम के तहत अभिरक्षा, अंतरिम अभिरक्षा, संरक्षकता प्रमाणपत्र एवं मुलाक़ात कार्यक्रम हेतु याचिकाएँ दाखिल की जाती हैं।",
+        "जहाँ माता-पिता सहमत पालन-योजना पर आ सकें, वह रास्ता पहले अपनाया जाता है — यह तेज़, किफायती और बच्चे के लिए कम हानिकारक है।",
+      ],
+    },
+    situations: {
+      en: [
+        "Permanent and interim custody petitions",
+        "Guardianship certificates for minors",
+        "Visitation and holiday access schedules",
+        "Enforcement of existing custody orders",
+        "Custody in cross-border and relocation cases",
+      ],
+      hi: [
+        "स्थायी एवं अंतरिम अभिरक्षा याचिकाएँ",
+        "अल्पवयस्कों हेतु संरक्षकता प्रमाणपत्र",
+        "मुलाक़ात एवं अवकाश भेंट कार्यक्रम",
+        "मौजूदा अभिरक्षा आदेशों का पालन कराना",
+        "स्थान परिवर्तन एवं सीमा-पार मामलों में अभिरक्षा",
+      ],
+    },
+  },
+  {
+    slug: "court-marriage-registration",
+    image: "paDocuments",
+    title: {
+      en: "Court Marriage & Marriage Registration",
+      hi: "कोर्ट मैरिज एवं विवाह पंजीकरण",
+    },
+    short: {
+      en: "Same-day guidance on court marriage, registration and certificates.",
+      hi: "कोर्ट मैरिज, पंजीकरण एवं प्रमाणपत्र पर तुरंत मार्गदर्शन।",
+    },
+    intro: {
+      en: [
+        "Court marriage is straightforward once the paperwork is right. Most delays happen because of mismatched addresses, missing witnesses or an incomplete notice under the Special Marriage Act.",
+        "Assistance covers marriage under the Special Marriage Act and the Hindu Marriage Act, the 30-day notice procedure, witness arrangement, and registration before the Marriage Officer or Registrar in Ghaziabad, Noida and Delhi.",
+        "Certified marriage certificates are also obtained for visa, passport, bank and insurance requirements.",
+      ],
+      hi: [
+        "दस्तावेज़ सही होने पर कोर्ट मैरिज सरल है। देरी अधिकतर पतों में अंतर, गवाहों की कमी या विशेष विवाह अधिनियम की अधूरी सूचना के कारण होती है।",
+        "विशेष विवाह अधिनियम एवं हिंदू विवाह अधिनियम के तहत विवाह, 30 दिन की सूचना प्रक्रिया, गवाहों की व्यवस्था तथा गाज़ियाबाद, नोएडा व दिल्ली में विवाह अधिकारी/रजिस्ट्रार के समक्ष पंजीकरण में सहायता दी जाती है।",
+        "वीज़ा, पासपोर्ट, बैंक एवं बीमा आवश्यकताओं हेतु प्रमाणित विवाह प्रमाणपत्र भी दिलाया जाता है।",
+      ],
+    },
+    situations: {
+      en: [
+        "Court marriage under the Special Marriage Act",
+        "Hindu Marriage Act registration",
+        "30-day notice and objection handling",
+        "Marriage certificate for visa and passport",
+        "Inter-faith and inter-caste marriage support",
+      ],
+      hi: [
+        "विशेष विवाह अधिनियम के तहत कोर्ट मैरिज",
+        "हिंदू विवाह अधिनियम के तहत पंजीकरण",
+        "30 दिन की सूचना एवं आपत्ति निपटान",
+        "वीज़ा एवं पासपोर्ट हेतु विवाह प्रमाणपत्र",
+        "अंतर-धार्मिक एवं अंतर-जातीय विवाह में सहयोग",
+      ],
+    },
+  },
+  {
+    slug: "property-law",
+    image: "paProperty",
+    title: { en: "Property Law", hi: "संपत्ति कानून" },
+    short: {
+      en: "Title verification, sale deeds, partition, mutation and possession.",
+      hi: "स्वामित्व जाँच, विक्रय विलेख, बंटवारा, दाखिल-खारिज एवं कब्ज़ा।",
+    },
+    intro: {
+      en: [
+        "Most property litigation could have been avoided at the drafting stage. A title search, a clean chain of documents and a correctly registered deed prevent years of dispute later.",
+        "Work includes title verification and due diligence, drafting and registration of sale deeds, gift deeds, wills, lease and rent agreements, partition and family settlement, mutation and record correction.",
+        "Where a dispute already exists, suits for declaration, possession, injunction and cancellation of forged documents are filed and pursued.",
+      ],
+      hi: [
+        "अधिकांश संपत्ति विवाद दस्तावेज़ तैयार करते समय ही रोके जा सकते थे। स्वामित्व जाँच, दस्तावेज़ों की स्पष्ट शृंखला और सही पंजीकृत विलेख वर्षों के विवाद से बचाते हैं।",
+        "इसमें स्वामित्व जाँच एवं ड्यू डिलिजेंस, विक्रय विलेख, दान विलेख, वसीयत, लीज़ व किरायानामा तैयार करना एवं पंजीकरण, बंटवारा व पारिवारिक समझौता, तथा दाखिल-खारिज व अभिलेख सुधार शामिल हैं।",
+        "विवाद होने पर घोषणा, कब्ज़ा, निषेधाज्ञा तथा कूटरचित दस्तावेज़ रद्द कराने के वाद दाखिल कर पैरवी की जाती है।",
+      ],
+    },
+    situations: {
+      en: [
+        "Title search and document due diligence",
+        "Sale, gift and lease deed drafting and registration",
+        "Partition and family settlement",
+        "Mutation and revenue record correction",
+        "Possession, declaration and cancellation suits",
+      ],
+      hi: [
+        "स्वामित्व जाँच एवं दस्तावेज़ ड्यू डिलिजेंस",
+        "विक्रय, दान एवं लीज़ विलेख तैयार करना व पंजीकरण",
+        "बंटवारा एवं पारिवारिक समझौता",
+        "दाखिल-खारिज एवं राजस्व अभिलेख सुधार",
+        "कब्ज़ा, घोषणा एवं विलेख रद्दीकरण वाद",
       ],
     },
   },
@@ -162,6 +279,43 @@ export const PRACTICE_AREAS: PracticeArea[] = [
         "नमूना एवं एफएसएल रिपोर्ट पर आपत्ति",
         "विशेष एनडीपीएस न्यायालय में ट्रायल पैरवी",
         "दोषसिद्धि के विरुद्ध अपील",
+      ],
+    },
+  },
+  {
+    slug: "bail-matters",
+    image: "gavel",
+    title: { en: "Bail Matters", hi: "जमानत मामले" },
+    short: {
+      en: "Anticipatory, regular and interim bail — moved without losing a day.",
+      hi: "अग्रिम, नियमित एवं अंतरिम जमानत — एक दिन गँवाए बिना।",
+    },
+    intro: {
+      en: [
+        "Bail is decided on preparation and timing. The grounds, the case diary, the antecedents and the stage of investigation all have to be read before the application is drafted — not afterwards.",
+        "Applications are moved for anticipatory bail under Section 482 BNSS, regular bail, interim bail, default bail on expiry of the investigation period, and bail in Special Act matters including NDPS, POCSO and economic offences.",
+        "For urgent arrests, WhatsApp the FIR or arrest memo and you get a same-day reading of what can realistically be moved and when.",
+      ],
+      hi: [
+        "जमानत तैयारी और समय पर तय होती है। आधार, केस डायरी, पूर्ववृत्त और जाँच की स्थिति — सब आवेदन तैयार करने से पहले पढ़ना ज़रूरी है, बाद में नहीं।",
+        "धारा 482 BNSS के तहत अग्रिम जमानत, नियमित जमानत, अंतरिम जमानत, जाँच अवधि समाप्त होने पर डिफ़ॉल्ट जमानत, तथा एनडीपीएस, पॉक्सो व आर्थिक अपराध जैसे विशेष अधिनियम मामलों में जमानत हेतु आवेदन किए जाते हैं।",
+        "तत्काल गिरफ़्तारी में एफआईआर या अरेस्ट मेमो व्हाट्सएप करें — उसी दिन बताया जाएगा कि क्या और कब दाखिल हो सकता है।",
+      ],
+    },
+    situations: {
+      en: [
+        "Anticipatory bail before arrest",
+        "Regular bail before Magistrate and Sessions Courts",
+        "Interim and default bail applications",
+        "Bail in NDPS, POCSO and economic offences",
+        "Cancellation and modification of bail conditions",
+      ],
+      hi: [
+        "गिरफ़्तारी से पूर्व अग्रिम जमानत",
+        "मजिस्ट्रेट एवं सेशन न्यायालय में नियमित जमानत",
+        "अंतरिम एवं डिफ़ॉल्ट जमानत आवेदन",
+        "एनडीपीएस, पॉक्सो एवं आर्थिक अपराधों में जमानत",
+        "जमानत शर्तों में संशोधन एवं निरस्तीकरण",
       ],
     },
   },
@@ -245,7 +399,7 @@ export const PRACTICE_AREAS: PracticeArea[] = [
   {
     slug: "rera",
     image: "paProperty",
-    title: { en: "RERA (Real Estate)", hi: "रेरा (रियल एस्टेट)" },
+    title: { en: "RERA (Real Estate Matters)", hi: "रेरा (रियल एस्टेट मामले)" },
     short: {
       en: "Possession delay, refund and builder-buyer disputes before RERA.",
       hi: "कब्ज़े में देरी, रिफंड एवं बिल्डर-खरीदार विवाद — रेरा के समक्ष।",
