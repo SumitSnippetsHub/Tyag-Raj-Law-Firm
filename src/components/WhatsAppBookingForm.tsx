@@ -219,7 +219,7 @@ export function WhatsAppBookingForm({
           {DICT[locale].cta.submit}
         </button>
         <a
-          href={`tel:${SITE.phonePrimary.replace(/\s/g, "")}`}
+          href={`tel:${SITE.phonePrimaryTel}`}
           className="text-sm font-semibold text-ink underline decoration-border underline-offset-4 hover:text-primary"
         >
           {DICT[locale].cta.callNow} — {SITE.phonePrimary}

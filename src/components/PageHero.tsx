@@ -12,6 +12,8 @@ export function PageHero({
   tall = false,
   priority = false,
   fit = "cover",
+  scrim = "default",
+  imagePosition = "default",
 }: {
   image: string;
   /** Portrait-friendly image used on small screens (defaults to `image`). */
@@ -25,6 +27,10 @@ export function PageHero({
   priority?: boolean;
   /** `contain` shows the full photo (no crop) — preferred for portrait people shots. */
   fit?: "cover" | "contain";
+  /** `soft` reduces the dark tint so the photo reads more clearly. */
+  scrim?: "default" | "soft";
+  /** `top` keeps heads/faces in frame (no top crop from cover/parallax). */
+  imagePosition?: "default" | "top" | "center";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
@@ -34,11 +40,22 @@ export function PageHero({
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "16%"]);
   const contain = fit === "contain";
+  const pinTop = imagePosition === "top";
+  const pinCenter = imagePosition === "center";
+  const freezeParallax = reduced || contain || pinTop || pinCenter;
+
+  const coverClass = pinTop
+    ? "h-full w-full object-cover object-top"
+    : pinCenter
+      ? "h-full w-full object-cover object-center"
+      : "h-[116%] w-full object-cover object-[center_18%] sm:object-[center_22%]";
 
   return (
     <section
       ref={ref}
       className={`photo-scrim relative isolate flex items-end overflow-hidden bg-dark-bg ${
+        scrim === "soft" ? "photo-scrim--soft" : ""
+      } ${
         tall ? "min-h-[86svh] md:min-h-[92svh]" : "min-h-[52svh] md:min-h-[58svh]"
       }`}
     >
@@ -47,7 +64,7 @@ export function PageHero({
         className={`absolute inset-0 -z-10 will-change-transform ${
           contain ? "flex items-center justify-center" : ""
         }`}
-        {...(reduced || contain ? {} : { style: { y } })}
+        {...(freezeParallax ? {} : { style: { y } })}
       >
         <picture className={contain ? "flex h-full w-full items-center justify-center" : undefined}>
           {mobileImage ? (
@@ -61,7 +78,7 @@ export function PageHero({
             className={
               contain
                 ? "max-h-full w-full object-contain object-center"
-                : "h-[116%] w-full object-cover object-[center_18%] sm:object-[center_22%]"
+                : coverClass
             }
           />
         </picture>

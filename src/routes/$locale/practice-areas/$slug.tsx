@@ -72,6 +72,8 @@ function PracticeAreaPage() {
       <PageHero
         priority
         image={areaImage(area)}
+        fit={area.slug === "cheque-bounce-138-ni-act" ? "contain" : "cover"}
+        scrim={area.slug === "cheque-bounce-138-ni-act" ? "soft" : "default"}
         alt={`${area.title.en} legal practice — Advocate Sumit Tyagi, Ghaziabad`}
         eyebrow={t.nav.practice}
         title={area.title[locale]}

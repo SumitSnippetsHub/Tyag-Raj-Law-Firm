@@ -8,8 +8,6 @@ import {
   MapPin,
   Navigation,
   Phone,
-  Scale,
-  ShieldCheck,
 } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { TextMarquee } from "@/components/TextMarquee";
@@ -20,16 +18,13 @@ import { TrustBar } from "@/components/TrustBar";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PracticeAreaCard } from "@/components/PracticeAreaCard";
-import {
-  TestimonialCarousel,
-  TestimonialMarquee,
-} from "@/components/TestimonialMarquee";
+import { TestimonialCarousel } from "@/components/TestimonialMarquee";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
-import { TeamGrid } from "@/components/TeamSection";
+import { FoundersGrid, TeamGrid } from "@/components/TeamSection";
 import { JsonLd } from "@/components/JsonLd";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
-import { SITE, waLink } from "@/lib/site";
+import { CHAMBERS, SITE, telHref, waLink } from "@/lib/site";
 import { DICT, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/")({
@@ -64,25 +59,28 @@ function Home() {
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "Attorney",
-          name: `${SITE.firm} — Advocate ${SITE.advocate}`,
+          "@type": "LegalService",
+          name: SITE.firm,
           description:
             "Advocate & Legal Consultant handling criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR matters in Delhi NCR.",
-          image: IMAGES.advocateStanding,
-          telephone: SITE.phonePrimary,
-          email: SITE.email,
+          image: IMAGES.foundersTogether,
+          telephone: [SITE.phonePrimaryTel, SITE.phoneSecondaryTel, SITE.phoneCofounderTel],
+          email: [SITE.email, SITE.cofounderEmail],
           priceRange: "₹₹",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress:
-              "Ch. No. 33A, New Building, Second Floor, District & Session Court",
-            addressLocality: "Ghaziabad",
-            addressRegion: "Uttar Pradesh",
-            addressCountry: "IN",
-          },
           areaServed: SITE.areasServed,
-          openingHours: "Mo-Sa 10:00-18:00",
+          openingHours: "Mo-Sa 10:00-17:00",
           knowsLanguage: ["en", "hi"],
+          location: CHAMBERS.map((c) => ({
+            "@type": "Place",
+            name: c.label.en,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: c.address,
+              addressLocality: "Ghaziabad",
+              addressRegion: "Uttar Pradesh",
+              addressCountry: "IN",
+            },
+          })),
         }}
       />
 
@@ -124,7 +122,7 @@ function Home() {
             <ArrowRight className="size-4" aria-hidden />
           </AppLink>
           <a
-            href="tel:+918060603368"
+            href={telHref(SITE.phonePrimaryTel)}
             className="inline-flex items-center gap-2 border border-dark-text/30 px-6 py-3.5 text-sm font-semibold text-dark-text transition-colors hover:bg-dark-text/10"
           >
             <Phone className="size-4" aria-hidden />
@@ -132,6 +130,131 @@ function Home() {
           </a>
         </div>
       </PageHero>
+
+      {/* Founders → Chambers (required homepage order) */}
+      <section className="border-b border-border bg-surface py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={home.foundersEyebrow}
+            title={home.foundersTitle}
+            lead={home.foundersLead}
+          />
+          <div className="mt-10">
+            <FoundersGrid locale={locale} />
+          </div>
+        </div>
+      </section>
+
+      {/* Chambers — maps once on the homepage */}
+      <section id="chambers" className="border-b border-border bg-secondary py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={home.chambersEyebrow}
+            title={home.chambersTitle}
+            lead={home.chambersBody}
+          />
+          <Reveal delay={0.08}>
+            <dl className="mt-8 grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
+              <div className="flex gap-3 border border-border bg-surface p-4">
+                <CalendarDays className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                <div>
+                  <dt className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-ink-soft uppercase">
+                    {home.chambersDays}
+                  </dt>
+                  <dd className="mt-1 text-ink">{SITE.workingDays}</dd>
+                </div>
+              </div>
+              <div className="flex gap-3 border border-border bg-surface p-4">
+                <Clock className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                <div>
+                  <dt className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-ink-soft uppercase">
+                    {home.chambersHours}
+                  </dt>
+                  <dd className="mt-1 text-ink">{SITE.workingHours}</dd>
+                </div>
+              </div>
+              <div className="flex gap-3 border border-border bg-surface p-4">
+                <Phone className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                <div>
+                  <dt className="sr-only">{t.contact.phoneLabel}</dt>
+                  <dd className="flex flex-col gap-1">
+                    <a href={telHref(SITE.phonePrimaryTel)} className="text-primary">
+                      {SITE.phonePrimary}
+                    </a>
+                    <a href={telHref(SITE.phoneSecondaryTel)} className="text-primary">
+                      {SITE.phoneSecondary}
+                    </a>
+                  </dd>
+                </div>
+              </div>
+              <div className="flex gap-3 border border-border bg-surface p-4">
+                <Mail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                <div>
+                  <dt className="sr-only">{t.contact.emailLabel}</dt>
+                  <dd className="flex flex-col gap-1 break-all">
+                    <a href={`mailto:${SITE.email}`} className="text-primary">
+                      {SITE.email}
+                    </a>
+                    <a href={`mailto:${SITE.cofounderEmail}`} className="text-primary">
+                      {SITE.cofounderEmail}
+                    </a>
+                  </dd>
+                </div>
+              </div>
+            </dl>
+          </Reveal>
+          <ul className="mt-8 grid gap-6 lg:grid-cols-2">
+            {CHAMBERS.map((chamber, i) => (
+              <Reveal as="li" key={chamber.id} delay={i * 0.08}>
+                <article className="border border-border bg-surface p-5">
+                  <div className="flex gap-3">
+                    <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                    <div>
+                      <p className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-primary uppercase">
+                        {chamber.label[locale]}
+                      </p>
+                      <address className="mt-2 text-sm leading-relaxed text-ink not-italic">
+                        {chamber.address}
+                      </address>
+                    </div>
+                  </div>
+                  <iframe
+                    title={`${chamber.label.en} map`}
+                    src={chamber.mapEmbed}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="mt-4 h-52 w-full border border-border"
+                  />
+                  <a
+                    href={chamber.directions}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary"
+                  >
+                    <Navigation className="size-4" aria-hidden />
+                    {home.chambersDirections}
+                  </a>
+                </article>
+              </Reveal>
+            ))}
+          </ul>
+          <div className="mt-8">
+            <a
+              href={waLink(
+                locale === "hi"
+                  ? "नमस्ते, मुझे परामर्श का समय चाहिए।"
+                  : "Hello, I would like to book a consultation slot.",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
+            >
+              <WhatsAppIcon className="size-4" />
+              {t.cta.whatsapp}
+            </a>
+          </div>
+        </div>
+      </section>
 
       <TrustBar items={home.trust} />
 
@@ -162,15 +285,16 @@ function Home() {
       </section>
 
       {/* About preview */}
-      <section className="mx-auto w-full max-w-6xl px-5 md:px-10 grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
+      <section className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 md:px-10 lg:grid-cols-2 lg:gap-12 lg:py-24">
         <Reveal>
-          {/* Client-supplied photograph of Advocate Sumit Tyagi in chamber. */}
-          <img
-            src={IMAGES.advocateStanding}
-            alt="Advocate Sumit Tyagi in his chamber at the District & Session Court, Ghaziabad"
-            loading="lazy"
-            className="aspect-4/5 w-full border border-border object-cover object-[center_15%]"
-          />
+          <figure className="border border-border bg-secondary">
+            <img
+              src={IMAGES.advocateOffice}
+              alt="Advocate Sumit Tyagi at the chamber office in Ghaziabad"
+              loading="lazy"
+              className="mx-auto h-auto w-full object-contain"
+            />
+          </figure>
         </Reveal>
         <div>
           <SectionHeading
@@ -298,7 +422,7 @@ function Home() {
             lead={home.teamLead}
           />
           <div className="mt-14">
-            <TeamGrid locale={locale} />
+            <TeamGrid locale={locale} mode="associates" />
           </div>
           <AppLink
             to={`/${locale}/team`}
@@ -318,12 +442,16 @@ function Home() {
             title={home.testimonialsTitle}
             lead={home.sampleNote}
           />
-        </div>
-        <div className="mt-14">
-          <TestimonialMarquee locale={locale} />
-        </div>
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 mt-12 max-w-3xl">
-          <TestimonialCarousel locale={locale} />
+          <div className="mx-auto mt-12 max-w-3xl">
+            <TestimonialCarousel locale={locale} />
+          </div>
+          <AppLink
+            to={`/${locale}/testimonials`}
+            className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
+          >
+            {t.nav.testimonials}
+            <ArrowRight className="size-4" aria-hidden />
+          </AppLink>
         </div>
       </section>
 
@@ -346,7 +474,7 @@ function Home() {
         <img
           aria-hidden
           alt=""
-          src={IMAGES.lawBooks}
+          src={IMAGES.courtBuilding}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-10">
@@ -376,24 +504,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Assurances */}
-      <section className="mx-auto w-full max-w-6xl px-5 py-16 md:px-10 lg:py-20">
-        <ul className="grid gap-8 sm:grid-cols-3">
-          {[
-            { icon: ShieldCheck, text: home.why[0]!.title },
-            { icon: Scale, text: home.why[1]!.title },
-            { icon: Clock, text: home.why[2]!.title },
-          ].map((item, i) => (
-            <Reveal as="li" key={item.text} delay={i * 0.07}>
-              <div className="flex items-start gap-4 border border-border bg-surface p-5">
-                <item.icon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
-                <p className="font-display text-sm font-semibold text-ink">{item.text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </ul>
-      </section>
-
       {/* FAQ */}
       <section className="border-y border-border bg-secondary py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
@@ -415,108 +525,6 @@ function Home() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Our Chambers — single consolidated contact & location block */}
-      <section id="chambers" className="border-t border-border bg-surface py-20 lg:py-28">
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-2">
-          <div>
-            <SectionHeading
-              eyebrow={home.chambersEyebrow}
-              title={home.chambersTitle}
-              lead={home.chambersBody}
-            />
-            <Reveal delay={0.1}>
-              <dl className="mt-8 space-y-5 text-sm leading-relaxed text-ink">
-                <div className="flex gap-3">
-                  <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                  <div>
-                    <dt className="sr-only">{t.contact.officeTitle}</dt>
-                    <dd>
-                      <address className="not-italic">{SITE.address}</address>
-                    </dd>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <Phone className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                  <div>
-                    <dt className="sr-only">{t.contact.phoneLabel}</dt>
-                    <dd className="flex flex-col">
-                      <a href="tel:+918060603368" className="text-primary">
-                        {SITE.phonePrimary}
-                      </a>
-                      <a href="tel:+919217620368" className="text-primary">
-                        {SITE.phoneSecondary}
-                      </a>
-                    </dd>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <Mail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                  <div>
-                    <dt className="sr-only">{t.contact.emailLabel}</dt>
-                    <dd>
-                      <a href={`mailto:${SITE.email}`} className="text-primary">
-                        {SITE.email}
-                      </a>
-                    </dd>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <CalendarDays className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                  <div>
-                    <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
-                      {home.chambersDays}
-                    </dt>
-                    <dd>{SITE.workingDays}</dd>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <Clock className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
-                  <div>
-                    <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
-                      {home.chambersHours}
-                    </dt>
-                    <dd>{SITE.workingHours}</dd>
-                  </div>
-                </div>
-              </dl>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={waLink(
-                    locale === "hi"
-                      ? "नमस्ते, मुझे परामर्श का समय चाहिए।"
-                      : "Hello, I would like to book a consultation slot.",
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
-                >
-                  <WhatsAppIcon className="size-4" />
-                  {t.cta.whatsapp}
-                </a>
-                <a
-                  href={SITE.directions}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-border px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
-                >
-                  <Navigation className="size-4" aria-hidden />
-                  {home.chambersDirections}
-                </a>
-              </div>
-            </Reveal>
-          </div>
-          <Reveal delay={0.08}>
-            <iframe
-              title={t.contact.mapTitle}
-              src={SITE.mapEmbed}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-80 w-full border border-border lg:h-full"
-            />
-          </Reveal>
         </div>
       </section>
     </>

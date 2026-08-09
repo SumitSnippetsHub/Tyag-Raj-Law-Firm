@@ -14,7 +14,7 @@ export const Route = createFileRoute("/$locale/team")({
       : "Our Team | Tyag Raj Law Firm, Ghaziabad";
     const description = hi
       ? "त्याग राज लॉ फर्म की टीम — अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) एवं सहयोगी अधिवक्ता, गाज़ियाबाद।"
-      : "Meet the team at Tyag Raj Law Firm — Advocate Sumit Tyagi (BBA, MBA, LLB) and associate advocates practising across Ghaziabad, Noida and Delhi NCR.";
+      : "Meet the team at Tyag Raj Law Firm — Founder Sumit Tyagi, Co-Founder Vishaw Pratap, and associates practising across Ghaziabad, Noida and Delhi NCR.";
     return {
       meta: [
         { title },
@@ -36,9 +36,9 @@ function TeamPage() {
   return (
     <>
       <PageHero
-        image={IMAGES.advocateOffice}
-        mobileImage={IMAGES.teamSumit}
-        alt="Chamber of Advocate Sumit Tyagi at the District & Session Court, Ghaziabad"
+        fit="contain"
+        image={IMAGES.fullTeam}
+        alt="Tyag Raj Law Firm team at the chamber in Ghaziabad"
         eyebrow={home.teamEyebrow}
         title={highlightName(home.teamTitle, "dark")}
         lead={home.teamLead}

@@ -49,10 +49,14 @@ export const DICT = {
       teamTitle: "The people who will handle your matter",
       teamLead:
         "A small, accountable team — you always know who is appearing on your date of hearing.",
+      foundersEyebrow: "Leadership",
+      foundersTitle: "Founder & Co-Founder",
+      foundersLead:
+        "Meet the advocates who lead Tyag Raj Law Firm — available on call and WhatsApp for urgent matters.",
       chambersEyebrow: "Our Chambers",
-      chambersTitle: "Visit the chamber in Ghaziabad",
+      chambersTitle: "Two offices in Ghaziabad",
       chambersBody:
-        "The chamber is inside the District & Session Court complex, Ghaziabad, with regular appearances in Noida, Gautam Buddh Nagar and Delhi district courts, UP RERA and consumer commissions. Walk in during working hours, or WhatsApp first for urgent bail and cheque bounce deadlines.",
+        "Visit the Main Chamber inside the District & Session Court complex, or the Second Office at Aditya Height Street, Lal Kuan. Walk in during working hours, or WhatsApp first for urgent bail and cheque bounce deadlines.",
       chambersDirections: "Get Directions",
       chambersDays: "Working days",
       chambersHours: "Working hours",
@@ -121,6 +125,18 @@ export const DICT = {
       chamberTitle: "Inside the District & Session Court, Ghaziabad",
       chamberBody:
         "Walk-in visits are welcome during working hours. For urgent bail, cheque bounce deadlines or same-day notices, WhatsApp is the fastest way to send papers and get a first response.",
+      partnershipEyebrow: "Founders Together",
+      partnershipTitle: "Built on shared courtroom discipline",
+      partnershipBody:
+        "Advocate Sumit Tyagi and Advocate Vishaw Pratap lead Tyag Raj Law Firm side by side — twelve years each at the bar, one standard of preparation, and one point of accountability for every file that leaves the chamber.",
+      clientsEyebrow: "With Clients",
+      clientsTitle: "Advice given face to face",
+      clientsBody:
+        "Consultations happen in the chamber, not behind a call-centre script. Papers are read, next dates are explained, and you leave knowing who will appear for you and what to expect.",
+      teamPhotoEyebrow: "Our People",
+      teamPhotoTitle: "The team behind your hearing dates",
+      teamPhotoBody:
+        "From founding partners to associate advocates, the roster is small on purpose — so your matter is never lost in a crowd of files, and you always know who is responsible for the next step.",
       galleryEyebrow: "In Chambers",
       galleryTitle: "Advocate Sumit Tyagi at work",
       creds: [
@@ -153,7 +169,7 @@ export const DICT = {
       h1: "Contact the Office",
       lead: "Chamber visits, phone calls and WhatsApp consultations — for urgent bail or notice deadlines, WhatsApp is fastest.",
       officeTitle: "Chamber address",
-      hours: "Monday – Saturday, 10:00 – 18:00",
+      hours: "Monday – Saturday, 10:00 AM – 5:00 PM",
       hoursLabel: "Office hours",
       phoneLabel: "Phone / WhatsApp",
       emailLabel: "Email",
@@ -234,10 +250,14 @@ export const DICT = {
       teamTitle: "आपका मामला देखने वाले लोग",
       teamLead:
         "एक छोटी, जवाबदेह टीम — आपको सदैव पता रहता है कि आपकी तारीख पर कौन पेश हो रहा है।",
-      chambersEyebrow: "हमारा चैम्बर",
-      chambersTitle: "गाज़ियाबाद में चैम्बर पर पधारें",
+      foundersEyebrow: "नेतृत्व",
+      foundersTitle: "संस्थापक एवं सह-संस्थापक",
+      foundersLead:
+        "त्याग राज लॉ फर्म का नेतृत्व करने वाले अधिवक्ता — तात्कालिक मामलों हेतु कॉल और व्हाट्सएप पर उपलब्ध।",
+      chambersEyebrow: "हमारे चैम्बर",
+      chambersTitle: "गाज़ियाबाद में दो कार्यालय",
       chambersBody:
-        "चैम्बर ज़िला एवं सेशन न्यायालय परिसर, गाज़ियाबाद में है; नोएडा, गौतमबुद्ध नगर व दिल्ली की ज़िला अदालतों, यूपी रेरा और उपभोक्ता आयोगों में नियमित उपस्थिति रहती है। कार्य समय में सीधे आइए, या तात्कालिक जमानत व चेक बाउंस समय-सीमा हेतु पहले व्हाट्सएप करें।",
+        "मुख्य चैम्बर ज़िला एवं सेशन न्यायालय परिसर में है, तथा द्वितीय कार्यालय आदित्य हाइट स्ट्रीट, लाल कुआँ में है। कार्य समय में आइए, या तात्कालिक जमानत व चेक बाउंस समय-सीमा हेतु पहले व्हाट्सएप करें।",
       chambersDirections: "रास्ता देखें",
       chambersDays: "कार्य दिवस",
       chambersHours: "कार्य समय",
@@ -306,6 +326,18 @@ export const DICT = {
       chamberTitle: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद के अंदर",
       chamberBody:
         "कार्य समय में वॉक-इन मुलाक़ात का स्वागत है। तात्कालिक जमानत, चेक बाउंस की समय-सीमा या उसी दिन के नोटिस के लिए कागजात भेजने और पहली प्रतिक्रिया पाने का सबसे तेज़ तरीका व्हाट्सएप है।",
+      partnershipEyebrow: "संस्थापक साथ में",
+      partnershipTitle: "साझा अदालती अनुशासन पर बनी फर्म",
+      partnershipBody:
+        "अधिवक्ता सुमित त्यागी और अधिवक्ता विशव प्रताप त्याग राज लॉ फर्म का नेतृत्व साथ करते हैं — प्रत्येक के बारह वर्ष का अनुभव, एक जैसी तैयारी का मानक, और चैम्बर से निकलने वाली हर फाइल की एक स्पष्ट ज़िम्मेदारी।",
+      clientsEyebrow: "मुवक्किलों के साथ",
+      clientsTitle: "सलाह आमने-सामने",
+      clientsBody:
+        "परामर्श चैम्बर में होता है, कॉल-सेंटर स्क्रिप्ट पर नहीं। कागजात पढ़े जाते हैं, अगली तारीखें समझाई जाती हैं, और आप यह जानकर जाते हैं कि आपकी पेशी कौन करेगा और आगे क्या अपेक्षित है।",
+      teamPhotoEyebrow: "हमारे लोग",
+      teamPhotoTitle: "आपकी सुनवाई के पीछे की टीम",
+      teamPhotoBody:
+        "संस्थापक साझेदारों से सहयोगी अधिवक्ताओं तक — टीम जानबूझकर छोटी रखी गई है, ताकि आपका मामला फाइलों की भीड़ में न खोए और अगले कदम की ज़िम्मेदारी सदैव स्पष्ट रहे।",
       galleryEyebrow: "चैम्बर में",
       galleryTitle: "अधिवक्ता सुमित त्यागी कार्य करते हुए",
       creds: [
@@ -338,7 +370,7 @@ export const DICT = {
       h1: "कार्यालय से संपर्क",
       lead: "चैम्बर में मुलाक़ात, फोन कॉल एवं व्हाट्सएप परामर्श — जमानत या नोटिस की तात्कालिक समय-सीमा हेतु व्हाट्सएप सबसे तेज़ है।",
       officeTitle: "चैम्बर का पता",
-      hours: "सोमवार – शनिवार, 10:00 – 18:00",
+      hours: "सोमवार – शनिवार, सुबह 10:00 – शाम 5:00",
       hoursLabel: "कार्यालय समय",
       phoneLabel: "फोन / व्हाट्सएप",
       emailLabel: "ईमेल",

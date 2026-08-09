@@ -1,7 +1,7 @@
 import { AppLink } from "@/components/AppLink";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { IMAGES } from "@/lib/images";
-import { SITE } from "@/lib/site";
+import { CHAMBERS, SITE, telHref } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
 import { LanguageToggle } from "./LanguageToggle";
@@ -18,7 +18,7 @@ export function Footer() {
         TYAG RAJ
       </span>
 
-      <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
+      <div className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-16 md:grid-cols-2 md:px-10 lg:grid-cols-4 lg:py-20">
         <div>
           <img
             src={IMAGES.logoFirm}
@@ -35,7 +35,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-dark-text/50">{t.footer.quick}</h2>
+          <h2 className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-dark-text/50 uppercase">
+            {t.footer.quick}
+          </h2>
           <ul className="mt-5 space-y-3 text-sm">
             {[
               { to: `/${locale}`, label: t.nav.home },
@@ -59,7 +61,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-dark-text/50">{t.footer.areas}</h2>
+          <h2 className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-dark-text/50 uppercase">
+            {t.footer.areas}
+          </h2>
           <ul className="mt-5 space-y-3 text-sm">
             {PRACTICE_AREAS.map((a) => (
               <li key={a.slug}>
@@ -75,34 +79,66 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-dark-text/50">{t.footer.reach}</h2>
+          <h2 className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-dark-text/50 uppercase">
+            {t.footer.reach}
+          </h2>
           <ul className="mt-5 space-y-4 text-sm text-dark-text/70">
-            <li className="flex gap-3">
-              <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
-              <address className="not-italic">{SITE.address}</address>
-            </li>
+            {CHAMBERS.map((chamber) => (
+              <li key={chamber.id} className="flex gap-3">
+                <MapPin className="mt-0.5 size-4 shrink-0" aria-hidden />
+                <div>
+                  <p className="font-semibold text-dark-text/85">
+                    {chamber.label[locale]}
+                  </p>
+                  <address className="not-italic">{chamber.address}</address>
+                </div>
+              </li>
+            ))}
             <li className="flex gap-3">
               <Phone className="mt-0.5 size-4 shrink-0" aria-hidden />
               <span className="flex flex-col">
-                <a href="tel:+918060603368" className="hover:text-dark-text">
+                <a
+                  href={telHref(SITE.phonePrimaryTel)}
+                  className="hover:text-dark-text"
+                >
                   {SITE.phonePrimary}
                 </a>
-                <a href="tel:+919217620368" className="hover:text-dark-text">
+                <a
+                  href={telHref(SITE.phoneSecondaryTel)}
+                  className="hover:text-dark-text"
+                >
                   {SITE.phoneSecondary}
+                </a>
+                <a
+                  href={telHref(SITE.phoneCofounderTel)}
+                  className="hover:text-dark-text"
+                >
+                  {SITE.phoneCofounder}
                 </a>
               </span>
             </li>
             <li className="flex gap-3">
               <Mail className="mt-0.5 size-4 shrink-0" aria-hidden />
-              <a href={`mailto:${SITE.email}`} className="hover:text-dark-text">
-                {SITE.email}
-              </a>
+              <span className="flex flex-col">
+                <a
+                  href={`mailto:${SITE.email}`}
+                  className="hover:text-dark-text"
+                >
+                  {SITE.email}
+                </a>
+                <a
+                  href={`mailto:${SITE.cofounderEmail}`}
+                  className="break-all hover:text-dark-text"
+                >
+                  {SITE.cofounderEmail}
+                </a>
+              </span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-5 md:px-10 border-t border-dark-text/10 py-8">
+      <div className="mx-auto w-full max-w-6xl border-t border-dark-text/10 px-5 py-8 md:px-10">
         <p className="text-xs leading-relaxed text-dark-text/45">
           {t.footer.disclaimer}
         </p>

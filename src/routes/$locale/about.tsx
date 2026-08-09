@@ -5,8 +5,9 @@ import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TextMarquee } from "@/components/TextMarquee";
+import { FoundersGrid } from "@/components/TeamSection";
 import { highlightName } from "@/components/NameMark";
-import { COURTS, EXTRA_UI, PROCESS } from "@/lib/content-extra";
+import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
 import { useT } from "@/lib/i18n";
@@ -18,8 +19,8 @@ export const Route = createFileRoute("/$locale/about")({
       ? "अधिवक्ता सुमित त्यागी का परिचय | गाज़ियाबाद"
       : "About Advocate Sumit Tyagi | 12+ Years, Ghaziabad Courts";
     const description = hi
-      ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 12+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी का परिचय, कार्यशैली और मूल्य।"
-      : "Meet Advocate Sumit Tyagi — 12+ years of litigation at the District & Session Court, Ghaziabad, with matters across Noida and Delhi NCR.";
+      ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 12+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी, सह-संस्थापक विशव प्रताप एवं टीम का परिचय।"
+      : "Meet Advocate Sumit Tyagi, Co-Founder Vishaw Pratap and the Tyag Raj Law Firm team — 12+ years of litigation in Ghaziabad, Noida and Delhi NCR.";
     return {
       meta: [
         { title },
@@ -38,10 +39,12 @@ function FullPhoto({
   src,
   alt,
   priority = false,
+  caption,
 }: {
   src: string;
   alt: string;
   priority?: boolean;
+  caption?: string;
 }) {
   return (
     <figure className="overflow-hidden border border-border bg-secondary">
@@ -52,6 +55,11 @@ function FullPhoto({
         fetchPriority={priority ? "high" : undefined}
         className="mx-auto h-auto w-full max-w-full object-contain"
       />
+      {caption ? (
+        <figcaption className="border-t border-border px-4 py-3 text-center text-xs leading-relaxed text-ink-soft sm:text-sm">
+          {caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
@@ -64,15 +72,44 @@ function About() {
     <>
       <PageHero
         priority
-        fit="contain"
-        image={IMAGES.advocateStanding}
-        alt="Advocate Sumit Tyagi at his chamber in Civil Court, Ghaziabad"
+        fit="cover"
+        scrim="soft"
+        imagePosition="top"
+        image={IMAGES.foundersTogether}
+        alt={
+          locale === "hi"
+            ? "अधिवक्ता सुमित त्यागी एवं अधिवक्ता विशव प्रताप — त्याग राज लॉ फर्म"
+            : "Advocate Sumit Tyagi and Advocate Vishaw Pratap — Tyag Raj Law Firm"
+        }
         eyebrow={SITE.tagline}
         title={highlightName(a.h1, "dark")}
         lead={a.lead}
       />
 
       <TextMarquee items={COURTS.map((c) => c[locale])} />
+
+      <section className="border-b border-border bg-surface py-14 lg:py-20">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={t.home.foundersEyebrow}
+            title={t.home.foundersTitle}
+            lead={t.home.foundersLead}
+          />
+          <div className="mt-10">
+            <FoundersGrid locale={locale} />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-secondary py-14 lg:py-20">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={a.partnershipEyebrow}
+            title={a.partnershipTitle}
+            lead={a.partnershipBody}
+          />
+        </div>
+      </section>
 
       <section className="mx-auto grid w-full max-w-6xl gap-12 px-5 py-16 md:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:py-24">
         <div>
@@ -107,34 +144,49 @@ function About() {
           </Reveal>
         </div>
 
-        <div className="space-y-8">
+        <Reveal delay={0.08}>
+          <dl className="divide-y divide-border border-y border-border">
+            {a.creds.map((c) => (
+              <div key={c.k} className="py-3.5">
+                <dt className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-ink-soft uppercase">
+                  {c.k}
+                </dt>
+                <dd className="mt-1.5 text-sm text-ink">{c.v}</dd>
+              </div>
+            ))}
+          </dl>
+        </Reveal>
+      </section>
+
+      {/* With clients — group photo */}
+      <section className="border-t border-border bg-surface py-14 lg:py-20">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 md:px-10 lg:grid-cols-2 lg:gap-14">
           <Reveal>
             <FullPhoto
-              src={IMAGES.advocatePortrait}
+              src={IMAGES.foundersWithClients}
               alt={
                 locale === "hi"
-                  ? "अधिवक्ता सुमित त्यागी का औपचारिक चित्र"
-                  : "Formal portrait of Advocate Sumit Tyagi"
+                  ? "संस्थापक एवं सह-संस्थापक मुवक्किलों के साथ चैम्बर में"
+                  : "Founder and Co-Founder with clients at the chamber"
               }
-              priority
+              caption={
+                locale === "hi"
+                  ? "चैम्बर परामर्श — स्पष्ट सलाह, स्पष्ट अगला कदम"
+                  : "Chamber consultation — clear advice, clear next steps"
+              }
             />
           </Reveal>
-          <Reveal delay={0.08}>
-            <dl className="divide-y divide-border border-y border-border">
-              {a.creds.map((c) => (
-                <div key={c.k} className="py-3.5">
-                  <dt className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-ink-soft uppercase">
-                    {c.k}
-                  </dt>
-                  <dd className="mt-1.5 text-sm text-ink">{c.v}</dd>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
+          <div>
+            <SectionHeading
+              eyebrow={a.clientsEyebrow}
+              title={a.clientsTitle}
+              lead={a.clientsBody}
+            />
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-border bg-surface py-14 lg:py-20">
+      <section className="border-t border-border bg-secondary py-14 lg:py-20">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading
             eyebrow={a.chamberEyebrow}
@@ -153,6 +205,56 @@ function About() {
               />
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Full team group photos */}
+      <section className="border-t border-border bg-surface py-14 lg:py-20">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={a.teamPhotoEyebrow}
+            title={a.teamPhotoTitle}
+            lead={a.teamPhotoBody}
+          />
+          <ul className="mt-10 grid gap-5 sm:grid-cols-2">
+            <Reveal as="li">
+              <FullPhoto
+                src={IMAGES.fullTeam}
+                alt={
+                  locale === "hi"
+                    ? "त्याग राज लॉ फर्म की पूरी टीम"
+                    : "Full team of Tyag Raj Law Firm"
+                }
+                caption={
+                  locale === "hi"
+                    ? "टीम रोस्टर — संस्थापक, सह-संस्थापक एवं सहयोगी अधिवक्ता"
+                    : "Team roster — founders and associate advocates"
+                }
+              />
+            </Reveal>
+            <Reveal as="li" delay={0.08}>
+              <FullPhoto
+                src={IMAGES.fullTeamAlt}
+                alt={
+                  locale === "hi"
+                    ? "त्याग राज लॉ फर्म टीम — समूह चित्र"
+                    : "Tyag Raj Law Firm team group photograph"
+                }
+                caption={
+                  locale === "hi"
+                    ? "एक छोटी टीम — आपकी तारीख की स्पष्ट ज़िम्मेदारी"
+                    : "A small team — clear ownership of your hearing date"
+                }
+              />
+            </Reveal>
+          </ul>
+          <AppLink
+            to={`/${locale}/team`}
+            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
+          >
+            {t.nav.team}
+            <ArrowRight className="size-4" aria-hidden />
+          </AppLink>
         </div>
       </section>
 
@@ -183,30 +285,6 @@ function About() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-6xl px-5 py-16 md:px-10 lg:py-20">
-        <SectionHeading
-          eyebrow={EXTRA_UI.processEyebrow[locale]}
-          title={EXTRA_UI.processTitle[locale]}
-        />
-        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {PROCESS.map((step, i) => (
-            <Reveal as="li" key={step.title.en} delay={(i % 4) * 0.08}>
-              <div className="h-full border-t border-border pt-5">
-                <span className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-primary uppercase">
-                  {step.step[locale]}
-                </span>
-                <h3 className="mt-3 font-display text-lg font-semibold text-ink">
-                  {step.title[locale]}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {step.body[locale]}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </ol>
-      </section>
-
       <section className="border-t border-border bg-secondary py-16 lg:py-24">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 md:px-10 lg:grid-cols-2 lg:gap-14">
           <div>
@@ -225,11 +303,11 @@ function About() {
           </div>
           <Reveal delay={0.08}>
             <FullPhoto
-              src={IMAGES.advocateOffice}
+              src={IMAGES.coFounderChamber}
               alt={
                 locale === "hi"
-                  ? "अधिवक्ता सुमित त्यागी का चैम्बर दृश्य"
-                  : "Advocate Sumit Tyagi in his chamber"
+                  ? "चैम्बर में टीम सदस्य"
+                  : "Team member at the chamber desk"
               }
             />
           </Reveal>

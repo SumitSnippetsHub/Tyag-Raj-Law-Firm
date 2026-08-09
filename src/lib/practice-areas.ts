@@ -516,8 +516,22 @@ export function getPracticeArea(slug: string) {
   return PRACTICE_AREAS.find((a) => a.slug === slug);
 }
 
+/** Overrides when the file is not `{slug}.jpg` (e.g. client PNG assets). */
+const PRACTICE_AREA_IMAGE_FILE: Partial<Record<string, string>> = {
+  ndps: "/images/practice-areas/ndps.png",
+  "cheque-bounce-138-ni-act":
+    "/images/practice-areas/cheque-bounce-138-ni-act.png",
+  "child-custody": "/images/practice-areas/child-custody.png",
+  rera: "/images/practice-areas/rera.png",
+};
+
 export function areaImage(area: PracticeArea) {
-  return IMAGES[area.image];
+  // Dedicated public path so client can drop `{slug}.jpg` into
+  // `public/images/practice-areas/` without touching code.
+  return (
+    PRACTICE_AREA_IMAGE_FILE[area.slug] ??
+    `/images/practice-areas/${area.slug}.jpg`
+  );
 }
 
 export function pick<T>(value: { en: T; hi: T }, locale: Locale): T {

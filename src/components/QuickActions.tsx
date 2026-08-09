@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Mail, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { LanguageToggle } from "@/components/LanguageToggle";
-import { SITE, waLink } from "@/lib/site";
+import { SITE, telHref, waLink } from "@/lib/site";
 import { useLocale } from "@/lib/i18n";
 
 /**
@@ -18,7 +18,7 @@ export function QuickActions() {
     ? "नमस्ते, मुझे अपने मामले पर विधिक सलाह चाहिए।"
     : "Hello, I need legal advice regarding my matter.";
 
-  const tel = `tel:${SITE.phonePrimary.replace(/\s/g, "")}`;
+  const tel = telHref(SITE.phonePrimaryTel);
   const labels = {
     call: hi ? "कॉल करें" : "Call",
     whatsapp: hi ? "व्हाट्सएप" : "WhatsApp",

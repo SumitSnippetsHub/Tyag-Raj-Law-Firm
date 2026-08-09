@@ -22,7 +22,11 @@ export function PracticeAreaCard({
           src={areaImage(area)}
           alt={`${area.title.en} — Advocate Sumit Tyagi, Ghaziabad`}
           loading="lazy"
-          className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+          className={`size-full transition-transform duration-700 group-hover:scale-[1.04] ${
+            area.slug === "cheque-bounce-138-ni-act"
+              ? "object-contain bg-secondary"
+              : "object-cover"
+          }`}
         />
       </div>
       <div className="flex flex-1 flex-col p-6">

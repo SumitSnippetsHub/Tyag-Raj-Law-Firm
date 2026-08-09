@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AppLink } from "@/components/AppLink";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { IMAGES } from "@/lib/images";
-import { SITE, waLink } from "@/lib/site";
+import { SITE, telHref, waLink } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 import { LanguageToggle } from "./LanguageToggle";
 
@@ -54,7 +54,7 @@ export function Navbar() {
           </p>
           <div className="flex shrink-0 items-center gap-4 text-[0.7rem] font-semibold">
             <a
-              href={`tel:${SITE.phonePrimary.replace(/\s/g, "")}`}
+              href={telHref(SITE.phonePrimaryTel)}
               className="inline-flex items-center gap-1.5 text-dark-text/85 transition-colors hover:text-dark-text"
             >
               <Phone className="size-3.5" aria-hidden />
@@ -76,7 +76,7 @@ export function Navbar() {
       <div
         className={`border-b transition-colors duration-300 ${
           dark
-            ? "border-dark-text/15 bg-dark-bg/80 backdrop-blur-md"
+            ? "border-dark-text/20 bg-dark-bg/92 backdrop-blur-xl shadow-[0_1px_24px_-10px_oklch(0_0_0/0.55)]"
             : "border-border bg-surface shadow-[0_1px_20px_-12px_oklch(0.2_0_0/0.5)]"
         }`}
       >
@@ -94,19 +94,23 @@ export function Navbar() {
             <span className="flex min-w-0 flex-col justify-center leading-none">
               <span className="whitespace-nowrap font-brand text-[1.15rem] sm:text-lg xl:text-xl">
                 <span
-                  className={`font-bold ${
+                  className={`font-bold tracking-tight ${
                     dark ? "text-dark-text" : "text-ink"
                   }`}
                 >
                   Tyag
                 </span>{" "}
-                <span className="font-semibold italic text-primary">
+                <span
+                  className={`font-semibold italic ${
+                    dark ? "text-primary-on-dark" : "text-primary"
+                  }`}
+                >
                   Raj Law Firm
                 </span>
               </span>
               <span
-                className={`mt-1.5 truncate text-[0.55rem] font-medium tracking-[0.14em] uppercase sm:mt-1 sm:text-[0.58rem] ${
-                  dark ? "text-dark-text/55" : "text-ink-soft"
+                className={`mt-1.5 truncate text-[0.55rem] font-medium tracking-[0.16em] uppercase sm:mt-1 sm:text-[0.58rem] ${
+                  dark ? "text-dark-text/80" : "text-ink-soft"
                 }`}
               >
                 {SITE.tagline}
@@ -216,7 +220,7 @@ export function Navbar() {
                   {t.cta.whatsapp}
                 </a>
                 <a
-                  href={`tel:${SITE.phonePrimary.replace(/\s/g, "")}`}
+                  href={telHref(SITE.phonePrimaryTel)}
                   className="inline-flex items-center justify-center gap-2 border border-border px-5 py-3.5 text-sm font-semibold text-ink"
                 >
                   <Phone className="size-4" aria-hidden />

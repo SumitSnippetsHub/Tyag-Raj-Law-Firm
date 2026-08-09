@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { AppLink } from "@/components/AppLink";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { PracticeAreaCard } from "@/components/PracticeAreaCard";
-import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TextMarquee } from "@/components/TextMarquee";
-import { COURTS, EXTRA_UI, FAQ } from "@/lib/content-extra";
+import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
 import { useT } from "@/lib/i18n";
@@ -41,7 +42,7 @@ function PracticeAreasIndex() {
       <PageHero
         priority
         image={IMAGES.lawBooks}
-        mobileImage={IMAGES.advocateDesk}
+        mobileImage={IMAGES.gavel}
         alt="Antique law reports and legal statute books in a chamber bookcase"
         eyebrow={t.nav.practice}
         title={t.practice.h1}
@@ -60,39 +61,20 @@ function PracticeAreasIndex() {
         </ul>
       </section>
 
-      <section className="border-t border-border bg-surface py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
-          <SectionHeading
-            eyebrow={EXTRA_UI.faqEyebrow[locale]}
-            title={EXTRA_UI.faqTitle[locale]}
-          />
-          <div className="mt-12 grid gap-4 lg:grid-cols-2">
-            {FAQ.map((item, i) => (
-              <Reveal key={item.q.en} delay={(i % 2) * 0.07}>
-                <details className="border border-border bg-secondary p-5 open:border-primary/40">
-                  <summary className="cursor-pointer list-none font-display text-base font-semibold text-ink">
-                    {item.q[locale]}
-                  </summary>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {item.a[locale]}
-                  </p>
-                </details>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-border bg-secondary py-20 lg:py-24">
-        <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+      <section className="border-t border-border bg-secondary py-16 lg:py-20">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-5 md:px-10 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow={t.nav.book}
             title={t.book.h1}
             lead={t.book.lead}
           />
-          <Reveal delay={0.08}>
-            <WhatsAppBookingForm locale={locale} />
-          </Reveal>
+          <AppLink
+            to={`/${locale}/book-consultation`}
+            className="inline-flex shrink-0 items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
+          >
+            {t.cta.bookFree}
+            <ArrowRight className="size-4" aria-hidden />
+          </AppLink>
         </div>
       </section>
     </>
