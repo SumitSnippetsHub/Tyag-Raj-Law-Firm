@@ -21,10 +21,10 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
         <div>
           <img
-            src={IMAGES.logo}
+            src={IMAGES.logoFirm}
             alt="Tyagi Raj Law Firm logo"
             loading="lazy"
-            className="h-10 w-auto bg-dark-text/95 px-2 py-1"
+            className="h-14 w-auto"
           />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-dark-text/70">
             {t.footer.about}
