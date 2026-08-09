@@ -41,6 +41,7 @@ export function Footer() {
               { to: `/${locale}`, label: t.nav.home },
               { to: `/${locale}/about`, label: t.nav.about },
               { to: `/${locale}/practice-areas`, label: t.nav.practice },
+              { to: `/${locale}/team`, label: t.nav.team },
               { to: `/${locale}/testimonials`, label: t.nav.testimonials },
               { to: `/${locale}/contact`, label: t.nav.contact },
               { to: `/${locale}/book-consultation`, label: t.nav.book },
