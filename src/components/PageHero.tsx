@@ -11,6 +11,7 @@ export function PageHero({
   children,
   tall = false,
   priority = false,
+  fit = "cover",
 }: {
   image: string;
   /** Portrait-friendly image used on small screens (defaults to `image`). */
@@ -22,6 +23,8 @@ export function PageHero({
   children?: ReactNode;
   tall?: boolean;
   priority?: boolean;
+  /** `contain` shows the full photo (no crop) — preferred for portrait people shots. */
+  fit?: "cover" | "contain";
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
@@ -30,6 +33,7 @@ export function PageHero({
     offset: ["start start", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "16%"]);
+  const contain = fit === "contain";
 
   return (
     <section
@@ -40,10 +44,12 @@ export function PageHero({
     >
       <motion.div
         aria-hidden
-        className="absolute inset-0 -z-10 will-change-transform"
-        {...(reduced ? {} : { style: { y } })}
+        className={`absolute inset-0 -z-10 will-change-transform ${
+          contain ? "flex items-center justify-center" : ""
+        }`}
+        {...(reduced || contain ? {} : { style: { y } })}
       >
-        <picture>
+        <picture className={contain ? "flex h-full w-full items-center justify-center" : undefined}>
           {mobileImage ? (
             <source media="(max-width: 640px)" srcSet={mobileImage} />
           ) : null}
@@ -52,12 +58,16 @@ export function PageHero({
             alt={alt}
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : undefined}
-            className="h-[116%] w-full object-cover object-[center_25%]"
+            className={
+              contain
+                ? "max-h-full w-full object-contain object-center"
+                : "h-[116%] w-full object-cover object-[center_18%] sm:object-[center_22%]"
+            }
           />
         </picture>
       </motion.div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-28 pb-14 md:px-10 md:pt-40 md:pb-20">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-36 pb-14 md:px-10 md:pt-40 md:pb-20">
         <div className="max-w-3xl">
           {eyebrow ? (
             <motion.p

@@ -1,12 +1,14 @@
 import { motion, useReducedMotion } from "motion/react";
 import { Mail, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { LanguageToggle } from "@/components/LanguageToggle";
 import { SITE, waLink } from "@/lib/site";
 import { useLocale } from "@/lib/i18n";
 
 /**
  * Persistent quick actions: Call, WhatsApp, Email.
  * Fixed bottom bar on mobile, floating cluster on desktop.
+ * Language toggle floats above the bar on mobile only.
  */
 export function QuickActions() {
   const locale = useLocale();
@@ -31,6 +33,13 @@ export function QuickActions() {
 
   return (
     <>
+      {/* Mobile: EN / हिं floating above the contact bar */}
+      <div className="fixed right-4 bottom-[5.25rem] z-50 sm:hidden">
+        <div className="rounded-full shadow-[0_8px_24px_-8px_oklch(0.2_0_0/0.55)]">
+          <LanguageToggle />
+        </div>
+      </div>
+
       {/* Mobile: fixed bottom bar */}
       <nav
         aria-label={hi ? "त्वरित संपर्क" : "Quick contact"}

@@ -88,19 +88,50 @@ export const DICT = {
     about: {
       h1: "About Advocate Sumit Tyagi",
       lead: "An independent litigation practice built on preparation, plain speaking and steady presence in the courts of Delhi NCR.",
+      introEyebrow: "The Advocate",
+      introTitle: "A courtroom practice you can actually reach",
       body: [
-        "Sumit Tyagi is an advocate and legal consultant with more than twelve years of courtroom practice, based at the District & Session Court, Ghaziabad. The practice began with criminal and civil trial work and now covers matrimonial disputes, NDPS defence, cheque bounce complaints, cyber matters, RERA, consumer commissions and intellectual property.",
-        "The approach is deliberately old-fashioned in one respect: every file is read personally before advice is given, and the client hears the weak points of their own case first. That single habit prevents most unpleasant surprises later.",
-        "Clients are individuals, families and small businesses across Ghaziabad, Noida and Delhi who want a lawyer they can actually reach — on the phone, on WhatsApp, and in court on the date of hearing.",
+        "Sumit Tyagi (BBA, MBA, LLB) is an advocate and legal consultant with more than twelve years of active courtroom practice. The chamber is based at Ch. No. 33A, New Building, Second Floor, District & Session Court, Ghaziabad — with regular appearances across Ghaziabad, Noida, Gautam Buddh Nagar and Delhi.",
+        "The practice began with criminal and civil trial work. It has since grown into a focused litigation office handling matrimonial and family disputes, child custody, court marriage and registration, property and RERA matters, NDPS defence, bail, cheque bounce (Sec. 138 NI Act), cyber complaints, consumer commissions, and trademark & copyright work.",
+        "The approach is deliberately careful: every file is read personally before advice is given, and the client hears the weak points of their own case first. That habit prevents most unpleasant surprises later — and keeps fees tied to clear, written scope.",
+        "Clients are individuals, families and small businesses who want a lawyer they can actually reach — on the phone, on WhatsApp, and in court on the date of hearing. Matters are not handed off to an unknown junior at the last minute.",
+      ],
+      approachEyebrow: "How We Work",
+      approachTitle: "Clear steps before money is spent",
+      approachLead:
+        "From the first WhatsApp message to the final order, the office follows a simple, transparent process.",
+      approach: [
+        {
+          title: "Honest first reading",
+          body: "Notices, FIRs, agreements and orders are reviewed the same day wherever possible. You are told what is strong, what is weak, and what the likely timeline looks like.",
+        },
+        {
+          title: "Written scope & fees",
+          body: "Professional fees and expected court expenses are confirmed in writing before filing. No hidden additions mid-matter.",
+        },
+        {
+          title: "Personal court presence",
+          body: "Drafting, filing and arguments are handled by the advocate you met — with updates after each date of hearing.",
+        },
       ],
       valuesTitle: "Dedication · Integrity · Justice",
       valuesBody:
         "The three words on the firm's seal are also the working rules of the office: prepare completely, advise honestly, and pursue the matter to its end.",
+      chamberEyebrow: "Our Chamber",
+      chamberTitle: "Inside the District & Session Court, Ghaziabad",
+      chamberBody:
+        "Walk-in visits are welcome during working hours. For urgent bail, cheque bounce deadlines or same-day notices, WhatsApp is the fastest way to send papers and get a first response.",
+      galleryEyebrow: "In Chambers",
+      galleryTitle: "Advocate Sumit Tyagi at work",
       creds: [
+        { k: "Credentials", v: "BBA, MBA, LLB" },
         { k: "Experience", v: "12+ years in active litigation" },
         { k: "Base court", v: "District & Session Court, Ghaziabad" },
         { k: "Appears before", v: "District courts, RERA, consumer commissions, tribunals" },
+        { k: "Areas served", v: "Ghaziabad, Noida, Delhi NCR" },
         { k: "Languages", v: "Hindi, English" },
+        { k: "Working days", v: "Monday to Saturday" },
+        { k: "Working hours", v: "10:00 AM – 5:00 PM" },
       ],
     },
     practice: {
@@ -242,19 +273,50 @@ export const DICT = {
     about: {
       h1: "अधिवक्ता सुमित त्यागी के बारे में",
       lead: "तैयारी, स्पष्टवादिता और दिल्ली एनसीआर की अदालतों में लगातार उपस्थिति पर आधारित एक स्वतंत्र वकालत।",
+      introEyebrow: "अधिवक्ता",
+      introTitle: "एक ऐसी अदालती प्रैक्टिस जो वास्तव में उपलब्ध हो",
       body: [
-        "सुमित त्यागी बारह वर्षों से अधिक अदालती अनुभव वाले अधिवक्ता एवं विधिक सलाहकार हैं, जिनका कार्यालय ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में है। प्रैक्टिस की शुरुआत आपराधिक व सिविल ट्रायल कार्य से हुई और अब इसमें वैवाहिक विवाद, एनडीपीएस बचाव, चेक बाउंस शिकायत, साइबर मामले, रेरा, उपभोक्ता आयोग और बौद्धिक संपदा शामिल हैं।",
-        "दृष्टिकोण एक मामले में जान-बूझकर पुरानी शैली का है: सलाह देने से पहले हर फाइल स्वयं पढ़ी जाती है, और मुवक्किल को सबसे पहले उनके ही मुकदमे की कमजोरियाँ बताई जाती हैं। यही एक आदत बाद के अप्रिय आश्चर्यों को रोक देती है।",
-        "मुवक्किल गाज़ियाबाद, नोएडा और दिल्ली के वे व्यक्ति, परिवार और छोटे व्यवसाय हैं जिन्हें ऐसा वकील चाहिए जो वास्तव में उपलब्ध हो — फोन पर, व्हाट्सएप पर, और सुनवाई की तारीख पर अदालत में।",
+        "सुमित त्यागी (बीबीए, एमबीए, एलएलबी) बारह वर्षों से अधिक सक्रिय अदालती अनुभव वाले अधिवक्ता एवं विधिक सलाहकार हैं। चैम्बर का पता — चैम्बर नं. 33A, न्यू बिल्डिंग, द्वितीय तल, ज़िला एवं सेशन न्यायालय, गाज़ियाबाद — है, तथा गाज़ियाबाद, नोएडा, गौतम बुद्ध नगर व दिल्ली में नियमित उपस्थिति रहती है।",
+        "प्रैक्टिस की शुरुआत आपराधिक व सिविल ट्रायल कार्य से हुई। अब इसमें वैवाहिक एवं पारिवारिक विवाद, बाल अभिरक्षा, कोर्ट मैरिज एवं पंजीकरण, संपत्ति व रेरा, एनडीपीएस बचाव, जमानत, चेक बाउंस (धारा 138 एनआई अधिनियम), साइबर शिकायतें, उपभोक्ता आयोग तथा ट्रेडमार्क व कॉपीराइट कार्य शामिल हैं।",
+        "दृष्टिकोण सावधानीपूर्ण है: सलाह देने से पहले हर फाइल स्वयं पढ़ी जाती है, और मुवक्किल को सबसे पहले उनके ही मुकदमे की कमजोरियाँ बताई जाती हैं। यही आदत बाद के अप्रिय आश्चर्यों को रोकती है — और फीस स्पष्ट, लिखित कार्य-क्षेत्र से जुड़ी रहती है।",
+        "मुवक्किल वे व्यक्ति, परिवार और छोटे व्यवसाय हैं जिन्हें ऐसा वकील चाहिए जो वास्तव में उपलब्ध हो — फोन पर, व्हाट्सएप पर, और सुनवाई की तारीख पर अदालत में। मामले अंतिम क्षण पर अज्ञात जूनियर को नहीं सौंपे जाते।",
+      ],
+      approachEyebrow: "कार्यशैली",
+      approachTitle: "पैसे खर्च होने से पहले स्पष्ट कदम",
+      approachLead:
+        "पहले व्हाट्सएप संदेश से अंतिम आदेश तक कार्यालय एक सरल, पारदर्शी प्रक्रिया अपनाता है।",
+      approach: [
+        {
+          title: "ईमानदार पहली समीक्षा",
+          body: "नोटिस, एफआईआर, करार और आदेश यथासंभव उसी दिन देखे जाते हैं। आपको बताया जाता है क्या मजबूत है, क्या कमजोर है, और संभावित समय-सीमा क्या है।",
+        },
+        {
+          title: "लिखित कार्य-क्षेत्र व फीस",
+          body: "पेशेवर फीस और अपेक्षित अदालती खर्च फाइलिंग से पहले लिखित रूप में तय होते हैं। मामले के बीच छिपी वृद्धि नहीं।",
+        },
+        {
+          title: "व्यक्तिगत अदालती उपस्थिति",
+          body: "ड्राफ्टिंग, फाइलिंग और बहस उसी अधिवक्ता द्वारा होती है जिससे आप मिले — प्रत्येक तारीख के बाद अपडेट के साथ।",
+        },
       ],
       valuesTitle: "समर्पण · ईमानदारी · न्याय",
       valuesBody:
         "फर्म की मुहर पर अंकित ये तीन शब्द कार्यालय के कार्य-नियम भी हैं: पूरी तैयारी, ईमानदार सलाह, और मुकदमे को अंत तक ले जाना।",
+      chamberEyebrow: "हमारा चैम्बर",
+      chamberTitle: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद के अंदर",
+      chamberBody:
+        "कार्य समय में वॉक-इन मुलाक़ात का स्वागत है। तात्कालिक जमानत, चेक बाउंस की समय-सीमा या उसी दिन के नोटिस के लिए कागजात भेजने और पहली प्रतिक्रिया पाने का सबसे तेज़ तरीका व्हाट्सएप है।",
+      galleryEyebrow: "चैम्बर में",
+      galleryTitle: "अधिवक्ता सुमित त्यागी कार्य करते हुए",
       creds: [
+        { k: "योग्यताएँ", v: "बीबीए, एमबीए, एलएलबी" },
         { k: "अनुभव", v: "12+ वर्ष सक्रिय पैरवी" },
         { k: "मुख्य न्यायालय", v: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद" },
         { k: "उपस्थिति", v: "ज़िला अदालतें, रेरा, उपभोक्ता आयोग, अधिकरण" },
+        { k: "सेवा क्षेत्र", v: "गाज़ियाबाद, नोएडा, दिल्ली एनसीआर" },
         { k: "भाषाएँ", v: "हिन्दी, अंग्रेज़ी" },
+        { k: "कार्य दिवस", v: "सोमवार से शनिवार" },
+        { k: "कार्य समय", v: "सुबह 10:00 – शाम 5:00" },
       ],
     },
     practice: {

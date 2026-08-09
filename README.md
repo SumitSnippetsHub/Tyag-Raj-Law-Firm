@@ -52,10 +52,10 @@ Persistent quick actions (Call → WhatsApp → Email) render as a fixed bottom 
 
 ## 5. Brand assets
 
-- Logo: `src/assets/logo-firm.png.asset.json` (navbar, footer, favicon)
-- Background watermark: `src/assets/watermark-firm.png.asset.json`
-- Team photo: `src/assets/team-sumit.jpg.asset.json`
-- Name plate: `src/assets/name-plate.jpg.asset.json`
+- Logo: `src/assets/logo_main_firm.jpeg` (navbar, footer)
+- Background watermark: `src/assets/baclground_watermark.jpeg`
+- Team photo: `src/assets/our_team_page_main.jpeg`
+- Name plate: `src/assets/name_plate.jpeg`
 
 ---
 

@@ -1,19 +1,21 @@
 import { IMAGES } from "@/lib/images";
 
 /**
- * Fixed, very low-opacity logo watermark sitting behind all page content.
+ * Fixed atmospheric logo watermark — full mark visible, soft visionary presence.
  */
 export function Watermark() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center p-4 sm:p-8"
     >
-      <img
-        src={IMAGES.watermarkFirm}
-        alt=""
-        className="w-[150vw] max-w-none opacity-[0.04] sm:w-[95vw] lg:w-[70vw]"
-      />
+      <div className="watermark-vision">
+        <img
+          src={IMAGES.watermarkFirm}
+          alt=""
+          className="h-auto w-auto max-h-[min(90svh,94vw)] max-w-[min(90svh,94vw)] object-contain opacity-[0.1] sm:opacity-[0.09]"
+        />
+      </div>
     </div>
   );
 }
@@ -25,7 +27,7 @@ export function SectionWatermark({ tone = "light" }: { tone?: "light" | "dark" }
       aria-hidden
       alt=""
       src={tone === "dark" ? IMAGES.logoLight : IMAGES.watermarkFirm}
-      className="pointer-events-none absolute -right-10 bottom-0 -z-10 w-[26rem] max-w-none opacity-[0.05] sm:w-[34rem]"
+      className="pointer-events-none absolute bottom-4 right-4 -z-10 h-auto w-[min(18rem,70vw)] max-w-none object-contain opacity-[0.08] sm:bottom-6 sm:right-6 sm:w-[22rem]"
     />
   );
 }

@@ -15,7 +15,7 @@ export function TeamGrid({ locale }: { locale: Locale }) {
                 src={IMAGES[member.image]}
                 alt={`${member.name} — ${member.role[locale]}`}
                 loading="lazy"
-                className="aspect-4/5 w-full object-cover object-top"
+                className="aspect-4/5 w-full object-cover object-[center_12%]"
               />
             ) : (
               /* TODO: client to provide role title, bio, and photo for this team member */

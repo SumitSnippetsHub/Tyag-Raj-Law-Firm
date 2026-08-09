@@ -80,34 +80,55 @@ export function Navbar() {
             : "border-border bg-surface shadow-[0_1px_20px_-12px_oklch(0.2_0_0/0.5)]"
         }`}
       >
-        <nav className="mx-auto grid w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-3 md:px-10 lg:flex lg:justify-between lg:gap-6 lg:py-0 lg:h-20">
+        <nav className="mx-auto grid h-24 w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:h-20 sm:gap-4 sm:px-5 md:px-10 lg:flex lg:flex-nowrap lg:justify-between lg:gap-4 xl:gap-6">
           <AppLink
             to={`/${locale}`}
-            className="flex min-w-0 shrink-0 items-center gap-3"
+            className="flex min-w-0 flex-1 items-center gap-2.5 sm:gap-3 lg:max-w-[15.5rem] lg:flex-none xl:max-w-none"
             aria-label={`${SITE.firm} — home`}
           >
             <img
               src={dark ? IMAGES.logoLight : IMAGES.logoFirm}
-              alt="Advocate Sumit Tyagi — Tyagi Raj Law Firm logo with scales of justice"
-              className="h-10 w-auto sm:h-12"
+              alt=""
+              className="h-14 w-auto shrink-0 object-contain sm:h-12"
             />
+            <span className="flex min-w-0 flex-col justify-center leading-none">
+              <span className="whitespace-nowrap font-brand text-[1.15rem] sm:text-lg xl:text-xl">
+                <span
+                  className={`font-bold ${
+                    dark ? "text-dark-text" : "text-ink"
+                  }`}
+                >
+                  Tyagi
+                </span>{" "}
+                <span className="font-semibold italic text-primary">
+                  Raj Law Firm
+                </span>
+              </span>
+              <span
+                className={`mt-1.5 truncate text-[0.55rem] font-medium tracking-[0.14em] uppercase sm:mt-1 sm:text-[0.58rem] ${
+                  dark ? "text-dark-text/55" : "text-ink-soft"
+                }`}
+              >
+                {SITE.tagline}
+              </span>
+            </span>
           </AppLink>
 
-          <ul className="hidden items-center gap-8 lg:flex">
+          <ul className="hidden shrink-0 items-center gap-5 xl:gap-7 lg:flex">
             {links.map((l) => (
-              <li key={l.to}>
+              <li key={l.to} className="shrink-0">
                 <AppLink
                   to={l.to}
                   activeOptions={{ exact: l.to === `/${locale}` }}
-                  className={`text-sm font-semibold transition-colors ${
+                  className={`whitespace-nowrap text-sm font-semibold transition-colors ${
                     dark
                       ? "text-dark-text/85 hover:text-dark-text"
                       : "text-ink-soft hover:text-primary"
                   }`}
                   activeProps={{
                     className: dark
-                      ? "text-dark-text underline decoration-2 underline-offset-8"
-                      : "text-primary underline decoration-2 underline-offset-8",
+                      ? "whitespace-nowrap text-dark-text underline decoration-2 underline-offset-8"
+                      : "whitespace-nowrap text-primary underline decoration-2 underline-offset-8",
                   }}
                 >
                   {l.label}
@@ -134,7 +155,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className={`inline-flex size-11 items-center justify-center border lg:hidden ${
+              className={`inline-flex size-12 items-center justify-center border sm:size-11 lg:hidden ${
                 dark
                   ? "border-dark-text/30 text-dark-text"
                   : "border-border bg-secondary text-ink"
@@ -149,7 +170,7 @@ export function Navbar() {
       <AnimatePresence>
         {open ? (
           <motion.div
-            className="fixed inset-x-0 bottom-0 top-[4.25rem] sm:top-[6.3rem] z-40 overflow-y-auto bg-surface lg:hidden"
+            className="fixed inset-x-0 bottom-0 top-24 sm:top-[6.3rem] z-40 overflow-y-auto bg-surface lg:hidden"
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 24 }}
@@ -159,7 +180,7 @@ export function Navbar() {
               aria-hidden
               alt=""
               src={IMAGES.watermarkFirm}
-              className="pointer-events-none absolute inset-x-0 bottom-10 mx-auto w-[120%] max-w-none opacity-[0.05]"
+              className="pointer-events-none absolute inset-x-4 bottom-8 mx-auto h-auto w-auto max-h-[55svh] max-w-[min(85vw,22rem)] object-contain opacity-[0.09]"
             />
             <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-8 md:px-10">
               <ul className="flex flex-col gap-1">
@@ -185,7 +206,6 @@ export function Navbar() {
                 </li>
               </ul>
               <div className="flex flex-col gap-4 pb-6">
-                <LanguageToggle />
                 <a
                   href={waLink(greeting)}
                   target="_blank"

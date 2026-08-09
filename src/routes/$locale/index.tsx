@@ -169,7 +169,7 @@ function Home() {
             src={IMAGES.advocateStanding}
             alt="Advocate Sumit Tyagi in his chamber at the District & Session Court, Ghaziabad"
             loading="lazy"
-            className="aspect-4/5 w-full border border-border object-cover"
+            className="aspect-4/5 w-full border border-border object-cover object-[center_15%]"
           />
         </Reveal>
         <div>
@@ -192,7 +192,9 @@ function Home() {
                 <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
                   {locale === "hi" ? "कार्यक्षेत्र" : "Practice areas"}
                 </dt>
-                <dd className="mt-2 font-display text-3xl font-bold text-ink">09</dd>
+                <dd className="mt-2 font-display text-3xl font-bold text-ink">
+                  {String(PRACTICE_AREAS.length).padStart(2, "0")}
+                </dd>
               </div>
             </dl>
             <AppLink
@@ -260,7 +262,7 @@ function Home() {
               src={IMAGES.advocateDesk}
               alt="Advocate Sumit Tyagi preparing case files at his desk in Ghaziabad"
               loading="lazy"
-              className="aspect-4/3 w-full border border-border object-cover"
+              className="aspect-4/3 w-full border border-border object-cover object-[center_20%]"
             />
           </Reveal>
         </div>
@@ -274,7 +276,7 @@ function Home() {
               src={IMAGES.namePlate}
               alt="Tyagi Raj Law Firm name plate — Advocate Sumit Tyagi, Legal Excellence, Trusted Advocacy"
               loading="lazy"
-              className="aspect-4/3 w-full border border-border object-cover"
+              className="aspect-[16/10] w-full border border-border bg-ink object-contain"
             />
           </Reveal>
           <div>
