@@ -7,6 +7,7 @@ export const DICT = {
       home: "Home",
       about: "About",
       practice: "Practice Areas",
+      team: "Our Team",
       testimonials: "Testimonials",
       contact: "Contact",
       book: "Book Consultation",
@@ -23,7 +24,7 @@ export const DICT = {
     home: {
       eyebrow: "Advocate & Legal Consultant · Ghaziabad",
       h1: "Advocate Sumit Tyagi",
-      lead: "12+ years of legal excellence in Delhi NCR — criminal, civil, matrimonial and commercial litigation handled personally, from first hearing to final order.",
+      lead: "Strategic Legal Counsel. Trusted Representation, Proven Commitment. 12+ years of litigation in Delhi NCR — criminal, civil, family and commercial matters handled personally, from first hearing to final order.",
       trust: [
         "Ghaziabad · Noida · Delhi NCR",
         "12+ Years Experience",
@@ -33,9 +34,28 @@ export const DICT = {
       aboutEyebrow: "About the Advocate",
       aboutTitle: "Straight advice, disciplined litigation",
       aboutBody:
-        "Sumit Tyagi practises from the District & Session Court, Ghaziabad, appearing regularly before courts, tribunals and consumer forums across Ghaziabad, Noida and Delhi. Clients come for one reason: they are told exactly where they stand before any money is spent.",
+        "Sumit Tyagi (BBA, MBA, LLB) practises from the District & Session Court, Ghaziabad, appearing regularly before courts, tribunals and consumer forums across Ghaziabad, Noida and Delhi. Clients come for one reason: they are told exactly where they stand before any money is spent.",
       practiceEyebrow: "Practice Areas",
-      practiceTitle: "Nine areas of focused litigation practice",
+      practiceTitle: "Thirteen areas of focused litigation practice",
+      missionEyebrow: "Our Mission",
+      missionTitle: "Accessible, ethical and effective representation",
+      missionBody:
+        "Our mission is to make competent legal representation genuinely accessible across Ghaziabad, Noida and Delhi NCR — with honest advice given before fees are discussed, plain-language explanations at every stage, and disciplined, ethical advocacy in court. Every client should leave the chamber knowing exactly what their position is and what happens next.",
+      visionEyebrow: "Our Vision",
+      visionTitle: "A trusted legal partner for NCR families and businesses",
+      visionBody:
+        "Our vision is to grow into the most trusted and reachable legal partner for individuals, families and small businesses across the National Capital Region — a chamber known less for advertising and more for outcomes, integrity and clients who return with their next matter and send their families along.",
+      teamEyebrow: "Expert Team",
+      teamTitle: "The people who will handle your matter",
+      teamLead:
+        "A small, accountable team — you always know who is appearing on your date of hearing.",
+      chambersEyebrow: "Our Chambers",
+      chambersTitle: "Visit the chamber in Ghaziabad",
+      chambersBody:
+        "The chamber is inside the District & Session Court complex, Ghaziabad, with regular appearances in Noida, Gautam Buddh Nagar and Delhi district courts, UP RERA and consumer commissions. Walk in during working hours, or WhatsApp first for urgent bail and cheque bounce deadlines.",
+      chambersDirections: "Get Directions",
+      chambersDays: "Working days",
+      chambersHours: "Working hours",
       whyEyebrow: "Why Clients Stay",
       whyTitle: "What working with this office looks like",
       why: [
@@ -85,7 +105,7 @@ export const DICT = {
     },
     practice: {
       h1: "Practice Areas",
-      lead: "Nine defined areas of practice across criminal, civil, family and commercial law — each handled personally in the courts of Delhi NCR.",
+      lead: "Thirteen defined areas of practice across criminal, civil, family, property and commercial law — each handled personally in the courts of Delhi NCR.",
       covers: "What this covers",
       handled: "Matters commonly handled",
       whyTitle: "Why work with Advocate Sumit Tyagi on this",
@@ -141,6 +161,7 @@ export const DICT = {
       home: "होम",
       about: "परिचय",
       practice: "कार्यक्षेत्र",
+      team: "हमारी टीम",
       testimonials: "प्रशंसापत्र",
       contact: "संपर्क",
       book: "परामर्श बुक करें",
@@ -157,7 +178,7 @@ export const DICT = {
     home: {
       eyebrow: "अधिवक्ता एवं विधिक सलाहकार · गाज़ियाबाद",
       h1: "अधिवक्ता सुमित त्यागी",
-      lead: "दिल्ली एनसीआर में 12+ वर्षों की विधिक सेवा — आपराधिक, सिविल, वैवाहिक एवं व्यावसायिक मुकदमे पहली सुनवाई से अंतिम आदेश तक स्वयं देखे जाते हैं।",
+      lead: "सुदृढ़ विधिक परामर्श, विश्वसनीय पैरवी, सिद्ध प्रतिबद्धता। दिल्ली एनसीआर में 12+ वर्षों का अनुभव — आपराधिक, सिविल, पारिवारिक एवं व्यावसायिक मुकदमे पहली सुनवाई से अंतिम आदेश तक स्वयं देखे जाते हैं।",
       trust: [
         "गाज़ियाबाद · नोएडा · दिल्ली एनसीआर",
         "12+ वर्षों का अनुभव",
@@ -167,9 +188,28 @@ export const DICT = {
       aboutEyebrow: "अधिवक्ता का परिचय",
       aboutTitle: "स्पष्ट सलाह, अनुशासित पैरवी",
       aboutBody:
-        "सुमित त्यागी ज़िला एवं सेशन न्यायालय, गाज़ियाबाद से प्रैक्टिस करते हैं और गाज़ियाबाद, नोएडा व दिल्ली की अदालतों, अधिकरणों तथा उपभोक्ता फोरम में नियमित रूप से पेश होते हैं। मुवक्किल एक कारण से आते हैं: खर्च से पहले उन्हें उनकी वास्तविक स्थिति बता दी जाती है।",
+        "सुमित त्यागी (बीबीए, एमबीए, एलएलबी) ज़िला एवं सेशन न्यायालय, गाज़ियाबाद से प्रैक्टिस करते हैं और गाज़ियाबाद, नोएडा व दिल्ली की अदालतों, अधिकरणों तथा उपभोक्ता फोरम में नियमित रूप से पेश होते हैं। मुवक्किल एक कारण से आते हैं: खर्च से पहले उन्हें उनकी वास्तविक स्थिति बता दी जाती है।",
       practiceEyebrow: "कार्यक्षेत्र",
-      practiceTitle: "नौ केंद्रित विधिक कार्यक्षेत्र",
+      practiceTitle: "तेरह केंद्रित विधिक कार्यक्षेत्र",
+      missionEyebrow: "हमारा उद्देश्य",
+      missionTitle: "सुलभ, नैतिक एवं प्रभावी पैरवी",
+      missionBody:
+        "हमारा उद्देश्य है गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में सक्षम विधिक सहायता को वास्तव में सुलभ बनाना — फीस की बात से पहले ईमानदार सलाह, हर चरण पर सरल भाषा में जानकारी, और अदालत में अनुशासित व नैतिक पैरवी। प्रत्येक मुवक्किल को अपनी स्थिति और अगला कदम स्पष्ट रूप से पता होना चाहिए।",
+      visionEyebrow: "हमारा दृष्टिकोण",
+      visionTitle: "एनसीआर के परिवारों एवं व्यवसायों का विश्वसनीय विधिक साथी",
+      visionBody:
+        "हमारा दृष्टिकोण है राष्ट्रीय राजधानी क्षेत्र के व्यक्तियों, परिवारों और छोटे व्यवसायों के लिए सबसे विश्वसनीय एवं सुलभ विधिक साथी बनना — ऐसा कार्यालय जो विज्ञापन से नहीं, परिणाम, ईमानदारी और लौटकर आने वाले मुवक्किलों से पहचाना जाए।",
+      teamEyebrow: "विशेषज्ञ टीम",
+      teamTitle: "आपका मामला देखने वाले लोग",
+      teamLead:
+        "एक छोटी, जवाबदेह टीम — आपको सदैव पता रहता है कि आपकी तारीख पर कौन पेश हो रहा है।",
+      chambersEyebrow: "हमारा चैम्बर",
+      chambersTitle: "गाज़ियाबाद में चैम्बर पर पधारें",
+      chambersBody:
+        "चैम्बर ज़िला एवं सेशन न्यायालय परिसर, गाज़ियाबाद में है; नोएडा, गौतमबुद्ध नगर व दिल्ली की ज़िला अदालतों, यूपी रेरा और उपभोक्ता आयोगों में नियमित उपस्थिति रहती है। कार्य समय में सीधे आइए, या तात्कालिक जमानत व चेक बाउंस समय-सीमा हेतु पहले व्हाट्सएप करें।",
+      chambersDirections: "रास्ता देखें",
+      chambersDays: "कार्य दिवस",
+      chambersHours: "कार्य समय",
       whyEyebrow: "क्यों चुनें",
       whyTitle: "इस कार्यालय के साथ काम करना कैसा है",
       why: [
@@ -219,7 +259,7 @@ export const DICT = {
     },
     practice: {
       h1: "कार्यक्षेत्र",
-      lead: "आपराधिक, सिविल, पारिवारिक एवं व्यावसायिक विधि में नौ निर्धारित कार्यक्षेत्र — प्रत्येक दिल्ली एनसीआर की अदालतों में स्वयं देखा जाता है।",
+      lead: "आपराधिक, सिविल, पारिवारिक, संपत्ति एवं व्यावसायिक विधि में तेरह निर्धारित कार्यक्षेत्र — प्रत्येक दिल्ली एनसीआर की अदालतों में स्वयं देखा जाता है।",
       covers: "इसमें क्या शामिल है",
       handled: "सामान्यतः देखे जाने वाले मामले",
       whyTitle: "इस मामले में अधिवक्ता सुमित त्यागी क्यों",
