@@ -274,7 +274,7 @@ function Home() {
           <Reveal>
             <img
               src={IMAGES.namePlate}
-              alt="Tyagi Raj Law Firm name plate — Advocate Sumit Tyagi, Legal Excellence, Trusted Advocacy"
+              alt="Tyag Raj Law Firm name plate — Advocate Sumit Tyagi, Legal Excellence, Trusted Advocacy"
               loading="lazy"
               className="aspect-[16/10] w-full border border-border bg-ink object-contain"
             />

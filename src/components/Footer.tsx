@@ -15,14 +15,14 @@ export function Footer() {
         aria-hidden
         className="pointer-events-none absolute -bottom-6 left-1/2 -z-10 -translate-x-1/2 whitespace-nowrap font-display text-[7rem] leading-none font-bold tracking-tighter text-dark-text opacity-[0.055] sm:text-[12rem] lg:text-[16rem]"
       >
-        TYAGI RAJ
+        TYAG RAJ
       </span>
 
       <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
         <div>
           <img
             src={IMAGES.logoFirm}
-            alt="Tyagi Raj Law Firm logo"
+            alt="Tyag Raj Law Firm logo"
             loading="lazy"
             className="h-14 w-auto object-contain"
           />

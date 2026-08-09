@@ -1,6 +1,6 @@
 export const SITE = {
   advocate: "Sumit Tyagi",
-  firm: "Tyagi Raj Law Firm",
+  firm: "Tyag Raj Law Firm",
   tagline: "Advocate & Legal Consultant",
   // Confirmed hero tagline. Alternates are listed in README.md.
   taglineMain: "Strategic Legal Counsel. Trusted Representation, Proven Commitment.",

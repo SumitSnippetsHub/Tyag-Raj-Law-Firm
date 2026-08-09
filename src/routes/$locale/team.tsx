@@ -10,11 +10,11 @@ export const Route = createFileRoute("/$locale/team")({
   head: ({ params }) => {
     const hi = params.locale === "hi";
     const title = hi
-      ? "हमारी टीम — अधिवक्ता सुमित त्यागी | त्यागी राज लॉ फर्म"
-      : "Our Team | Tyagi Raj Law Firm, Ghaziabad";
+      ? "हमारी टीम — अधिवक्ता सुमित त्यागी | त्याग राज लॉ फर्म"
+      : "Our Team | Tyag Raj Law Firm, Ghaziabad";
     const description = hi
-      ? "त्यागी राज लॉ फर्म की टीम — अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) एवं सहयोगी अधिवक्ता, गाज़ियाबाद।"
-      : "Meet the team at Tyagi Raj Law Firm — Advocate Sumit Tyagi (BBA, MBA, LLB) and associate advocates practising across Ghaziabad, Noida and Delhi NCR.";
+      ? "त्याग राज लॉ फर्म की टीम — अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) एवं सहयोगी अधिवक्ता, गाज़ियाबाद।"
+      : "Meet the team at Tyag Raj Law Firm — Advocate Sumit Tyagi (BBA, MBA, LLB) and associate advocates practising across Ghaziabad, Noida and Delhi NCR.";
     return {
       meta: [
         { title },

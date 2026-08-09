@@ -1,11 +1,11 @@
-# Advocate Sumit Tyagi — Tyagi Raj Law Firm
+# Advocate Sumit Tyagi — Tyag Raj Law Firm
 
 Bilingual (English / Hindi) website for Advocate Sumit Tyagi, Ghaziabad. This file is the single source of truth for site content decisions.
 
 ## 1. Business identity
 
 - **Advocate:** Sumit Tyagi — Founder & Advocate (BBA, MBA, LLB), 12+ years in litigation
-- **Firm:** Tyagi Raj Law Firm
+- **Firm:** Tyag Raj Law Firm
 - **Confirmed tagline (live):** "Strategic Legal Counsel. Trusted Representation, Proven Commitment."
 - **Tagline options — client to confirm final pick** (alternates, not on the live site):
   1. "Justice, Integrity, Excellence."

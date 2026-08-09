@@ -98,7 +98,7 @@ export function Navbar() {
                     dark ? "text-dark-text" : "text-ink"
                   }`}
                 >
-                  Tyagi
+                  Tyag
                 </span>{" "}
                 <span className="font-semibold italic text-primary">
                   Raj Law Firm
