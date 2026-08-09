@@ -1,7 +1,7 @@
 import { createFileRoute, notFound, Outlet } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { QuickActions } from "@/components/QuickActions";
 import { Watermark } from "@/components/Watermark";
 import { isLocale } from "@/lib/site";
 
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/$locale")({
 
 function LocaleLayout() {
   return (
-    <div className="relative flex min-h-screen flex-col bg-background">
+    <div className="relative flex min-h-screen flex-col bg-background pb-16 sm:pb-0">
       {/* Logo watermark behind every page. */}
       <Watermark />
       <Navbar />
@@ -23,7 +23,7 @@ function LocaleLayout() {
         <Outlet />
       </main>
       <Footer />
-      <FloatingWhatsApp />
+      <QuickActions />
     </div>
   );
 }

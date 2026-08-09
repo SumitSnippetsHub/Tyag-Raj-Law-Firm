@@ -31,6 +31,7 @@ export function Navbar() {
     { to: `/${locale}`, label: t.nav.home },
     { to: `/${locale}/about`, label: t.nav.about },
     { to: `/${locale}/practice-areas`, label: t.nav.practice },
+    { to: `/${locale}/team`, label: t.nav.team },
     { to: `/${locale}/testimonials`, label: t.nav.testimonials },
     { to: `/${locale}/contact`, label: t.nav.contact },
   ];
@@ -86,9 +87,9 @@ export function Navbar() {
             aria-label={`${SITE.firm} — home`}
           >
             <img
-              src={dark ? IMAGES.logoLight : IMAGES.logoPng}
+              src={dark ? IMAGES.logoLight : IMAGES.logoFirm}
               alt="Advocate Sumit Tyagi — Tyagi Raj Law Firm logo with scales of justice"
-              className="h-9 w-auto sm:h-11"
+              className="h-10 w-auto sm:h-12"
             />
           </AppLink>
 
@@ -157,7 +158,7 @@ export function Navbar() {
             <img
               aria-hidden
               alt=""
-              src={IMAGES.logoPng}
+              src={IMAGES.watermarkFirm}
               className="pointer-events-none absolute inset-x-0 bottom-10 mx-auto w-[120%] max-w-none opacity-[0.05]"
             />
             <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-8 md:px-10">

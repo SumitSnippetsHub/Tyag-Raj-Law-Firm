@@ -1,6 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppLink } from "@/components/AppLink";
-import { ArrowRight, Phone, Scale, ShieldCheck, Clock } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarDays,
+  Clock,
+  Mail,
+  MapPin,
+  Navigation,
+  Phone,
+  Scale,
+  ShieldCheck,
+} from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { TextMarquee } from "@/components/TextMarquee";
 import { highlightName } from "@/components/NameMark";
@@ -15,6 +25,7 @@ import {
   TestimonialMarquee,
 } from "@/components/TestimonialMarquee";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
+import { TeamGrid } from "@/components/TeamSection";
 import { JsonLd } from "@/components/JsonLd";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
@@ -234,6 +245,69 @@ function Home() {
         </ul>
       </section>
 
+      {/* Our Mission */}
+      <section className="border-t border-border bg-surface py-20 lg:py-28">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 md:px-10 lg:grid-cols-2">
+          <div>
+            <SectionHeading
+              eyebrow={home.missionEyebrow}
+              title={home.missionTitle}
+              lead={home.missionBody}
+            />
+          </div>
+          <Reveal delay={0.08}>
+            <img
+              src={IMAGES.advocateDesk}
+              alt="Advocate Sumit Tyagi preparing case files at his desk in Ghaziabad"
+              loading="lazy"
+              className="aspect-4/3 w-full border border-border object-cover"
+            />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Our Vision */}
+      <section className="border-t border-border bg-secondary py-20 lg:py-28">
+        <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 md:px-10 lg:grid-cols-2">
+          <Reveal>
+            <img
+              src={IMAGES.namePlate}
+              alt="Tyagi Raj Law Firm name plate — Advocate Sumit Tyagi, Legal Excellence, Trusted Advocacy"
+              loading="lazy"
+              className="aspect-4/3 w-full border border-border object-cover"
+            />
+          </Reveal>
+          <div>
+            <SectionHeading
+              eyebrow={home.visionEyebrow}
+              title={home.visionTitle}
+              lead={home.visionBody}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Expert Team */}
+      <section className="border-t border-border bg-surface py-20 lg:py-28">
+        <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
+          <SectionHeading
+            eyebrow={home.teamEyebrow}
+            title={home.teamTitle}
+            lead={home.teamLead}
+          />
+          <div className="mt-14">
+            <TeamGrid locale={locale} />
+          </div>
+          <AppLink
+            to={`/${locale}/team`}
+            className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
+          >
+            {t.nav.team}
+            <ArrowRight className="size-4" aria-hidden />
+          </AppLink>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="border-t border-border bg-secondary py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
@@ -342,36 +416,94 @@ function Home() {
         </div>
       </section>
 
-      {/* Local SEO / service area */}
-      <section className="border-t border-border bg-surface py-20 lg:py-28">
+      {/* Our Chambers — single consolidated contact & location block */}
+      <section id="chambers" className="border-t border-border bg-surface py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10 grid gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
-              eyebrow={home.areaEyebrow}
-              title={home.areaTitle}
-              lead={home.areaBody}
+              eyebrow={home.chambersEyebrow}
+              title={home.chambersTitle}
+              lead={home.chambersBody}
             />
             <Reveal delay={0.1}>
-              <address className="mt-8 not-italic text-sm leading-relaxed text-ink">
-                {SITE.address}
-                <br />
-                <a href="tel:+918060603368" className="text-primary">
-                  {SITE.phonePrimary}
+              <dl className="mt-8 space-y-5 text-sm leading-relaxed text-ink">
+                <div className="flex gap-3">
+                  <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                  <div>
+                    <dt className="sr-only">{t.contact.officeTitle}</dt>
+                    <dd>
+                      <address className="not-italic">{SITE.address}</address>
+                    </dd>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Phone className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                  <div>
+                    <dt className="sr-only">{t.contact.phoneLabel}</dt>
+                    <dd className="flex flex-col">
+                      <a href="tel:+918060603368" className="text-primary">
+                        {SITE.phonePrimary}
+                      </a>
+                      <a href="tel:+919217620368" className="text-primary">
+                        {SITE.phoneSecondary}
+                      </a>
+                    </dd>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Mail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                  <div>
+                    <dt className="sr-only">{t.contact.emailLabel}</dt>
+                    <dd>
+                      <a href={`mailto:${SITE.email}`} className="text-primary">
+                        {SITE.email}
+                      </a>
+                    </dd>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <CalendarDays className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                  <div>
+                    <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
+                      {home.chambersDays}
+                    </dt>
+                    <dd>{SITE.workingDays}</dd>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Clock className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
+                  <div>
+                    <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
+                      {home.chambersHours}
+                    </dt>
+                    <dd>{SITE.workingHours}</dd>
+                  </div>
+                </div>
+              </dl>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={waLink(
+                    locale === "hi"
+                      ? "नमस्ते, मुझे परामर्श का समय चाहिए।"
+                      : "Hello, I would like to book a consultation slot.",
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
+                >
+                  <WhatsAppIcon className="size-4" />
+                  {t.cta.whatsapp}
                 </a>
-              </address>
-              <a
-                href={waLink(
-                  locale === "hi"
-                    ? "नमस्ते, मुझे परामर्श का समय चाहिए।"
-                    : "Hello, I would like to book a consultation slot.",
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
-              >
-                <WhatsAppIcon className="size-4" />
-                {t.cta.whatsapp}
-              </a>
+                <a
+                  href={SITE.directions}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-border px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
+                >
+                  <Navigation className="size-4" aria-hidden />
+                  {home.chambersDirections}
+                </a>
+              </div>
             </Reveal>
           </div>
           <Reveal delay={0.08}>
