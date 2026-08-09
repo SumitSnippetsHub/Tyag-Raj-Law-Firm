@@ -142,6 +142,25 @@ function Home() {
           <div className="mt-10">
             <FoundersGrid locale={locale} />
           </div>
+          <Reveal delay={0.1}>
+            <figure className="mt-10 border border-border bg-secondary">
+              <img
+                src={IMAGES.foundersTogether}
+                alt={
+                  locale === "hi"
+                    ? "अधिवक्ता सुमित त्यागी एवं अधिवक्ता विशव प्रताप चैम्बर में"
+                    : "Advocate Sumit Tyagi and Advocate Vishaw Pratap together at the chamber"
+                }
+                loading="lazy"
+                className="mx-auto h-auto w-full object-contain"
+              />
+              <figcaption className="border-t border-border px-4 py-3 text-center text-sm text-ink-soft">
+                {locale === "hi"
+                  ? "संस्थापक एवं सह-संस्थापक — ज़िला न्यायालय गाज़ियाबाद चैम्बर"
+                  : "Founder & Co-Founder — District Court chamber, Ghaziabad"}
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
       </section>
 
