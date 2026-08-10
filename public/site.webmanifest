@@ -1,0 +1,24 @@
+{
+  "name": "Tyag Raj Law Firm — Advocate Sumit Tyagi",
+  "short_name": "Tyag Raj Law",
+  "description": "Advocate & Legal Consultant in Ghaziabad, Noida and Delhi NCR — criminal, civil, matrimonial, RERA and cheque bounce matters.",
+  "start_url": "/en",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf7f2",
+  "theme_color": "#2d0a0f",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

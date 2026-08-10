@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=3600" }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=3600" }
+      ]
+    },
+    {
+      "source": "/site.webmanifest",
+      "headers": [
+        { "key": "Content-Type", "value": "application/manifest+json" }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/about", "destination": "/en/about", "permanent": true },
+    { "source": "/team", "destination": "/en/team", "permanent": true },
+    { "source": "/contact", "destination": "/en/contact", "permanent": true },
+    {
+      "source": "/services",
+      "destination": "/en/practice-areas",
+      "permanent": true
+    },
+    {
+      "source": "/practice-areas",
+      "destination": "/en/practice-areas",
+      "permanent": true
+    },
+    {
+      "source": "/practice-areas/:slug",
+      "destination": "/en/practice-areas/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/en/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/book-consultation",
+      "destination": "/en/book-consultation",
+      "permanent": true
+    }
+  ]
+}

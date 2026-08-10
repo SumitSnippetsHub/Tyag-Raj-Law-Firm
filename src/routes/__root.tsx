@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -11,6 +12,8 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { OG_IMAGE } from "../lib/seo";
+import { SITE, isLocale } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -77,16 +80,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Advocate Sumit Tyagi — Ghaziabad, Noida, Delhi NCR" },
+      { title: `${SITE.firm} — Advocates in Ghaziabad, Noida & Delhi NCR` },
       {
         name: "description",
         content:
-          "Advocate Sumit Tyagi — Advocate & Legal Consultant with 12+ years of practice in Ghaziabad, Noida and Delhi NCR.",
+          "Tyag Raj Law Firm — Advocate Sumit Tyagi and Vishaw Pratap, 12+ years of litigation across Ghaziabad, Noida and Delhi NCR.",
       },
-      { name: "author", content: "Advocate Sumit Tyagi" },
-      { property: "og:site_name", content: "Advocate Sumit Tyagi" },
+      { name: "author", content: SITE.firm },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1",
+      },
+      { name: "theme-color", content: "#2d0a0f" },
+      { property: "og:site_name", content: SITE.firm },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -104,6 +114,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
     ],
   }),
   shellComponent: RootShell,
@@ -113,8 +125,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  // The locale lives in the first path segment, so <html lang> must follow it.
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const segment = pathname.split("/")[1] ?? "";
+  const lang = isLocale(segment) ? segment : "en";
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <head>
         <HeadContent />
       </head>

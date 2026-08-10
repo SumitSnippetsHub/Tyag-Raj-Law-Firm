@@ -7,7 +7,14 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
 import { JsonLd } from "@/components/JsonLd";
 import { areaImage, getPracticeArea, PRACTICE_AREAS } from "@/lib/practice-areas";
-import { SITE, isLocale } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import {
+  assetUrl,
+  breadcrumbSchema,
+  buildSeo,
+  pageUrl,
+  toLocale,
+} from "@/lib/seo";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/practice-areas/$slug")({
@@ -16,24 +23,22 @@ export const Route = createFileRoute("/$locale/practice-areas/$slug")({
   },
   head: ({ params }) => {
     const area = getPracticeArea(params.slug);
-    const locale = isLocale(params.locale) ? params.locale : "en";
+    const locale = toLocale(params.locale);
     if (!area) return {};
     const name = area.title[locale];
     const title =
       locale === "hi"
         ? `${name} वकील गाज़ियाबाद | अधिवक्ता सुमित त्यागी`
         : `${name} Lawyer in Ghaziabad, Noida | Advocate Sumit Tyagi`;
-    const description = area.short[locale];
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    return buildSeo({
+      locale,
+      path: `practice-areas/${area.slug}`,
+      title,
+      description: area.short[locale],
+      image: assetUrl(areaImage(area)),
+      imageAlt: `${area.title.en} — ${SITE.firm}`,
+      type: "article",
+    });
   },
   component: PracticeAreaPage,
 });
@@ -47,11 +52,21 @@ function PracticeAreaPage() {
   return (
     <>
       <JsonLd
+        data={breadcrumbSchema(locale, [
+          { name: t.nav.practice, path: "practice-areas" },
+          { name: area.title[locale], path: `practice-areas/${area.slug}` },
+        ])}
+      />
+
+      <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "Service",
           serviceType: area.title.en,
-          description: area.short.en,
+          name: area.title[locale],
+          description: area.short[locale],
+          url: pageUrl(locale, `practice-areas/${area.slug}`),
+          image: assetUrl(areaImage(area)),
           provider: {
             "@type": "Attorney",
             name: `${SITE.firm} — Advocate ${SITE.advocate}`,

@@ -6,27 +6,21 @@ import { TextMarquee } from "@/components/TextMarquee";
 import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/book-consultation")({
   head: ({ params }) => {
-    const hi = params.locale === "hi";
+    const locale = toLocale(params.locale);
+    const hi = locale === "hi";
     const title = hi
       ? "परामर्श बुक करें | अधिवक्ता सुमित त्यागी, गाज़ियाबाद"
       : "Book a Consultation | Advocate Sumit Tyagi, Ghaziabad";
     const description = hi
       ? "व्हाट्सएप पर अधिवक्ता सुमित त्यागी से परामर्श बुक करें — जमानत, चेक बाउंस, रेरा एवं वैवाहिक मामलों में शीघ्र सहायता।"
       : "Book a WhatsApp consultation with Advocate Sumit Tyagi — fast help with bail, cheque bounce notices, RERA and matrimonial matters in Delhi NCR.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    return buildSeo({ locale, path: "book-consultation", title, description });
   },
   component: BookConsultation,
 });
@@ -36,6 +30,12 @@ function BookConsultation() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [
+          { name: t.nav.book, path: "book-consultation" },
+        ])}
+      />
+
       <PageHero
         priority
         image={IMAGES.paDocuments}

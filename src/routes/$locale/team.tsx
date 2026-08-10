@@ -4,27 +4,21 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { TeamGrid } from "@/components/TeamSection";
 import { highlightName } from "@/components/NameMark";
 import { IMAGES } from "@/lib/images";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/team")({
   head: ({ params }) => {
-    const hi = params.locale === "hi";
+    const locale = toLocale(params.locale);
+    const hi = locale === "hi";
     const title = hi
       ? "हमारी टीम — अधिवक्ता सुमित त्यागी | त्याग राज लॉ फर्म"
       : "Our Team | Tyag Raj Law Firm, Ghaziabad";
     const description = hi
       ? "त्याग राज लॉ फर्म की टीम — अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) एवं सहयोगी अधिवक्ता, गाज़ियाबाद।"
       : "Meet the team at Tyag Raj Law Firm — Founder Sumit Tyagi, Co-Founder Vishaw Pratap, and associates practising across Ghaziabad, Noida and Delhi NCR.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    return buildSeo({ locale, path: "team", title, description });
   },
   component: TeamPage,
 });
@@ -35,6 +29,10 @@ function TeamPage() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [{ name: t.nav.team, path: "team" }])}
+      />
+
       <PageHero
         fit="contain"
         image={IMAGES.fullTeam}

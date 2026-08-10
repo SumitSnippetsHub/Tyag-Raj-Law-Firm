@@ -12,27 +12,21 @@ import { ArrowRight } from "lucide-react";
 import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { TESTIMONIALS } from "@/lib/testimonials";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/testimonials")({
   head: ({ params }) => {
-    const hi = params.locale === "hi";
+    const locale = toLocale(params.locale);
+    const hi = locale === "hi";
     const title = hi
       ? "मुवक्किलों के प्रशंसापत्र | अधिवक्ता सुमित त्यागी"
       : "Client Testimonials | Advocate Sumit Tyagi, Ghaziabad";
     const description = hi
       ? "आपराधिक, वैवाहिक, चेक बाउंस एवं रेरा मामलों में अधिवक्ता सुमित त्यागी के मुवक्किलों के अनुभव।"
       : "Read client experiences across criminal, matrimonial, cheque bounce, RERA and cyber matters handled by Advocate Sumit Tyagi.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    return buildSeo({ locale, path: "testimonials", title, description });
   },
   component: Testimonials,
 });
@@ -42,6 +36,12 @@ function Testimonials() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [
+          { name: t.nav.testimonials, path: "testimonials" },
+        ])}
+      />
+
       <PageHero
         priority
         image={IMAGES.gavel}

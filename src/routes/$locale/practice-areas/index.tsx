@@ -9,27 +9,22 @@ import { TextMarquee } from "@/components/TextMarquee";
 import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, buildSeo, pageUrl, toLocale } from "@/lib/seo";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/practice-areas/")({
   head: ({ params }) => {
-    const hi = params.locale === "hi";
+    const locale = toLocale(params.locale);
+    const hi = locale === "hi";
+    const count = PRACTICE_AREAS.length;
     const title = hi
       ? "कार्यक्षेत्र | अधिवक्ता सुमित त्यागी, गाज़ियाबाद"
       : "Practice Areas | Advocate Sumit Tyagi, Ghaziabad & Noida";
     const description = hi
-      ? "आपराधिक, सिविल, वैवाहिक, एनडीपीएस, चेक बाउंस, साइबर, रेरा, उपभोक्ता एवं आईपीआर — नौ कार्यक्षेत्रों में पैरवी।"
-      : "Criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR — nine focused litigation practice areas across Delhi NCR.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+      ? `आपराधिक, सिविल, वैवाहिक, एनडीपीएस, चेक बाउंस, साइबर, रेरा, उपभोक्ता एवं आईपीआर — ${count} कार्यक्षेत्रों में पैरवी।`
+      : `Criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR — ${count} focused litigation practice areas across Delhi NCR.`;
+    return buildSeo({ locale, path: "practice-areas", title, description });
   },
   component: PracticeAreasIndex,
 });
@@ -39,6 +34,26 @@ function PracticeAreasIndex() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [
+          { name: t.nav.practice, path: "practice-areas" },
+        ])}
+      />
+
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: t.nav.practice,
+          itemListElement: PRACTICE_AREAS.map((area, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: area.title[locale],
+            url: pageUrl(locale, `practice-areas/${area.slug}`),
+          })),
+        }}
+      />
+
       <PageHero
         priority
         image={IMAGES.lawBooks}

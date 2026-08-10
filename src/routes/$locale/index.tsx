@@ -24,28 +24,21 @@ import { FoundersGrid, TeamGrid } from "@/components/TeamSection";
 import { JsonLd } from "@/components/JsonLd";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
-import { CHAMBERS, SITE, telHref, waLink } from "@/lib/site";
+import { CHAMBERS, FOUNDERS, SITE, telHref, waLink } from "@/lib/site";
+import { buildSeo, OG_IMAGE, pageUrl, SITE_URL, toLocale } from "@/lib/seo";
 import { DICT, useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/")({
   head: ({ params }) => {
-    const hi = params.locale === "hi";
+    const locale = toLocale(params.locale);
+    const hi = locale === "hi";
     const title = hi
       ? "अधिवक्ता सुमित त्यागी — गाज़ियाबाद, नोएडा, दिल्ली एनसीआर वकील"
       : "Advocate in Ghaziabad | Sumit Tyagi, Advocate & Legal Consultant";
     const description = hi
       ? "गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में 12+ वर्ष अनुभवी अधिवक्ता सुमित त्यागी — आपराधिक, सिविल, वैवाहिक, रेरा व चेक बाउंस मामले।"
       : "Advocate Sumit Tyagi — 12+ years handling criminal, civil, matrimonial, NDPS, cheque bounce, RERA and consumer matters in Ghaziabad, Noida and Delhi NCR.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    return buildSeo({ locale, path: "", title, description });
   },
   component: Home,
 });
@@ -60,16 +53,45 @@ function Home() {
         data={{
           "@context": "https://schema.org",
           "@type": "LegalService",
+          "@id": `${SITE_URL}/#organization`,
           name: SITE.firm,
+          url: pageUrl(locale),
           description:
             "Advocate & Legal Consultant handling criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR matters in Delhi NCR.",
-          image: IMAGES.foundersTogether,
+          image: OG_IMAGE,
+          logo: `${SITE_URL}/favicon.png`,
           telephone: [SITE.phonePrimaryTel, SITE.phoneSecondaryTel, SITE.phoneCofounderTel],
           email: [SITE.email, SITE.cofounderEmail],
           priceRange: "₹₹",
           areaServed: SITE.areasServed,
-          openingHours: "Mo-Sa 10:00-17:00",
           knowsLanguage: ["en", "hi"],
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: CHAMBERS[0].address,
+            addressLocality: "Ghaziabad",
+            addressRegion: "Uttar Pradesh",
+            addressCountry: "IN",
+          },
+          openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            opens: "10:00",
+            closes: "17:00",
+          },
+          founder: FOUNDERS.map((person) => ({
+            "@type": "Person",
+            name: `Advocate ${person.name}`,
+            jobTitle: person.title.en,
+            telephone: person.phoneTel,
+            email: person.email,
+          })),
           location: CHAMBERS.map((c) => ({
             "@type": "Place",
             name: c.label.en,
@@ -81,6 +103,19 @@ function Home() {
               addressCountry: "IN",
             },
           })),
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: locale === "hi" ? "कार्यक्षेत्र" : "Practice Areas",
+            itemListElement: PRACTICE_AREAS.map((area) => ({
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: area.title[locale],
+                description: area.short[locale],
+                url: pageUrl(locale, `practice-areas/${area.slug}`),
+              },
+            })),
+          },
         }}
       />
 

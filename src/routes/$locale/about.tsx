@@ -10,27 +10,21 @@ import { highlightName } from "@/components/NameMark";
 import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
+import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/about")({
   head: ({ params }) => {
-    const hi = params.locale === "hi";
+    const locale = toLocale(params.locale);
+    const hi = locale === "hi";
     const title = hi
       ? "अधिवक्ता सुमित त्यागी का परिचय | गाज़ियाबाद"
       : "About Advocate Sumit Tyagi | 12+ Years, Ghaziabad Courts";
     const description = hi
       ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 12+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी, सह-संस्थापक विशव प्रताप एवं टीम का परिचय।"
       : "Meet Advocate Sumit Tyagi, Co-Founder Vishaw Pratap and the Tyag Raj Law Firm team — 12+ years of litigation in Ghaziabad, Noida and Delhi NCR.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    return buildSeo({ locale, path: "about", title, description });
   },
   component: About,
 });
@@ -70,6 +64,12 @@ function About() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [
+          { name: t.nav.about, path: "about" },
+        ])}
+      />
+
       <PageHero
         priority
         fit="cover"

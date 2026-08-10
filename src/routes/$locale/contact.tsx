@@ -7,27 +7,21 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
 import { IMAGES } from "@/lib/images";
 import { CHAMBERS, SITE, telHref, waLink } from "@/lib/site";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/contact")({
   head: ({ params }) => {
-    const hi = params.locale === "hi";
+    const locale = toLocale(params.locale);
+    const hi = locale === "hi";
     const title = hi
       ? "संपर्क | अधिवक्ता सुमित त्यागी, ज़िला न्यायालय गाज़ियाबाद"
       : "Contact | Advocate Sumit Tyagi, District Court Ghaziabad";
     const description = hi
       ? "दो चैम्बर पते, फोन एवं व्हाट्सएप — गाज़ियाबाद में अधिवक्ता सुमित त्यागी व अधिवक्ता विशव प्रताप से संपर्क करें।"
       : "Two chamber addresses, phone and WhatsApp for Advocate Sumit Tyagi and Co-Founder Vishaw Pratap in Ghaziabad — serving Noida and Delhi NCR.";
-    return {
-      meta: [
-        { title },
-        { name: "description", content: description },
-        { property: "og:title", content: title },
-        { property: "og:description", content: description },
-        { name: "twitter:title", content: title },
-        { name: "twitter:description", content: description },
-      ],
-    };
+    return buildSeo({ locale, path: "contact", title, description });
   },
   component: Contact,
 });
@@ -38,6 +32,12 @@ function Contact() {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale, [
+          { name: t.nav.contact, path: "contact" },
+        ])}
+      />
+
       <PageHero
         priority
         image={IMAGES.courtBuilding}

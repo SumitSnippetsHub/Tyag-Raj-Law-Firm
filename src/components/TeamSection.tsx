@@ -3,7 +3,7 @@ import { IMAGES } from "@/lib/images";
 import { FOUNDERS, TEAM, telHref, type Locale } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 
-const FOUNDER_NAMES = new Set(FOUNDERS.map((f) => f.name));
+const FOUNDER_NAMES = new Set<string>(FOUNDERS.map((f) => f.name));
 
 export function TeamGrid({
   locale,
