@@ -23,7 +23,13 @@ export function PracticeAreaCard({
           alt={`${area.title.en} — Advocate Sumit Tyagi, Ghaziabad`}
           loading="lazy"
           className={`size-full transition-transform duration-700 group-hover:scale-[1.04] ${
-            area.slug === "cheque-bounce-138-ni-act"
+            [
+              "cheque-bounce-138-ni-act",
+              "mact-accidental-cases",
+              "bail-matters",
+              "consumer-matters",
+              "court-marriage-registration",
+            ].includes(area.slug)
               ? "object-contain bg-secondary"
               : "object-cover"
           }`}

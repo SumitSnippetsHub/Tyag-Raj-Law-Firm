@@ -283,6 +283,46 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     },
   },
   {
+    slug: "mact-accidental-cases",
+    image: "courtBuilding",
+    title: {
+      en: "MACT / Accidental Cases",
+      hi: "एमएसीटी / दुर्घटना मामले",
+    },
+    short: {
+      en: "Motor Accident Claims Tribunal — injury, death and compensation claims.",
+      hi: "मोटर दुर्घटना दावा अधिकरण — चोट, मृत्यु एवं मुआवज़ा दावे।",
+    },
+    intro: {
+      en: [
+        "A road accident leaves families dealing with medical bills, lost income and insurance paperwork at the same time. MACT claims exist so that compensation reaches the injured person — or the legal heirs — without years of delay.",
+        "The office handles claims before the Motor Accident Claims Tribunal for injury, permanent disability and death, as well as insurance company contests on liability, quantum and policy defences.",
+        "Documents matter: FIR, MLC / post-mortem, driving licence, RC, insurance policy and proof of income. WhatsApp what you have, and a clear reading of the claimable amount and next filing step follows.",
+      ],
+      hi: [
+        "सड़क दुर्घटना के बाद परिवारों को इलाज, आय की हानि और बीमा कागज़ात — तीनों साथ निपटाने पड़ते हैं। एमएसीटी दावे इसी लिए हैं कि घायल व्यक्ति या कानूनी उत्तराधिकारियों तक मुआवज़ा बिना वर्षों की देरी के पहुँचे।",
+        "कार्यालय मोटर दुर्घटना दावा अधिकरण में चोट, स्थायी विकलांगता एवं मृत्यु के दावे देखता है, तथा देयता, राशि और पॉलिसी बचाव पर बीमा कंपनी के विरोध का भी जवाब देता है।",
+        "दस्तावेज़ महत्वपूर्ण हैं: एफआईआर, एमएलसी / पोस्टमार्टम, ड्राइविंग लाइसेंस, आरसी, बीमा पॉलिसी और आय का प्रमाण। जो उपलब्ध हो व्हाट्सएप करें — दावे की संभावित राशि और अगला कदम स्पष्ट बताया जाएगा।",
+      ],
+    },
+    situations: {
+      en: [
+        "Injury and permanent disability compensation claims",
+        "Death claims by legal heirs and dependents",
+        "Insurance company liability and quantum disputes",
+        "Interim compensation applications",
+        "Appeals against MACT awards",
+      ],
+      hi: [
+        "चोट एवं स्थायी विकलांगता मुआवज़ा दावे",
+        "कानूनी उत्तराधिकारियों द्वारा मृत्यु दावे",
+        "बीमा कंपनी की देयता एवं राशि संबंधी विवाद",
+        "अंतरिम मुआवज़ा आवेदन",
+        "एमएसीटी अधिनिर्णय के विरुद्ध अपील",
+      ],
+    },
+  },
+  {
     slug: "bail-matters",
     image: "gavel",
     title: { en: "Bail Matters", hi: "जमानत मामले" },
@@ -523,6 +563,12 @@ const PRACTICE_AREA_IMAGE_FILE: Partial<Record<string, string>> = {
     "/images/practice-areas/cheque-bounce-138-ni-act.png",
   "child-custody": "/images/practice-areas/child-custody.png",
   rera: "/images/practice-areas/rera.png",
+  "mact-accidental-cases":
+    "/images/practice-areas/mact-accidental-cases.jpg",
+  "court-marriage-registration":
+    "/images/practice-areas/court-marriage-registration.png",
+  "bail-matters": "/images/practice-areas/bail-matters.jpg",
+  "consumer-matters": "/images/practice-areas/consumer-matters.jpg",
 };
 
 export function areaImage(area: PracticeArea) {

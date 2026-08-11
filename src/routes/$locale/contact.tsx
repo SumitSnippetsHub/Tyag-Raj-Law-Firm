@@ -95,16 +95,16 @@ function Contact() {
                         {SITE.phonePrimary} (WhatsApp)
                       </a>
                       <a
-                        href={telHref(SITE.phoneSecondaryTel)}
-                        className="hover:text-primary"
-                      >
-                        {SITE.phoneSecondary}
-                      </a>
-                      <a
                         href={telHref(SITE.phoneCofounderTel)}
                         className="hover:text-primary"
                       >
                         {SITE.phoneCofounder}
+                      </a>
+                      <a
+                        href={telHref(SITE.phoneSecondaryTel)}
+                        className="hover:text-primary"
+                      >
+                        {SITE.phoneSecondary}
                       </a>
                     </p>
                   </div>

@@ -96,6 +96,18 @@ export function FoundersGrid({ locale }: { locale: Locale }) {
                     {person.experience[locale]}
                   </dd>
                 </div>
+                <div>
+                  <dt className="sr-only">
+                    {locale === "hi" ? "न्यायालय" : "Court"}
+                  </dt>
+                  <dd>{person.court[locale]}</dd>
+                </div>
+                <div>
+                  <dt className="sr-only">
+                    {locale === "hi" ? "कार्यक्षेत्र" : "Focus"}
+                  </dt>
+                  <dd>{person.focus[locale]}</dd>
+                </div>
               </dl>
               <div className="mt-5 flex flex-col gap-2 text-sm font-semibold">
                 <a

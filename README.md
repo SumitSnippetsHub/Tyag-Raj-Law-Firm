@@ -4,8 +4,8 @@ Bilingual (English / Hindi) website for Tyag Raj Law Firm, Ghaziabad. This file 
 
 ## 1. Business identity
 
-- **Founder:** Advocate Sumit Tyagi (BBA, MBA, LLB), 12 years — Phone/WhatsApp `+91 88606 00368` · Email `sumittyagi09@gmail.com`
-- **Co-Founder:** Advocate Vishaw Pratap (BA, LLB, LLM), 12 years — Phone `9910039006` · Email `vishupratap786@yahoo.co.in`
+- **Founder:** Advocate Sumit Tyagi (BBA, MBA, LLB), 13 years — Phone/WhatsApp `8860600368` · Email `sumittyagi09@gmail.com`
+- **Co-Founder:** Advocate Vishaw Pratap (BA, LLB, LLM), 13 years — Phone `9910039006` · Email `vishupratap786@yahoo.co.in`
 - **Firm:** Tyag Raj Law Firm
 - **Confirmed tagline (live):** "Strategic Legal Counsel. Trusted Representation, Proven Commitment."
 - **Tagline options — client to confirm final pick** (alternates, not on the live site):
@@ -13,9 +13,9 @@ Bilingual (English / Hindi) website for Tyag Raj Law Firm, Ghaziabad. This file 
   2. "Your Rights, Our Commitment, Justice Our Pursuit."
   3. "Where Your Rights Find Their Strongest Voice."
   4. "Strategic Counsel. Trusted Advocacy."
-- **Main Chamber:** Ch. No. 33A, New Building, Second Floor, District & Session Court, Ghaziabad
-- **Second Office:** Office No. 435, 4th Floor, Aditya Height Street, Lal Kuan, Ghaziabad
-- **Phone / WhatsApp:** `8860600368` (primary WhatsApp, display as `+91 88606 00368`), `9217620368`, `9910039006` (Co-Founder)
+- **Main Chamber:** Office No. 435, 4th Floor, Aditya Height Street, Lal Kuan, Ghaziabad
+- **Second Office:** Ch. No. 33A, New Building, Second Floor, District & Session Court, Ghaziabad
+- **Phone / WhatsApp series:** `8860600368` (primary WhatsApp), `9910039006` (Co-Founder), `9217620368`
 - **Working days:** Monday to Saturday · **Working hours:** 10:00 AM – 5:00 PM
 - **Service area:** Ghaziabad, Noida, Delhi NCR
 

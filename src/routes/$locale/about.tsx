@@ -6,7 +6,6 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { TextMarquee } from "@/components/TextMarquee";
 import { FoundersGrid } from "@/components/TeamSection";
-import { highlightName } from "@/components/NameMark";
 import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
 import { SITE } from "@/lib/site";
@@ -19,11 +18,11 @@ export const Route = createFileRoute("/$locale/about")({
     const locale = toLocale(params.locale);
     const hi = locale === "hi";
     const title = hi
-      ? "अधिवक्ता सुमित त्यागी का परिचय | गाज़ियाबाद"
-      : "About Advocate Sumit Tyagi | 12+ Years, Ghaziabad Courts";
+      ? "अधिवक्ता सुमित त्यागी एवं विशव प्रताप | त्याग राज लॉ फर्म, गाज़ियाबाद"
+      : "About Advocate Sumit Tyagi & Vishaw Pratap | Tyag Raj Law Firm";
     const description = hi
-      ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 12+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी, सह-संस्थापक विशव प्रताप एवं टीम का परिचय।"
-      : "Meet Advocate Sumit Tyagi, Co-Founder Vishaw Pratap and the Tyag Raj Law Firm team — 12+ years of litigation in Ghaziabad, Noida and Delhi NCR.";
+      ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 13+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी, सह-संस्थापक विशव प्रताप एवं टीम का परिचय।"
+      : "Meet Advocate Sumit Tyagi and Co-Founder Vishaw Pratap — 13+ years of litigation at Tyag Raj Law Firm, Ghaziabad, Noida and Delhi NCR.";
     return buildSeo({ locale, path: "about", title, description });
   },
   component: About,
@@ -75,14 +74,35 @@ function About() {
         fit="cover"
         scrim="soft"
         imagePosition="top"
-        image={IMAGES.foundersTogether}
+        image={IMAGES.aboutHero}
         alt={
           locale === "hi"
-            ? "अधिवक्ता सुमित त्यागी एवं अधिवक्ता विशव प्रताप — त्याग राज लॉ फर्म"
-            : "Advocate Sumit Tyagi and Advocate Vishaw Pratap — Tyag Raj Law Firm"
+            ? "अधिवक्ता सुमित त्यागी एवं अधिवक्ता विशव प्रताप — त्याग राज लॉ फर्म चैम्बर"
+            : "Advocate Sumit Tyagi and Advocate Vishaw Pratap at Tyag Raj Law Firm chamber"
         }
         eyebrow={SITE.tagline}
-        title={highlightName(a.h1, "dark")}
+        title={
+          <>
+            {locale === "hi" ? (
+              <>
+                अधिवक्ता{" "}
+                <span className="name-mark name-mark--on-dark">सुमित त्यागी</span>
+                {" एवं "}
+                <br className="hidden sm:block" />
+                <span className="name-mark name-mark--on-dark">विशव प्रताप</span>
+              </>
+            ) : (
+              <>
+                About Advocate
+                <br />
+                <span className="name-mark name-mark--on-dark">Sumit Tyagi</span>
+                {" &"}
+                <br />
+                <span className="name-mark name-mark--on-dark">Vishaw Pratap</span>
+              </>
+            )}
+          </>
+        }
         lead={a.lead}
       />
 

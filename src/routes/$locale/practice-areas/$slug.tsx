@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
 import { JsonLd } from "@/components/JsonLd";
 import { areaImage, getPracticeArea, PRACTICE_AREAS } from "@/lib/practice-areas";
-import { SITE } from "@/lib/site";
+import { CHAMBERS, SITE } from "@/lib/site";
 import {
   assetUrl,
   breadcrumbSchema,
@@ -70,11 +70,10 @@ function PracticeAreaPage() {
           provider: {
             "@type": "Attorney",
             name: `${SITE.firm} — Advocate ${SITE.advocate}`,
-            telephone: SITE.phonePrimary,
+            telephone: SITE.phonePrimaryTel,
             address: {
               "@type": "PostalAddress",
-              streetAddress:
-                "Ch. No. 33A, New Building, Second Floor, District & Session Court",
+              streetAddress: CHAMBERS[0].address,
               addressLocality: "Ghaziabad",
               addressRegion: "Uttar Pradesh",
               addressCountry: "IN",
@@ -87,8 +86,28 @@ function PracticeAreaPage() {
       <PageHero
         priority
         image={areaImage(area)}
-        fit={area.slug === "cheque-bounce-138-ni-act" ? "contain" : "cover"}
-        scrim={area.slug === "cheque-bounce-138-ni-act" ? "soft" : "default"}
+        fit={
+          [
+            "cheque-bounce-138-ni-act",
+            "mact-accidental-cases",
+            "bail-matters",
+            "consumer-matters",
+            "court-marriage-registration",
+          ].includes(area.slug)
+            ? "contain"
+            : "cover"
+        }
+        scrim={
+          [
+            "cheque-bounce-138-ni-act",
+            "mact-accidental-cases",
+            "bail-matters",
+            "consumer-matters",
+            "court-marriage-registration",
+          ].includes(area.slug)
+            ? "soft"
+            : "default"
+        }
         alt={`${area.title.en} legal practice — Advocate Sumit Tyagi, Ghaziabad`}
         eyebrow={t.nav.practice}
         title={area.title[locale]}

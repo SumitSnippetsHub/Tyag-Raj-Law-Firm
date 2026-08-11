@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Tyag Raj Law Firm — Advocate Sumit Tyagi and Vishaw Pratap, 12+ years of litigation across Ghaziabad, Noida and Delhi NCR.",
+          "Tyag Raj Law Firm — Advocate Sumit Tyagi and Vishaw Pratap, 13+ years of litigation across Ghaziabad, Noida and Delhi NCR.",
       },
       { name: "author", content: SITE.firm },
       {

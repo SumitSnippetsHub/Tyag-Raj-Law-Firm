@@ -53,10 +53,11 @@ function BookConsultation() {
           <Reveal>
             <div className="border-t border-border pt-8">
               <p className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">{t.contact.phoneLabel}</p>
-              <p className="mt-3 font-display text-2xl font-semibold text-ink">
-                {SITE.phonePrimary}
+              <p className="mt-3 flex flex-col gap-1 font-display text-2xl font-semibold text-ink">
+                <span>{SITE.phonePrimary}</span>
+                <span className="text-lg">{SITE.phoneCofounder}</span>
+                <span className="text-lg text-ink-soft">{SITE.phoneSecondary}</span>
               </p>
-              <p className="mt-1 text-sm text-ink-soft">{SITE.phoneSecondary}</p>
               <p className="mt-8 text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">{t.contact.hoursLabel}</p>
               <p className="mt-3 text-sm text-ink">{t.contact.hours}</p>
               <p className="mt-8 text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">{t.contact.officeTitle}</p>

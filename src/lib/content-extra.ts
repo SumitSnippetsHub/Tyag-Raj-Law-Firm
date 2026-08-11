@@ -38,7 +38,7 @@ export const PROCESS: { step: Bi; title: Bi; body: Bi }[] = [
 ];
 
 export const STATS: { value: string; label: Bi }[] = [
-  { value: "12+", label: { en: "Years in practice", hi: "वर्षों का अनुभव" } },
+  { value: "13+", label: { en: "Years in practice", hi: "वर्षों का अनुभव" } },
   { value: "09", label: { en: "Practice areas", hi: "कार्यक्षेत्र" } },
   { value: "3", label: { en: "Districts covered", hi: "ज़िलों में पैरवी" } },
   { value: "24×7", label: { en: "WhatsApp response", hi: "व्हाट्सएप उत्तर" } },

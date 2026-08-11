@@ -36,8 +36,8 @@ export const Route = createFileRoute("/$locale/")({
       ? "अधिवक्ता सुमित त्यागी — गाज़ियाबाद, नोएडा, दिल्ली एनसीआर वकील"
       : "Advocate in Ghaziabad | Sumit Tyagi, Advocate & Legal Consultant";
     const description = hi
-      ? "गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में 12+ वर्ष अनुभवी अधिवक्ता सुमित त्यागी — आपराधिक, सिविल, वैवाहिक, रेरा व चेक बाउंस मामले।"
-      : "Advocate Sumit Tyagi — 12+ years handling criminal, civil, matrimonial, NDPS, cheque bounce, RERA and consumer matters in Ghaziabad, Noida and Delhi NCR.";
+      ? "गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में 13+ वर्ष अनुभवी अधिवक्ता सुमित त्यागी — आपराधिक, सिविल, वैवाहिक, रेरा व चेक बाउंस मामले।"
+      : "Advocate Sumit Tyagi — 13+ years handling criminal, civil, matrimonial, NDPS, cheque bounce, RERA and consumer matters in Ghaziabad, Noida and Delhi NCR.";
     return buildSeo({ locale, path: "", title, description });
   },
   component: Home,
@@ -60,7 +60,7 @@ function Home() {
             "Advocate & Legal Consultant handling criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR matters in Delhi NCR.",
           image: OG_IMAGE,
           logo: `${SITE_URL}/favicon.png`,
-          telephone: [SITE.phonePrimaryTel, SITE.phoneSecondaryTel, SITE.phoneCofounderTel],
+          telephone: [SITE.phonePrimaryTel, SITE.phoneCofounderTel, SITE.phoneSecondaryTel],
           email: [SITE.email, SITE.cofounderEmail],
           priceRange: "₹₹",
           areaServed: SITE.areasServed,
@@ -234,6 +234,9 @@ function Home() {
                   <dd className="flex flex-col gap-1">
                     <a href={telHref(SITE.phonePrimaryTel)} className="text-primary">
                       {SITE.phonePrimary}
+                    </a>
+                    <a href={telHref(SITE.phoneCofounderTel)} className="text-primary">
+                      {SITE.phoneCofounder}
                     </a>
                     <a href={telHref(SITE.phoneSecondaryTel)} className="text-primary">
                       {SITE.phoneSecondary}

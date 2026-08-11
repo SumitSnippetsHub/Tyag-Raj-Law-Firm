@@ -104,16 +104,16 @@ export function Footer() {
                   {SITE.phonePrimary}
                 </a>
                 <a
-                  href={telHref(SITE.phoneSecondaryTel)}
-                  className="hover:text-dark-text"
-                >
-                  {SITE.phoneSecondary}
-                </a>
-                <a
                   href={telHref(SITE.phoneCofounderTel)}
                   className="hover:text-dark-text"
                 >
                   {SITE.phoneCofounder}
+                </a>
+                <a
+                  href={telHref(SITE.phoneSecondaryTel)}
+                  className="hover:text-dark-text"
+                >
+                  {SITE.phoneSecondary}
                 </a>
               </span>
             </li>

@@ -24,10 +24,10 @@ export const DICT = {
     home: {
       eyebrow: "Advocate & Legal Consultant · Ghaziabad",
       h1: "Advocate Sumit Tyagi",
-      lead: "Strategic Legal Counsel. Trusted Representation, Proven Commitment. 12+ years of litigation in Delhi NCR — criminal, civil, family and commercial matters handled personally, from first hearing to final order.",
+      lead: "Strategic Legal Counsel. Trusted Representation, Proven Commitment. 13+ years of litigation in Delhi NCR — criminal, civil, family and commercial matters handled personally, from first hearing to final order.",
       trust: [
         "Ghaziabad · Noida · Delhi NCR",
-        "12+ Years Experience",
+        "13+ Years Experience",
         "Dedication · Integrity · Justice",
         "District & Session Court, Ghaziabad",
       ],
@@ -56,7 +56,7 @@ export const DICT = {
       chambersEyebrow: "Our Chambers",
       chambersTitle: "Two offices in Ghaziabad",
       chambersBody:
-        "Visit the Main Chamber inside the District & Session Court complex, or the Second Office at Aditya Height Street, Lal Kuan. Walk in during working hours, or WhatsApp first for urgent bail and cheque bounce deadlines.",
+        "Visit the Main Chamber at Aditya Height Street, Lal Kuan, or the Second Office inside the District & Session Court complex. Walk in during working hours, or WhatsApp first for urgent bail and cheque bounce deadlines.",
       chambersDirections: "Get Directions",
       chambersDays: "Working days",
       chambersHours: "Working hours",
@@ -64,8 +64,8 @@ export const DICT = {
       whyTitle: "What working with this office looks like",
       why: [
         {
-          title: "12+ years at the bar",
-          body: "Over a decade of hearings in the same courts, before the same benches — experience that shows in preparation and timing.",
+          title: "13+ years at the bar",
+          body: "Thirteen years of hearings in the same courts, before the same benches — experience that shows in preparation and timing.",
         },
         {
           title: "Multi-forum litigation",
@@ -87,18 +87,18 @@ export const DICT = {
       areaEyebrow: "Service Area",
       areaTitle: "Serving Ghaziabad, Noida and Delhi NCR",
       areaBody:
-        "The office is inside the District & Session Court complex in Ghaziabad, with regular appearances in Noida, Gautam Buddh Nagar and Delhi district courts, UP RERA, and consumer commissions. Same-day WhatsApp consultation is available for urgent bail and cheque bounce deadlines.",
+        "The Main Chamber is at Aditya Height Street, Lal Kuan, Ghaziabad, with a Second Office inside the District & Session Court complex — and regular appearances in Noida, Gautam Buddh Nagar and Delhi district courts, UP RERA, and consumer commissions. Same-day WhatsApp consultation is available for urgent bail and cheque bounce deadlines.",
     },
     about: {
-      h1: "About Advocate Sumit Tyagi",
-      lead: "An independent litigation practice built on preparation, plain speaking and steady presence in the courts of Delhi NCR.",
-      introEyebrow: "The Advocate",
+      h1: "About Advocate Sumit Tyagi & Vishaw Pratap",
+      lead: "Tyag Raj Law Firm — Founder Sumit Tyagi and Co-Founder Vishaw Pratap, leading a chamber built on preparation, plain speaking and steady presence in the courts of Delhi NCR.",
+      introEyebrow: "The Advocates",
       introTitle: "A courtroom practice you can actually reach",
       body: [
-        "Sumit Tyagi (BBA, MBA, LLB) is an advocate and legal consultant with more than twelve years of active courtroom practice. The chamber is based at Ch. No. 33A, New Building, Second Floor, District & Session Court, Ghaziabad — with regular appearances across Ghaziabad, Noida, Gautam Buddh Nagar and Delhi.",
+        "Advocate Sumit Tyagi (BBA, MBA, LLB) is the Founder of Tyag Raj Law Firm, with 13 years of active courtroom practice at Civil Court and District & Session Court, Ghaziabad — with regular appearances across Ghaziabad, Noida, Gautam Buddh Nagar and Delhi.",
+        "Advocate Vishaw Pratap (BA, LLB, LLM) is the Co-Founder — 13 years at the Ghaziabad bar, LLM-qualified counsel handling civil, family and trial advocacy alongside the Founder. He is available on 9910039006 and vishupratap786@yahoo.co.in.",
         "The practice began with criminal and civil trial work. It has since grown into a focused litigation office handling matrimonial and family disputes, child custody, court marriage and registration, property and RERA matters, NDPS defence, bail, cheque bounce (Sec. 138 NI Act), cyber complaints, consumer commissions, and trademark & copyright work.",
-        "The approach is deliberately careful: every file is read personally before advice is given, and the client hears the weak points of their own case first. That habit prevents most unpleasant surprises later — and keeps fees tied to clear, written scope.",
-        "Clients are individuals, families and small businesses who want a lawyer they can actually reach — on the phone, on WhatsApp, and in court on the date of hearing. Matters are not handed off to an unknown junior at the last minute.",
+        "The approach is deliberately careful: every file is read personally before advice is given, and the client hears the weak points of their own case first. That habit prevents most unpleasant surprises later — and keeps fees tied to clear, written scope. Matters are not handed off to an unknown junior at the last minute.",
       ],
       approachEyebrow: "How We Work",
       approachTitle: "Clear steps before money is spent",
@@ -128,7 +128,7 @@ export const DICT = {
       partnershipEyebrow: "Founders Together",
       partnershipTitle: "Built on shared courtroom discipline",
       partnershipBody:
-        "Advocate Sumit Tyagi and Advocate Vishaw Pratap lead Tyag Raj Law Firm side by side — twelve years each at the bar, one standard of preparation, and one point of accountability for every file that leaves the chamber.",
+        "Advocate Sumit Tyagi and Advocate Vishaw Pratap lead Tyag Raj Law Firm side by side — thirteen years each at the bar, one standard of preparation, and one point of accountability for every file that leaves the chamber.",
       clientsEyebrow: "With Clients",
       clientsTitle: "Advice given face to face",
       clientsBody:
@@ -140,14 +140,14 @@ export const DICT = {
       galleryEyebrow: "In Chambers",
       galleryTitle: "Advocate Sumit Tyagi at work",
       creds: [
-        { k: "Credentials", v: "BBA, MBA, LLB" },
-        { k: "Experience", v: "12+ years in active litigation" },
-        { k: "Base court", v: "District & Session Court, Ghaziabad" },
+        { k: "Founder", v: "Advocate Sumit Tyagi — BBA, MBA, LLB" },
+        { k: "Co-Founder", v: "Advocate Vishaw Pratap — BA, LLB, LLM" },
+        { k: "Experience", v: "13+ years each in active litigation" },
+        { k: "Base court", v: "District & Session Court / Civil Court, Ghaziabad" },
         { k: "Appears before", v: "District courts, RERA, consumer commissions, tribunals" },
         { k: "Areas served", v: "Ghaziabad, Noida, Delhi NCR" },
         { k: "Languages", v: "Hindi, English" },
-        { k: "Working days", v: "Monday to Saturday" },
-        { k: "Working hours", v: "10:00 AM – 5:00 PM" },
+        { k: "Working days", v: "Monday to Saturday · 10:00 AM – 5:00 PM" },
       ],
     },
     practice: {
@@ -157,7 +157,7 @@ export const DICT = {
       handled: "Matters commonly handled",
       whyTitle: "Why work with Advocate Sumit Tyagi on this",
       whyBody:
-        "Twelve-plus years of hearings in Ghaziabad, Noida and Delhi, direct familiarity with the local benches and registry practice, and one advocate responsible for your file from the first consultation to the final order.",
+        "Thirteen-plus years of hearings in Ghaziabad, Noida and Delhi, direct familiarity with the local benches and registry practice, and one advocate responsible for your file from the first consultation to the final order.",
       back: "All practice areas",
       other: "Other practice areas",
     },
@@ -225,10 +225,10 @@ export const DICT = {
     home: {
       eyebrow: "अधिवक्ता एवं विधिक सलाहकार · गाज़ियाबाद",
       h1: "अधिवक्ता सुमित त्यागी",
-      lead: "सुदृढ़ विधिक परामर्श, विश्वसनीय पैरवी, सिद्ध प्रतिबद्धता। दिल्ली एनसीआर में 12+ वर्षों का अनुभव — आपराधिक, सिविल, पारिवारिक एवं व्यावसायिक मुकदमे पहली सुनवाई से अंतिम आदेश तक स्वयं देखे जाते हैं।",
+      lead: "सुदृढ़ विधिक परामर्श, विश्वसनीय पैरवी, सिद्ध प्रतिबद्धता। दिल्ली एनसीआर में 13+ वर्षों का अनुभव — आपराधिक, सिविल, पारिवारिक एवं व्यावसायिक मुकदमे पहली सुनवाई से अंतिम आदेश तक स्वयं देखे जाते हैं।",
       trust: [
         "गाज़ियाबाद · नोएडा · दिल्ली एनसीआर",
-        "12+ वर्षों का अनुभव",
+        "13+ वर्षों का अनुभव",
         "समर्पण · ईमानदारी · न्याय",
         "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद",
       ],
@@ -257,7 +257,7 @@ export const DICT = {
       chambersEyebrow: "हमारे चैम्बर",
       chambersTitle: "गाज़ियाबाद में दो कार्यालय",
       chambersBody:
-        "मुख्य चैम्बर ज़िला एवं सेशन न्यायालय परिसर में है, तथा द्वितीय कार्यालय आदित्य हाइट स्ट्रीट, लाल कुआँ में है। कार्य समय में आइए, या तात्कालिक जमानत व चेक बाउंस समय-सीमा हेतु पहले व्हाट्सएप करें।",
+        "मुख्य चैम्बर आदित्य हाइट स्ट्रीट, लाल कुआँ में है, तथा द्वितीय कार्यालय ज़िला एवं सेशन न्यायालय परिसर में है। कार्य समय में आइए, या तात्कालिक जमानत व चेक बाउंस समय-सीमा हेतु पहले व्हाट्सएप करें।",
       chambersDirections: "रास्ता देखें",
       chambersDays: "कार्य दिवस",
       chambersHours: "कार्य समय",
@@ -265,7 +265,7 @@ export const DICT = {
       whyTitle: "इस कार्यालय के साथ काम करना कैसा है",
       why: [
         {
-          title: "12+ वर्षों की वकालत",
+          title: "13+ वर्षों की वकालत",
           body: "एक दशक से अधिक समय तक उन्हीं अदालतों में सुनवाई — जिसका असर तैयारी और समय-प्रबंधन में दिखता है।",
         },
         {
@@ -288,18 +288,18 @@ export const DICT = {
       areaEyebrow: "सेवा क्षेत्र",
       areaTitle: "गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में सेवा",
       areaBody:
-        "कार्यालय गाज़ियाबाद के ज़िला एवं सेशन न्यायालय परिसर में है, तथा नोएडा, गौतमबुद्ध नगर व दिल्ली की ज़िला अदालतों, यूपी रेरा और उपभोक्ता आयोगों में नियमित उपस्थिति रहती है। जमानत और चेक बाउंस की तात्कालिक समय-सीमा के लिए उसी दिन व्हाट्सएप परामर्श उपलब्ध है।",
+        "मुख्य चैम्बर आदित्य हाइट स्ट्रीट, लाल कुआँ, गाज़ियाबाद में है, तथा द्वितीय कार्यालय ज़िला एवं सेशन न्यायालय परिसर में — नोएडा, गौतमबुद्ध नगर व दिल्ली की ज़िला अदालतों, यूपी रेरा और उपभोक्ता आयोगों में नियमित उपस्थिति रहती है। जमानत और चेक बाउंस की तात्कालिक समय-सीमा के लिए उसी दिन व्हाट्सएप परामर्श उपलब्ध है।",
     },
     about: {
-      h1: "अधिवक्ता सुमित त्यागी के बारे में",
-      lead: "तैयारी, स्पष्टवादिता और दिल्ली एनसीआर की अदालतों में लगातार उपस्थिति पर आधारित एक स्वतंत्र वकालत।",
-      introEyebrow: "अधिवक्ता",
+      h1: "अधिवक्ता सुमित त्यागी एवं विशव प्रताप के बारे में",
+      lead: "त्याग राज लॉ फर्म — संस्थापक सुमित त्यागी एवं सह-संस्थापक विशव प्रताप, तैयारी, स्पष्टवादिता और दिल्ली एनसीआर की अदालतों में लगातार उपस्थिति पर आधारित चैम्बर।",
+      introEyebrow: "अधिवक्तागण",
       introTitle: "एक ऐसी अदालती प्रैक्टिस जो वास्तव में उपलब्ध हो",
       body: [
-        "सुमित त्यागी (बीबीए, एमबीए, एलएलबी) बारह वर्षों से अधिक सक्रिय अदालती अनुभव वाले अधिवक्ता एवं विधिक सलाहकार हैं। चैम्बर का पता — चैम्बर नं. 33A, न्यू बिल्डिंग, द्वितीय तल, ज़िला एवं सेशन न्यायालय, गाज़ियाबाद — है, तथा गाज़ियाबाद, नोएडा, गौतम बुद्ध नगर व दिल्ली में नियमित उपस्थिति रहती है।",
+        "अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) त्याग राज लॉ फर्म के संस्थापक हैं — सिविल न्यायालय एवं ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में 13 वर्षों की सक्रिय अदालती पैरवी, तथा गाज़ियाबाद, नोएडा, गौतम बुद्ध नगर व दिल्ली में नियमित उपस्थिति।",
+        "अधिवक्ता विशव प्रताप (बीए, एलएलबी, एलएलएम) सह-संस्थापक हैं — गाज़ियाबाद बार में 13 वर्ष, एलएलएम योग्यता वाले अधिवक्ता, सिविल, पारिवारिक एवं ट्रायल पैरवी में संस्थापक के साथ। संपर्क: 9910039006 · vishupratap786@yahoo.co.in।",
         "प्रैक्टिस की शुरुआत आपराधिक व सिविल ट्रायल कार्य से हुई। अब इसमें वैवाहिक एवं पारिवारिक विवाद, बाल अभिरक्षा, कोर्ट मैरिज एवं पंजीकरण, संपत्ति व रेरा, एनडीपीएस बचाव, जमानत, चेक बाउंस (धारा 138 एनआई अधिनियम), साइबर शिकायतें, उपभोक्ता आयोग तथा ट्रेडमार्क व कॉपीराइट कार्य शामिल हैं।",
-        "दृष्टिकोण सावधानीपूर्ण है: सलाह देने से पहले हर फाइल स्वयं पढ़ी जाती है, और मुवक्किल को सबसे पहले उनके ही मुकदमे की कमजोरियाँ बताई जाती हैं। यही आदत बाद के अप्रिय आश्चर्यों को रोकती है — और फीस स्पष्ट, लिखित कार्य-क्षेत्र से जुड़ी रहती है।",
-        "मुवक्किल वे व्यक्ति, परिवार और छोटे व्यवसाय हैं जिन्हें ऐसा वकील चाहिए जो वास्तव में उपलब्ध हो — फोन पर, व्हाट्सएप पर, और सुनवाई की तारीख पर अदालत में। मामले अंतिम क्षण पर अज्ञात जूनियर को नहीं सौंपे जाते।",
+        "दृष्टिकोण सावधानीपूर्ण है: सलाह देने से पहले हर फाइल स्वयं पढ़ी जाती है, और मुवक्किल को सबसे पहले उनके ही मुकदमे की कमजोरियाँ बताई जाती हैं। मामले अंतिम क्षण पर अज्ञात जूनियर को नहीं सौंपे जाते।",
       ],
       approachEyebrow: "कार्यशैली",
       approachTitle: "पैसे खर्च होने से पहले स्पष्ट कदम",
@@ -329,7 +329,7 @@ export const DICT = {
       partnershipEyebrow: "संस्थापक साथ में",
       partnershipTitle: "साझा अदालती अनुशासन पर बनी फर्म",
       partnershipBody:
-        "अधिवक्ता सुमित त्यागी और अधिवक्ता विशव प्रताप त्याग राज लॉ फर्म का नेतृत्व साथ करते हैं — प्रत्येक के बारह वर्ष का अनुभव, एक जैसी तैयारी का मानक, और चैम्बर से निकलने वाली हर फाइल की एक स्पष्ट ज़िम्मेदारी।",
+        "अधिवक्ता सुमित त्यागी और अधिवक्ता विशव प्रताप त्याग राज लॉ फर्म का नेतृत्व साथ करते हैं — प्रत्येक के तेरह वर्ष का अनुभव, एक जैसी तैयारी का मानक, और चैम्बर से निकलने वाली हर फाइल की एक स्पष्ट ज़िम्मेदारी।",
       clientsEyebrow: "मुवक्किलों के साथ",
       clientsTitle: "सलाह आमने-सामने",
       clientsBody:
@@ -341,14 +341,14 @@ export const DICT = {
       galleryEyebrow: "चैम्बर में",
       galleryTitle: "अधिवक्ता सुमित त्यागी कार्य करते हुए",
       creds: [
-        { k: "योग्यताएँ", v: "बीबीए, एमबीए, एलएलबी" },
-        { k: "अनुभव", v: "12+ वर्ष सक्रिय पैरवी" },
-        { k: "मुख्य न्यायालय", v: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद" },
+        { k: "संस्थापक", v: "अधिवक्ता सुमित त्यागी — बीबीए, एमबीए, एलएलबी" },
+        { k: "सह-संस्थापक", v: "अधिवक्ता विशव प्रताप — बीए, एलएलबी, एलएलएम" },
+        { k: "अनुभव", v: "प्रत्येक के 13+ वर्ष सक्रिय पैरवी" },
+        { k: "मुख्य न्यायालय", v: "ज़िला एवं सेशन / सिविल न्यायालय, गाज़ियाबाद" },
         { k: "उपस्थिति", v: "ज़िला अदालतें, रेरा, उपभोक्ता आयोग, अधिकरण" },
         { k: "सेवा क्षेत्र", v: "गाज़ियाबाद, नोएडा, दिल्ली एनसीआर" },
         { k: "भाषाएँ", v: "हिन्दी, अंग्रेज़ी" },
-        { k: "कार्य दिवस", v: "सोमवार से शनिवार" },
-        { k: "कार्य समय", v: "सुबह 10:00 – शाम 5:00" },
+        { k: "कार्य समय", v: "सोमवार से शनिवार · सुबह 10:00 – शाम 5:00" },
       ],
     },
     practice: {
@@ -358,7 +358,7 @@ export const DICT = {
       handled: "सामान्यतः देखे जाने वाले मामले",
       whyTitle: "इस मामले में अधिवक्ता सुमित त्यागी क्यों",
       whyBody:
-        "गाज़ियाबाद, नोएडा और दिल्ली में बारह वर्षों से अधिक की सुनवाई, स्थानीय अदालतों व रजिस्ट्री प्रक्रिया की सीधी जानकारी, और पहली सलाह से अंतिम आदेश तक आपकी फाइल के लिए एक ही ज़िम्मेदार अधिवक्ता।",
+        "गाज़ियाबाद, नोएडा और दिल्ली में तेरह वर्षों से अधिक की सुनवाई, स्थानीय अदालतों व रजिस्ट्री प्रक्रिया की सीधी जानकारी, और पहली सलाह से अंतिम आदेश तक आपकी फाइल के लिए एक ही ज़िम्मेदार अधिवक्ता।",
       back: "सभी कार्यक्षेत्र",
       other: "अन्य कार्यक्षेत्र",
     },

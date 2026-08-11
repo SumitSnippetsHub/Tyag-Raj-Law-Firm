@@ -1,6 +1,11 @@
 import type { ReactNode } from "react";
 
-const NAMES = ["Sumit Tyagi", "सुमित त्यागी"];
+const NAMES = [
+  "Sumit Tyagi",
+  "सुमित त्यागी",
+  "Vishaw Pratap",
+  "विशव प्रताप",
+];
 
 /**
  * Wraps every occurrence of the advocate's name in a highlighted span so the

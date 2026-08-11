@@ -7,6 +7,7 @@ import teamNitin from "@/assets/member-3.jpeg";
 import teamVikrant from "@/assets/member-4.jpeg";
 import teamPooja from "@/assets/member-5.jpeg";
 import foundersTogether from "@/assets/founder-cofounder-both.jpeg";
+import aboutHero from "@/assets/about-hero.jpeg";
 import foundersWithClients from "@/assets/founder-cofounder-with-clients.jpeg";
 import fullTeam from "@/assets/full-team.jpeg";
 import fullTeamAlt from "@/assets/full-team2.jpeg";
@@ -40,6 +41,7 @@ export const IMAGES = {
   teamVikrant,
   teamPooja,
   foundersTogether,
+  aboutHero,
   foundersWithClients,
   fullTeam,
   fullTeamAlt,
