@@ -1,14 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AppLink } from "@/components/AppLink";
-import {
-  ArrowRight,
-  CalendarDays,
-  Clock,
-  Mail,
-  MapPin,
-  Navigation,
-  Phone,
-} from "lucide-react";
+import { ArrowRight, CalendarDays, Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { TextMarquee } from "@/components/TextMarquee";
 import { highlightName } from "@/components/NameMark";
@@ -74,14 +66,7 @@ function Home() {
           },
           openingHoursSpecification: {
             "@type": "OpeningHoursSpecification",
-            dayOfWeek: [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday",
-            ],
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
             opens: "10:00",
             closes: "17:00",
           },
@@ -134,13 +119,25 @@ function Home() {
       <PageHero
         priority
         tall
-        image={IMAGES.justiceStatue}
-        mobileImage={IMAGES.advocateStanding}
-        alt="Bronze scales of justice statue representing legal practice in Delhi NCR"
+        image={IMAGES.aboutHero}
+        mobileImage={IMAGES.aboutHero}
+        alt="Advocates Sumit Tyagi and Vishaw Pratap at Tyag Raj Law Firm"
         eyebrow={home.eyebrow}
         title={
           <>
-            {highlightName(home.h1, "dark")}
+            {locale === "hi" ? (
+              <>
+                <span className="name-mark name-mark--on-dark">सुमित त्यागी</span>
+                {" & "}
+                <span className="name-mark name-mark--on-dark">विशव प्रताप</span>
+              </>
+            ) : (
+              <>
+                <span className="name-mark name-mark--on-dark">Sumit Tyagi</span>
+                {" & "}
+                <span className="name-mark name-mark--on-dark">Vishaw Pratap</span>
+              </>
+            )}
             <span className="mt-4 block font-display text-lg font-semibold text-dark-text/60 md:text-xl">
               {SITE.tagline} · {home.trust[1]}
             </span>
@@ -191,8 +188,8 @@ function Home() {
               />
               <figcaption className="border-t border-border px-4 py-3 text-center text-sm text-ink-soft">
                 {locale === "hi"
-                  ? "संस्थापक एवं सह-संस्थापक — ज़िला न्यायालय गाज़ियाबाद चैम्बर"
-                  : "Founder & Co-Founder — District Court chamber, Ghaziabad"}
+                  ? "संस्थापक एवं संस्थापक — ज़िला न्यायालय गाज़ियाबाद चैम्बर"
+                  : "Founder & Founder — District Court chamber, Ghaziabad"}
               </figcaption>
             </figure>
           </Reveal>
@@ -200,7 +197,10 @@ function Home() {
       </section>
 
       {/* Chambers — maps once on the homepage */}
-      <section id="chambers" className="border-b border-border bg-secondary py-14 sm:py-16 lg:py-20">
+      <section
+        id="chambers"
+        className="border-b border-border bg-secondary py-14 sm:py-16 lg:py-20"
+      >
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading
             eyebrow={home.chambersEyebrow}
@@ -344,30 +344,34 @@ function Home() {
       {/* About preview */}
       <section className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 md:px-10 lg:grid-cols-2 lg:gap-12 lg:py-24">
         <Reveal>
-          <figure className="border border-border bg-secondary">
-            <img
-              src={IMAGES.advocateOffice}
-              alt="Advocate Sumit Tyagi at the chamber office in Ghaziabad"
-              loading="lazy"
-              className="mx-auto h-auto w-full object-contain"
-            />
-          </figure>
+          <div className="grid grid-cols-2 gap-4">
+            <figure className="border border-border bg-secondary">
+              <img
+                src={IMAGES.advocatePortrait}
+                alt="Advocate Sumit Tyagi"
+                loading="lazy"
+                className="mx-auto h-auto w-full object-contain"
+              />
+            </figure>
+            <figure className="border border-border bg-secondary">
+              <img
+                src={IMAGES.teamVishaw}
+                alt="Advocate Vishaw Pratap"
+                loading="lazy"
+                className="mx-auto h-auto w-full object-contain"
+              />
+            </figure>
+          </div>
         </Reveal>
         <div>
-          <SectionHeading
-            eyebrow={home.aboutEyebrow}
-            title={home.aboutTitle}
-            lead={home.aboutBody}
-          />
+          <SectionHeading eyebrow={home.aboutEyebrow} title={t.about.h1} lead={t.about.lead} />
           <Reveal delay={0.1}>
             <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-border pt-8">
               <div>
                 <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
                   {locale === "hi" ? "अनुभव" : "Experience"}
                 </dt>
-                <dd className="mt-2 font-display text-3xl font-bold text-ink">
-                  {SITE.years}
-                </dd>
+                <dd className="mt-2 font-display text-3xl font-bold text-ink">{SITE.years}</dd>
               </div>
               <div>
                 <dt className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-ink-soft">
@@ -392,10 +396,7 @@ function Home() {
       {/* Practice areas */}
       <section className="border-y border-border bg-secondary py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
-          <SectionHeading
-            eyebrow={home.practiceEyebrow}
-            title={home.practiceTitle}
-          />
+          <SectionHeading eyebrow={home.practiceEyebrow} title={home.practiceTitle} />
           <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PRACTICE_AREAS.map((area, i) => (
               <Reveal as="li" key={area.slug} delay={(i % 3) * 0.08}>
@@ -416,12 +417,8 @@ function Home() {
                 <span className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 font-display text-xl font-semibold text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {item.body}
-                </p>
+                <h3 className="mt-3 font-display text-xl font-semibold text-ink">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{item.body}</p>
               </div>
             </Reveal>
           ))}
@@ -473,11 +470,7 @@ function Home() {
       {/* Expert Team */}
       <section className="border-t border-border bg-surface py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
-          <SectionHeading
-            eyebrow={home.teamEyebrow}
-            title={home.teamTitle}
-            lead={home.teamLead}
-          />
+          <SectionHeading eyebrow={home.teamEyebrow} title={home.teamTitle} lead={home.teamLead} />
           <div className="mt-14">
             <TeamGrid locale={locale} mode="associates" />
           </div>
@@ -564,10 +557,7 @@ function Home() {
       {/* FAQ */}
       <section className="border-y border-border bg-secondary py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
-          <SectionHeading
-            eyebrow={EXTRA_UI.faqEyebrow[locale]}
-            title={EXTRA_UI.faqTitle[locale]}
-          />
+          <SectionHeading eyebrow={EXTRA_UI.faqEyebrow[locale]} title={EXTRA_UI.faqTitle[locale]} />
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
             {FAQ.map((item, i) => (
               <Reveal key={item.q.en} delay={(i % 2) * 0.07}>
@@ -575,9 +565,7 @@ function Home() {
                   <summary className="cursor-pointer list-none font-display text-base font-semibold text-ink marker:hidden">
                     {item.q[locale]}
                   </summary>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {item.a[locale]}
-                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">{item.a[locale]}</p>
                 </details>
               </Reveal>
             ))}

@@ -58,7 +58,7 @@ export function TeamGrid({
   );
 }
 
-/** Founder + Co-Founder profile cards — mobile-first, full photos. */
+/** Founder + Founder profile cards — mobile-first, full photos. */
 export function FoundersGrid({ locale }: { locale: Locale }) {
   return (
     <ul className="grid gap-6 sm:grid-cols-2">

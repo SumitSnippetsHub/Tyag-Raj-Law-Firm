@@ -17,7 +17,7 @@ export const Route = createFileRoute("/$locale/team")({
       : "Our Team | Tyag Raj Law Firm, Ghaziabad";
     const description = hi
       ? "त्याग राज लॉ फर्म की टीम — अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) एवं सहयोगी अधिवक्ता, गाज़ियाबाद।"
-      : "Meet the team at Tyag Raj Law Firm — Founder Sumit Tyagi, Co-Founder Vishaw Pratap, and associates practising across Ghaziabad, Noida and Delhi NCR.";
+      : "Meet the team at Tyag Raj Law Firm — Founder Sumit Tyagi, Founder Vishaw Pratap, and associates practising across Ghaziabad, Noida and Delhi NCR.";
     return buildSeo({ locale, path: "team", title, description });
   },
   component: TeamPage,

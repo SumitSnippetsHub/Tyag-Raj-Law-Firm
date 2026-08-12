@@ -2,7 +2,7 @@ import logoFirm from "@/assets/logo_main_firm.jpeg";
 import watermarkFirm from "@/assets/baclground_watermark.jpeg";
 import namePlate from "@/assets/name_plate.jpeg";
 import teamSumit from "@/assets/our_team_page_main.jpeg";
-import teamVishaw from "@/assets/member-2.jpeg";
+import teamVishaw from "@/assets/co-founder-chamber.jpeg";
 import teamNitin from "@/assets/member-3.jpeg";
 import teamVikrant from "@/assets/member-4.jpeg";
 import teamPooja from "@/assets/member-5.jpeg";
@@ -16,7 +16,7 @@ import advocateStanding from "@/assets/sumit_tyagi (1).jpeg";
 import advocateDesk from "@/assets/sumit_tyagi (3).jpeg";
 import advocateOffice from "@/assets/sumit_tyagi (2).jpeg";
 import advocateChamber from "@/assets/sumit_tyagi (4).jpeg";
-import advocatePortrait from "@/assets/our_team_page_main.jpeg";
+import advocatePortrait from "@/assets/sumit_tyagi (3).jpeg";
 import justiceStatue from "@/assets/law-statue.jpeg";
 import gavel from "@/assets/gavel.jpeg";
 import lawBooks from "@/assets/law-books.jpeg";
@@ -78,8 +78,7 @@ export const PRACTICE_AREA_FALLBACK: Record<string, string> = {
   "property-law": IMAGES.paProperty,
   ndps: "/images/practice-areas/ndps.png",
   "bail-matters": IMAGES.gavel,
-  "cheque-bounce-138-ni-act":
-    "/images/practice-areas/cheque-bounce-138-ni-act.png",
+  "cheque-bounce-138-ni-act": "/images/practice-areas/cheque-bounce-138-ni-act.png",
   "cyber-law": IMAGES.paCyber,
   rera: "/images/practice-areas/rera.png",
   "consumer-matters": IMAGES.paDocuments,

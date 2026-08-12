@@ -50,7 +50,7 @@ export const DICT = {
       teamLead:
         "A small, accountable team — you always know who is appearing on your date of hearing.",
       foundersEyebrow: "Leadership",
-      foundersTitle: "Founder & Co-Founder",
+      foundersTitle: "Founder & Founder",
       foundersLead:
         "Meet the advocates who lead Tyag Raj Law Firm — available on call and WhatsApp for urgent matters.",
       chambersEyebrow: "Our Chambers",
@@ -91,12 +91,12 @@ export const DICT = {
     },
     about: {
       h1: "About Advocate Sumit Tyagi & Vishaw Pratap",
-      lead: "Tyag Raj Law Firm — Founder Sumit Tyagi and Co-Founder Vishaw Pratap, leading a chamber built on preparation, plain speaking and steady presence in the courts of Delhi NCR.",
+      lead: "Tyag Raj Law Firm — Founder Sumit Tyagi and Founder Vishaw Pratap, leading a chamber built on preparation, plain speaking and steady presence in the courts of Delhi NCR.",
       introEyebrow: "The Advocates",
       introTitle: "A courtroom practice you can actually reach",
       body: [
         "Advocate Sumit Tyagi (BBA, MBA, LLB) is the Founder of Tyag Raj Law Firm, with 13 years of active courtroom practice at Civil Court and District & Session Court, Ghaziabad — with regular appearances across Ghaziabad, Noida, Gautam Buddh Nagar and Delhi.",
-        "Advocate Vishaw Pratap (BA, LLB, LLM) is the Co-Founder — 13 years at the Ghaziabad bar, LLM-qualified counsel handling civil, family and trial advocacy alongside the Founder. He is available on 9910039006 and vishupratap786@yahoo.co.in.",
+        "Advocate Vishaw Pratap (BA, LLB, LLM) is the Founder — 13 years at the Ghaziabad bar, LLM-qualified counsel handling civil, family and trial advocacy alongside the Founder. He is available on 9910039006 and vishupratap786@yahoo.co.in.",
         "The practice began with criminal and civil trial work. It has since grown into a focused litigation office handling matrimonial and family disputes, child custody, court marriage and registration, property and RERA matters, NDPS defence, bail, cheque bounce (Sec. 138 NI Act), cyber complaints, consumer commissions, and trademark & copyright work.",
         "The approach is deliberately careful: every file is read personally before advice is given, and the client hears the weak points of their own case first. That habit prevents most unpleasant surprises later — and keeps fees tied to clear, written scope. Matters are not handed off to an unknown junior at the last minute.",
       ],
@@ -141,7 +141,7 @@ export const DICT = {
       galleryTitle: "Advocate Sumit Tyagi at work",
       creds: [
         { k: "Founder", v: "Advocate Sumit Tyagi — BBA, MBA, LLB" },
-        { k: "Co-Founder", v: "Advocate Vishaw Pratap — BA, LLB, LLM" },
+        { k: "Founder", v: "Advocate Vishaw Pratap — BA, LLB, LLM" },
         { k: "Experience", v: "13+ years each in active litigation" },
         { k: "Base court", v: "District & Session Court / Civil Court, Ghaziabad" },
         { k: "Appears before", v: "District courts, RERA, consumer commissions, tribunals" },
@@ -251,7 +251,7 @@ export const DICT = {
       teamLead:
         "एक छोटी, जवाबदेह टीम — आपको सदैव पता रहता है कि आपकी तारीख पर कौन पेश हो रहा है।",
       foundersEyebrow: "नेतृत्व",
-      foundersTitle: "संस्थापक एवं सह-संस्थापक",
+      foundersTitle: "संस्थापक एवं संस्थापक",
       foundersLead:
         "त्याग राज लॉ फर्म का नेतृत्व करने वाले अधिवक्ता — तात्कालिक मामलों हेतु कॉल और व्हाट्सएप पर उपलब्ध।",
       chambersEyebrow: "हमारे चैम्बर",
@@ -292,12 +292,12 @@ export const DICT = {
     },
     about: {
       h1: "अधिवक्ता सुमित त्यागी एवं विशव प्रताप के बारे में",
-      lead: "त्याग राज लॉ फर्म — संस्थापक सुमित त्यागी एवं सह-संस्थापक विशव प्रताप, तैयारी, स्पष्टवादिता और दिल्ली एनसीआर की अदालतों में लगातार उपस्थिति पर आधारित चैम्बर।",
+      lead: "त्याग राज लॉ फर्म — संस्थापक सुमित त्यागी एवं संस्थापक विशव प्रताप, तैयारी, स्पष्टवादिता और दिल्ली एनसीआर की अदालतों में लगातार उपस्थिति पर आधारित चैम्बर।",
       introEyebrow: "अधिवक्तागण",
       introTitle: "एक ऐसी अदालती प्रैक्टिस जो वास्तव में उपलब्ध हो",
       body: [
         "अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) त्याग राज लॉ फर्म के संस्थापक हैं — सिविल न्यायालय एवं ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में 13 वर्षों की सक्रिय अदालती पैरवी, तथा गाज़ियाबाद, नोएडा, गौतम बुद्ध नगर व दिल्ली में नियमित उपस्थिति।",
-        "अधिवक्ता विशव प्रताप (बीए, एलएलबी, एलएलएम) सह-संस्थापक हैं — गाज़ियाबाद बार में 13 वर्ष, एलएलएम योग्यता वाले अधिवक्ता, सिविल, पारिवारिक एवं ट्रायल पैरवी में संस्थापक के साथ। संपर्क: 9910039006 · vishupratap786@yahoo.co.in।",
+        "अधिवक्ता विशव प्रताप (बीए, एलएलबी, एलएलएम) संस्थापक हैं — गाज़ियाबाद बार में 13 वर्ष, एलएलएम योग्य अधिवक्ता, सिविल, पारिवारिक एवं ट्रायल पैरवी में संस्थापक के साथ। संपर्क: 9910039006 · vishupratap786@yahoo.co.in।",
         "प्रैक्टिस की शुरुआत आपराधिक व सिविल ट्रायल कार्य से हुई। अब इसमें वैवाहिक एवं पारिवारिक विवाद, बाल अभिरक्षा, कोर्ट मैरिज एवं पंजीकरण, संपत्ति व रेरा, एनडीपीएस बचाव, जमानत, चेक बाउंस (धारा 138 एनआई अधिनियम), साइबर शिकायतें, उपभोक्ता आयोग तथा ट्रेडमार्क व कॉपीराइट कार्य शामिल हैं।",
         "दृष्टिकोण सावधानीपूर्ण है: सलाह देने से पहले हर फाइल स्वयं पढ़ी जाती है, और मुवक्किल को सबसे पहले उनके ही मुकदमे की कमजोरियाँ बताई जाती हैं। मामले अंतिम क्षण पर अज्ञात जूनियर को नहीं सौंपे जाते।",
       ],
@@ -342,7 +342,7 @@ export const DICT = {
       galleryTitle: "अधिवक्ता सुमित त्यागी कार्य करते हुए",
       creds: [
         { k: "संस्थापक", v: "अधिवक्ता सुमित त्यागी — बीबीए, एमबीए, एलएलबी" },
-        { k: "सह-संस्थापक", v: "अधिवक्ता विशव प्रताप — बीए, एलएलबी, एलएलएम" },
+        { k: "संस्थापक", v: "अधिवक्ता विशव प्रताप — बीए, एलएलबी, एलएलएम" },
         { k: "अनुभव", v: "प्रत्येक के 13+ वर्ष सक्रिय पैरवी" },
         { k: "मुख्य न्यायालय", v: "ज़िला एवं सेशन / सिविल न्यायालय, गाज़ियाबाद" },
         { k: "उपस्थिति", v: "ज़िला अदालतें, रेरा, उपभोक्ता आयोग, अधिकरण" },

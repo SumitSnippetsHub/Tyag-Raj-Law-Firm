@@ -75,7 +75,7 @@ export const FOUNDERS = [
   },
   {
     name: "Vishaw Pratap",
-    title: { en: "Co-Founder", hi: "सह-संस्थापक" },
+    title: { en: "Founder", hi: "संस्थापक" },
     experience: { en: "13 years", hi: "13 वर्ष" },
     education: "BA, LLB, LLM",
     court: {
@@ -105,7 +105,7 @@ export const TEAM = [
   },
   {
     name: "Vishaw Pratap",
-    role: { en: "Co-Founder", hi: "सह-संस्थापक" },
+    role: { en: "Founder", hi: "संस्थापक" },
     detail: {
       en: "BA, LLB, LLM · 13 years of litigation practice at District & Session Court, Ghaziabad · 9910039006 · vishupratap786@yahoo.co.in",
       hi: "बीए, एलएलबी, एलएलएम · ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में 13 वर्षों की पैरवी · 9910039006 · vishupratap786@yahoo.co.in",

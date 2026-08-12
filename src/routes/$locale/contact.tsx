@@ -20,7 +20,7 @@ export const Route = createFileRoute("/$locale/contact")({
       : "Contact | Advocate Sumit Tyagi, District Court Ghaziabad";
     const description = hi
       ? "दो चैम्बर पते, फोन एवं व्हाट्सएप — गाज़ियाबाद में अधिवक्ता सुमित त्यागी व अधिवक्ता विशव प्रताप से संपर्क करें।"
-      : "Two chamber addresses, phone and WhatsApp for Advocate Sumit Tyagi and Co-Founder Vishaw Pratap in Ghaziabad — serving Noida and Delhi NCR.";
+      : "Two chamber addresses, phone and WhatsApp for Advocate Sumit Tyagi and Founder Vishaw Pratap in Ghaziabad — serving Noida and Delhi NCR.";
     return buildSeo({ locale, path: "contact", title, description });
   },
   component: Contact,

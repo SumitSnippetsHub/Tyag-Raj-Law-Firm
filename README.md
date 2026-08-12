@@ -5,7 +5,7 @@ Bilingual (English / Hindi) website for Tyag Raj Law Firm, Ghaziabad. This file 
 ## 1. Business identity
 
 - **Founder:** Advocate Sumit Tyagi (BBA, MBA, LLB), 13 years — Phone/WhatsApp `8860600368` · Email `sumittyagi09@gmail.com`
-- **Co-Founder:** Advocate Vishaw Pratap (BA, LLB, LLM), 13 years — Phone `9910039006` · Email `vishupratap786@yahoo.co.in`
+- **Founder:** Advocate Vishaw Pratap (BA, LLB, LLM), 13 years — Phone `9910039006` · Email `vishupratap786@yahoo.co.in`
 - **Firm:** Tyag Raj Law Firm
 - **Confirmed tagline (live):** "Strategic Legal Counsel. Trusted Representation, Proven Commitment."
 - **Tagline options — client to confirm final pick** (alternates, not on the live site):
@@ -15,7 +15,7 @@ Bilingual (English / Hindi) website for Tyag Raj Law Firm, Ghaziabad. This file 
   4. "Strategic Counsel. Trusted Advocacy."
 - **Main Chamber:** Office No. 435, 4th Floor, Aditya Height Street, Lal Kuan, Ghaziabad
 - **Second Office:** Ch. No. 33A, New Building, Second Floor, District & Session Court, Ghaziabad
-- **Phone / WhatsApp series:** `8860600368` (primary WhatsApp), `9910039006` (Co-Founder), `9217620368`
+- **Phone / WhatsApp series:** `8860600368` (primary WhatsApp), `9910039006` (Founder), `9217620368`
 - **Working days:** Monday to Saturday · **Working hours:** 10:00 AM – 5:00 PM
 - **Service area:** Ghaziabad, Noida, Delhi NCR
 
@@ -40,7 +40,7 @@ Content lives in `src/lib/practice-areas.ts`. Practice-area photos are served fr
 ## 3. Team roster
 
 1. Advocate Sumit Tyagi — Founder
-2. Advocate Vishaw Pratap — Co-Founder
+2. Advocate Vishaw Pratap — Founder
 3. Nitin Chandela — Advocate (specific title TODO — confirm with client)
 4. Vikrant Tyagi — Advocate (specific title TODO — confirm with client)
 5. Pooja Saxena — Advocate (specific title TODO — confirm with client)
@@ -51,7 +51,7 @@ Rendered on the homepage "Expert Team" section and the `/team` page (`src/lib/si
 
 ## 4. Homepage sections
 
-Hero → **Founder & Co-Founder** → **Our Chambers (both offices)** → trust bar → courts marquee → stats → about preview → practice areas (13) → why choose us → Our Mission → Our Vision → Expert Team → testimonials → booking form → process → assurances → FAQ → extra photos → Our Chambers (dual maps) again near footer.
+Hero → **Founder & Founder** → **Our Chambers (both offices)** → trust bar → courts marquee → stats → about preview → practice areas (13) → why choose us → Our Mission → Our Vision → Expert Team → testimonials → booking form → process → assurances → FAQ → extra photos → Our Chambers (dual maps) again near footer.
 
 Persistent quick actions (Call → WhatsApp → Email) use WhatsApp number `918860600368`.
 

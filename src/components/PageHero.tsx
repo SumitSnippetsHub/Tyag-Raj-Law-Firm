@@ -50,6 +50,23 @@ export function PageHero({
       ? "h-full w-full object-cover object-center"
       : "h-[116%] w-full object-cover object-[center_18%] sm:object-[center_22%]";
 
+  // If a separate `mobileImage` is provided, prefer `object-contain` on small screens
+  // so portrait/people photos are not cropped. Preserve cover behaviour on larger viewports.
+  let imgClass: string;
+  if (contain) {
+    imgClass = "max-h-full w-full object-contain object-center";
+  } else if (mobileImage) {
+    if (pinTop) {
+      imgClass = "max-h-full w-full object-contain object-center sm:h-full sm:w-full sm:object-cover sm:object-top";
+    } else if (pinCenter) {
+      imgClass = "max-h-full w-full object-contain object-center sm:h-full sm:w-full sm:object-cover sm:object-center";
+    } else {
+      imgClass = "max-h-full w-full object-contain object-center sm:h-[116%] sm:w-full sm:object-cover sm:object-[center_18%] sm:object-[center_22%]";
+    }
+  } else {
+    imgClass = coverClass;
+  }
+
   return (
     <section
       ref={ref}
@@ -75,11 +92,7 @@ export function PageHero({
             alt={alt}
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : undefined}
-            className={
-              contain
-                ? "max-h-full w-full object-contain object-center"
-                : coverClass
-            }
+            className={imgClass}
           />
         </picture>
       </motion.div>

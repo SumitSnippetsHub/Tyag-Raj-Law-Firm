@@ -21,8 +21,8 @@ export const Route = createFileRoute("/$locale/about")({
       ? "अधिवक्ता सुमित त्यागी एवं विशव प्रताप | त्याग राज लॉ फर्म, गाज़ियाबाद"
       : "About Advocate Sumit Tyagi & Vishaw Pratap | Tyag Raj Law Firm";
     const description = hi
-      ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 13+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी, सह-संस्थापक विशव प्रताप एवं टीम का परिचय।"
-      : "Meet Advocate Sumit Tyagi and Co-Founder Vishaw Pratap — 13+ years of litigation at Tyag Raj Law Firm, Ghaziabad, Noida and Delhi NCR.";
+      ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 13+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी, संस्थापक विशव प्रताप एवं टीम का परिचय।"
+      : "Meet Advocate Sumit Tyagi and Founder Vishaw Pratap — 13+ years of litigation at Tyag Raj Law Firm, Ghaziabad, Noida and Delhi NCR.";
     return buildSeo({ locale, path: "about", title, description });
   },
   component: About,
@@ -185,9 +185,9 @@ function About() {
             <FullPhoto
               src={IMAGES.foundersWithClients}
               alt={
-                locale === "hi"
-                  ? "संस्थापक एवं सह-संस्थापक मुवक्किलों के साथ चैम्बर में"
-                  : "Founder and Co-Founder with clients at the chamber"
+                  locale === "hi"
+                    ? "संस्थापक एवं संस्थापक मुवक्किलों के साथ चैम्बर में"
+                    : "Founder and Founder with clients at the chamber"
               }
               caption={
                 locale === "hi"
@@ -246,9 +246,9 @@ function About() {
                     : "Full team of Tyag Raj Law Firm"
                 }
                 caption={
-                  locale === "hi"
-                    ? "टीम रोस्टर — संस्थापक, सह-संस्थापक एवं सहयोगी अधिवक्ता"
-                    : "Team roster — founders and associate advocates"
+                locale === "hi"
+                  ? "टीम रोस्टर — संस्थापक, संस्थापक एवं सहयोगी अधिवक्ता"
+                  : "Team roster — founders and associate advocates"
                 }
               />
             </Reveal>
