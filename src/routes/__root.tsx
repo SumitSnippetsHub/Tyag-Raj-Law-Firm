@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "robots",
         content: "index, follow, max-image-preview:large, max-snippet:-1",
       },
-      { name: "theme-color", content: "#2d0a0f" },
+      { name: "theme-color", content: "#C9A227" },
       { property: "og:site_name", content: SITE.firm },
       { property: "og:type", content: "website" },
       { property: "og:image", content: OG_IMAGE },

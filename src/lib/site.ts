@@ -3,9 +3,17 @@ export const SITE = {
   cofounder: "Vishaw Pratap",
   firm: "Tyag Raj Law Firm",
   tagline: "Advocate & Legal Consultant",
-  // Confirmed hero tagline. Alternates are listed in README.md.
+  /** Primary hero subheadline */
   taglineMain:
     "Strategic Legal Counsel. Trusted Representation, Proven Commitment.",
+  /** Secondary — trust / values strip (echoes logo: Dedication · Integrity · Justice) */
+  taglineSecondary: "Justice, Integrity, Excellence.",
+  /** Alternates (not live) — see README */
+  taglineAlternates: [
+    "Strategic Counsel. Trusted Advocacy.",
+    "Where Your Rights Find Their Strongest Voice.",
+    "Your Rights, Our Commitment, Justice Our Pursuit.",
+  ] as const,
   credentials: "BBA, MBA, LLB",
   years: "13+",
   /** @deprecated use CHAMBERS[0].address — kept for any leftover single-address reads */

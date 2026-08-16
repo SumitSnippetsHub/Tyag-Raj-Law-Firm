@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="relative isolate overflow-hidden bg-dark-bg text-dark-text">
       <span
         aria-hidden
-        className="pointer-events-none absolute -bottom-6 left-1/2 -z-10 -translate-x-1/2 whitespace-nowrap font-display text-[7rem] leading-none font-bold tracking-tighter text-dark-text opacity-[0.055] sm:text-[12rem] lg:text-[16rem]"
+        className="pointer-events-none absolute -bottom-6 left-1/2 -z-10 -translate-x-1/2 whitespace-nowrap font-display text-[7rem] leading-none font-bold tracking-tighter text-primary opacity-[0.08] sm:text-[12rem] lg:text-[16rem]"
       >
         TYAG RAJ
       </span>

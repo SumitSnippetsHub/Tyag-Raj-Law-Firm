@@ -65,7 +65,7 @@ function Testimonials() {
         <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {TESTIMONIALS.map((item, i) => (
             <Reveal as="li" key={item.name} delay={(i % 3) * 0.08}>
-              <figure className="flex h-full flex-col border border-border bg-surface p-7">
+              <figure className="surface-card surface-card--interactive flex h-full flex-col p-7">
                 <Quote className="size-5 text-primary" aria-hidden />
                 <blockquote className="mt-4 text-sm leading-relaxed text-ink">
                   {item.quote[locale]}

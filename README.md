@@ -7,19 +7,20 @@ Bilingual (English / Hindi) website for Tyag Raj Law Firm, Ghaziabad. This file 
 - **Founder:** Advocate Sumit Tyagi (BBA, MBA, LLB), 13 years — Phone/WhatsApp `8860600368` · Email `sumittyagi09@gmail.com`
 - **Founder:** Advocate Vishaw Pratap (BA, LLB, LLM), 13 years — Phone `9910039006` · Email `vishupratap786@yahoo.co.in`
 - **Firm:** Tyag Raj Law Firm
-- **Confirmed tagline (live):** "Strategic Legal Counsel. Trusted Representation, Proven Commitment."
-- **Tagline options — client to confirm final pick** (alternates, not on the live site):
-  1. "Justice, Integrity, Excellence."
-  2. "Your Rights, Our Commitment, Justice Our Pursuit."
-  3. "Where Your Rights Find Their Strongest Voice."
-  4. "Strategic Counsel. Trusted Advocacy."
+- **Taglines in active use:**
+  1. **Hero (primary):** "Strategic Legal Counsel. Trusted Representation, Proven Commitment."
+  2. **Values strip (secondary):** "Justice, Integrity, Excellence."
+- **Tagline alternates (not live):**
+  1. "Strategic Counsel. Trusted Advocacy."
+  2. "Where Your Rights Find Their Strongest Voice."
+  3. "Your Rights, Our Commitment, Justice Our Pursuit."
 - **Main Chamber:** Office No. 435, 4th Floor, Aditya Height Street, Lal Kuan, Ghaziabad
 - **Second Office:** Ch. No. 33A, New Building, Second Floor, District & Session Court, Ghaziabad
 - **Phone / WhatsApp series:** `8860600368` (primary WhatsApp), `9910039006` (Founder), `9217620368`
 - **Working days:** Monday to Saturday · **Working hours:** 10:00 AM – 5:00 PM
 - **Service area:** Ghaziabad, Noida, Delhi NCR
 
-## 2. Practice areas (13)
+## 2. Practice areas (14)
 
 1. Criminal Law
 2. Civil Litigation
@@ -29,15 +30,36 @@ Bilingual (English / Hindi) website for Tyag Raj Law Firm, Ghaziabad. This file 
 6. Property Law
 7. RERA (Real Estate Matters)
 8. NDPS Act
-9. Bail Matters
-10. Section 138 NI Act (Cheque Bounce)
-11. Consumer Matters
-12. Cyber Law
-13. IPR — Trademark & Copyright
+9. MACT / Accidental Cases
+10. Bail Matters
+11. Section 138 NI Act (Cheque Bounce)
+12. Consumer Matters
+13. Cyber Law
+14. IPR — Trademark & Copyright
 
-Content lives in `src/lib/practice-areas.ts`. Practice-area photos are served from **client-provided files** at `public/images/practice-areas/{slug}.jpg` (not stock CDN assets).
+Content lives in `src/lib/practice-areas.ts`. Practice-area photos are served from client-provided files at `public/images/practice-areas/{slug}.jpg` / `.png`.
 
-## 3. Team roster
+## 3. Brand Design System
+
+**Confirmed palette: black & gold** (matches the firm logo). This **replaces** the earlier maroon accent.
+
+| Token | Hex | Role |
+| --- | --- | --- |
+| `--background` | `#FAF8F4` | Warm off-white page background |
+| `--surface` | `#FFFFFF` | Cards / panels |
+| `--ink` | `#141414` | Primary text / black |
+| `--ink-soft` | `#4A4A4A` | Secondary text |
+| `--primary` | `#C9A227` | Gold accent (CTAs, links, icons, underlines) |
+| `--accent-2` | `#E4C158` | Lighter gold for hover |
+| `--border` | `#E5E1D8` | Hairline borders |
+| `--dark-bg` | `#141414` | Footer / dark sections |
+| `--dark-text` | `#F5F3EE` | Text on dark |
+
+Design language stays **light, minimal, and flat**: thin gold accents, gold text/icons, gold underlines — no glow, multi-layer shadows, or gradient gold fills.
+
+Fonts: Playfair Display (`--font-brand`), Manrope (`--font-display`), Inter (`--font-sans`).
+
+## 4. Team roster
 
 1. Advocate Sumit Tyagi — Founder
 2. Advocate Vishaw Pratap — Founder
@@ -45,22 +67,26 @@ Content lives in `src/lib/practice-areas.ts`. Practice-area photos are served fr
 4. Vikrant Tyagi — Advocate (specific title TODO — confirm with client)
 5. Pooja Saxena — Advocate (specific title TODO — confirm with client)
 
-Photos are client-provided under `src/assets/` (`member-2.jpeg` … `member-5.jpeg`, founder portraits, team group shots). **Kanak Tyagi removed** from the roster.
+Photos under `src/assets/` (`member-2.jpeg` … `member-5.jpeg`, founder portraits, team group shots).
 
-Rendered on the homepage "Expert Team" section and the `/team` page (`src/lib/site.ts` → `TEAM` / `FOUNDERS`).
+## 5. Homepage sections
 
-## 4. Homepage sections
+Hero (soft bottom scrim so founders photo stays visible) → Founders → Chambers → trust bar → **secondary tagline strip** → courts marquee → stats → about preview → practice areas → why choose us → **Our Mission (copy + photo)** → **Our Vision (copy + distinct photo)** → Expert Team → testimonials → booking → process → FAQ.
 
-Hero → **Founder & Founder** → **Our Chambers (both offices)** → trust bar → courts marquee → stats → about preview → practice areas (13) → why choose us → Our Mission → Our Vision → Expert Team → testimonials → booking form → process → assurances → FAQ → extra photos → Our Chambers (dual maps) again near footer.
+**Hero visibility:** corrected with a bottom-weighted soft overlay (`scrim="soft"` + `imagePosition="top"`) so faces stay clear while CTAs remain legible.
+
+**Mission + Vision:** both sections include supporting photos (`advocateDesk` for Mission, `namePlate` for Vision).
 
 Persistent quick actions (Call → WhatsApp → Email) use WhatsApp number `918860600368`.
 
-## 5. Brand assets
+## 6. Brand assets
 
 - Logo: `src/assets/logo_main_firm.jpeg`
 - Watermark: `src/assets/baclground_watermark.jpeg`
+- About / hero: `src/assets/about-hero.jpeg`
 - Team / founders: `src/assets/our_team_page_main.jpeg`, `member-*.jpeg`, `founder-cofounder-*.jpeg`, `full-team*.jpeg`
-- Practice areas: `public/images/practice-areas/*.jpg`
+- Practice areas: `public/images/practice-areas/*`
+- OG / PWA: `public/og-image.jpg`, `public/favicon.png`, `public/apple-touch-icon.png`, `public/site.webmanifest`
 
 ---
 

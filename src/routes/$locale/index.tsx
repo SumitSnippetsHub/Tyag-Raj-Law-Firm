@@ -12,7 +12,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { PracticeAreaCard } from "@/components/PracticeAreaCard";
 import { TestimonialCarousel } from "@/components/TestimonialMarquee";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
-import { FoundersGrid, TeamGrid } from "@/components/TeamSection";
+import { FoundersGrid, TeamSlider } from "@/components/TeamSection";
 import { JsonLd } from "@/components/JsonLd";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
@@ -119,8 +119,11 @@ function Home() {
       <PageHero
         priority
         tall
+        stackOnMobile
+        scrim="soft"
+        imagePosition="top"
         image={IMAGES.aboutHero}
-        mobileImage={IMAGES.aboutHero}
+        mobileImage={IMAGES.homeHeroMobile}
         alt="Advocates Sumit Tyagi and Vishaw Pratap at Tyag Raj Law Firm"
         eyebrow={home.eyebrow}
         title={
@@ -138,24 +141,24 @@ function Home() {
                 <span className="name-mark name-mark--on-dark">Vishaw Pratap</span>
               </>
             )}
-            <span className="mt-4 block font-display text-lg font-semibold text-dark-text/60 md:text-xl">
-              {SITE.tagline} · {home.trust[1]}
+            <span className="mt-2.5 block max-w-2xl font-brand text-[1.05rem] font-semibold italic leading-snug text-primary-on-dark sm:mt-4 sm:text-xl md:text-2xl">
+              {SITE.taglineMain}
             </span>
           </>
         }
         lead={home.lead}
       >
-        <div className="flex flex-wrap gap-4">
+        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap sm:gap-4">
           <AppLink
             to={`/${locale}/book-consultation`}
-            className="inline-flex items-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2"
+            className="inline-flex w-full items-center justify-center gap-2 bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent-2 sm:w-auto"
           >
             {t.cta.bookFree}
             <ArrowRight className="size-4" aria-hidden />
           </AppLink>
           <a
             href={telHref(SITE.phonePrimaryTel)}
-            className="inline-flex items-center gap-2 border border-dark-text/30 px-6 py-3.5 text-sm font-semibold text-dark-text transition-colors hover:bg-dark-text/10"
+            className="inline-flex w-full items-center justify-center gap-2 border border-dark-text/30 px-6 py-3.5 text-sm font-semibold text-dark-text transition-colors hover:bg-dark-text/10 sm:w-auto"
           >
             <Phone className="size-4" aria-hidden />
             {t.cta.callNow}
@@ -175,7 +178,7 @@ function Home() {
             <FoundersGrid locale={locale} />
           </div>
           <Reveal delay={0.1}>
-            <figure className="mt-10 border border-border bg-secondary">
+            <figure className="surface-card surface-card--muted mt-10">
               <img
                 src={IMAGES.foundersTogether}
                 alt={
@@ -209,7 +212,7 @@ function Home() {
           />
           <Reveal delay={0.08}>
             <dl className="mt-8 grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
-              <div className="flex gap-3 border border-border bg-surface p-4">
+              <div className="surface-card surface-card--rail flex gap-3 p-4">
                 <CalendarDays className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
                 <div>
                   <dt className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-ink-soft uppercase">
@@ -218,7 +221,7 @@ function Home() {
                   <dd className="mt-1 text-ink">{SITE.workingDays}</dd>
                 </div>
               </div>
-              <div className="flex gap-3 border border-border bg-surface p-4">
+              <div className="surface-card surface-card--rail flex gap-3 p-4">
                 <Clock className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
                 <div>
                   <dt className="font-display text-[0.6875rem] font-semibold tracking-[0.18em] text-ink-soft uppercase">
@@ -227,7 +230,7 @@ function Home() {
                   <dd className="mt-1 text-ink">{SITE.workingHours}</dd>
                 </div>
               </div>
-              <div className="flex gap-3 border border-border bg-surface p-4">
+              <div className="surface-card surface-card--rail flex gap-3 p-4">
                 <Phone className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
                 <div>
                   <dt className="sr-only">{t.contact.phoneLabel}</dt>
@@ -244,7 +247,7 @@ function Home() {
                   </dd>
                 </div>
               </div>
-              <div className="flex gap-3 border border-border bg-surface p-4">
+              <div className="surface-card surface-card--rail flex gap-3 p-4">
                 <Mail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
                 <div>
                   <dt className="sr-only">{t.contact.emailLabel}</dt>
@@ -263,7 +266,7 @@ function Home() {
           <ul className="mt-8 grid gap-6 lg:grid-cols-2">
             {CHAMBERS.map((chamber, i) => (
               <Reveal as="li" key={chamber.id} delay={i * 0.08}>
-                <article className="border border-border bg-surface p-5">
+                <article className="surface-card surface-card--accent surface-card--interactive p-5">
                   <div className="flex gap-3">
                     <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden />
                     <div>
@@ -280,7 +283,7 @@ function Home() {
                     src={chamber.mapEmbed}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="mt-4 h-52 w-full border border-border"
+                    className="mt-4 h-52 w-full rounded-xl border border-border"
                   />
                   <a
                     href={chamber.directions}
@@ -315,6 +318,18 @@ function Home() {
 
       <TrustBar items={home.trust} />
 
+      {/* Secondary tagline — Justice, Integrity, Excellence */}
+      <section className="border-b border-border bg-dark-bg py-10 sm:py-12">
+        <div className="mx-auto max-w-6xl px-5 text-center md:px-10">
+          <p className="font-display text-[0.65rem] font-semibold tracking-[0.22em] text-primary uppercase">
+            {SITE.firm}
+          </p>
+          <p className="mt-3 font-brand text-2xl font-semibold tracking-tight text-dark-text sm:text-3xl md:text-4xl">
+            {home.valuesTagline}
+          </p>
+        </div>
+      </section>
+
       {/* Courts marquee */}
       <TextMarquee items={COURTS.map((c) => c[locale])} />
 
@@ -345,7 +360,7 @@ function Home() {
       <section className="mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 md:px-10 lg:grid-cols-2 lg:gap-12 lg:py-24">
         <Reveal>
           <div className="grid grid-cols-2 gap-4">
-            <figure className="border border-border bg-secondary">
+            <figure className="surface-card surface-card--muted">
               <img
                 src={IMAGES.advocatePortrait}
                 alt="Advocate Sumit Tyagi"
@@ -353,7 +368,7 @@ function Home() {
                 className="mx-auto h-auto w-full object-contain"
               />
             </figure>
-            <figure className="border border-border bg-secondary">
+            <figure className="surface-card surface-card--muted">
               <img
                 src={IMAGES.teamVishaw}
                 alt="Advocate Vishaw Pratap"
@@ -413,8 +428,8 @@ function Home() {
         <ul className="mt-14 grid gap-10 sm:grid-cols-2">
           {home.why.map((item, i) => (
             <Reveal as="li" key={item.title} delay={(i % 2) * 0.08}>
-              <div className="border-t border-border pt-6">
-                <span className="text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">
+              <div className="surface-card surface-card--rail surface-card--interactive h-full p-6">
+                <span className="font-brand text-[0.7rem] font-semibold tracking-[0.2em] text-primary uppercase">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 font-display text-xl font-semibold text-ink">{item.title}</h3>
@@ -425,7 +440,7 @@ function Home() {
         </ul>
       </section>
 
-      {/* Our Mission */}
+      {/* Our Mission — accessible counsel with clients */}
       <section className="border-t border-border bg-surface py-20 lg:py-28">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 md:px-10 lg:grid-cols-2">
           <div>
@@ -436,26 +451,30 @@ function Home() {
             />
           </div>
           <Reveal delay={0.08}>
-            <img
-              src={IMAGES.advocateDesk}
-              alt="Advocate Sumit Tyagi preparing case files at his desk in Ghaziabad"
-              loading="lazy"
-              className="aspect-4/3 w-full border border-border object-cover object-[center_20%]"
-            />
+            <figure className="surface-card surface-card--accent surface-card--muted">
+              <img
+                src={IMAGES.foundersWithClients}
+                alt="Advocates Sumit Tyagi and Vishaw Pratap in chamber consultation with clients"
+                loading="lazy"
+                className="aspect-4/3 w-full object-cover object-[center_35%]"
+              />
+            </figure>
           </Reveal>
         </div>
       </section>
 
-      {/* Our Vision */}
+      {/* Our Vision — justice, integrity, trusted partnership */}
       <section className="border-t border-border bg-secondary py-20 lg:py-28">
         <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 md:px-10 lg:grid-cols-2">
           <Reveal>
-            <img
-              src={IMAGES.namePlate}
-              alt="Tyag Raj Law Firm name plate — Advocate Sumit Tyagi, Legal Excellence, Trusted Advocacy"
-              loading="lazy"
-              className="aspect-[16/10] w-full border border-border bg-ink object-contain"
-            />
+            <figure className="surface-card surface-card--accent surface-card--muted">
+              <img
+                src={IMAGES.visionBlocks}
+                alt="Building vision on mission, strategy and value — Tyag Raj Law Firm"
+                loading="lazy"
+                className="aspect-4/3 w-full object-cover object-[center_45%]"
+              />
+            </figure>
           </Reveal>
           <div>
             <SectionHeading
@@ -467,20 +486,13 @@ function Home() {
         </div>
       </section>
 
-      {/* Expert Team */}
-      <section className="border-t border-border bg-surface py-20 lg:py-28">
+      {/* Expert Team — auto-slides members, then View our team */}
+      <section className="border-t border-border bg-surface py-16 sm:py-20 lg:py-28">
         <div className="mx-auto w-full max-w-6xl px-5 md:px-10">
           <SectionHeading eyebrow={home.teamEyebrow} title={home.teamTitle} lead={home.teamLead} />
-          <div className="mt-14">
-            <TeamGrid locale={locale} mode="associates" />
+          <div className="mt-10 sm:mt-14">
+            <TeamSlider locale={locale} mode="associates" />
           </div>
-          <AppLink
-            to={`/${locale}/team`}
-            className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent-2"
-          >
-            {t.nav.team}
-            <ArrowRight className="size-4" aria-hidden />
-          </AppLink>
         </div>
       </section>
 
@@ -561,7 +573,7 @@ function Home() {
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
             {FAQ.map((item, i) => (
               <Reveal key={item.q.en} delay={(i % 2) * 0.07}>
-                <details className="group border border-border bg-surface p-5 open:border-primary/40">
+                <details className="surface-card group p-5 open:border-primary/45">
                   <summary className="cursor-pointer list-none font-display text-base font-semibold text-ink marker:hidden">
                     {item.q[locale]}
                   </summary>

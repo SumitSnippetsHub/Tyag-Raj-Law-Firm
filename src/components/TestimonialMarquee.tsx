@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/site";
 
 function Card({ item, locale }: { item: (typeof TESTIMONIALS)[number]; locale: Locale }) {
   return (
-    <figure className="flex w-[19rem] shrink-0 flex-col border border-border bg-surface p-6 sm:w-[23rem]">
+    <figure className="surface-card flex w-[19rem] shrink-0 flex-col p-6 sm:w-[23rem]">
       <Quote className="size-5 text-primary" aria-hidden />
       <blockquote className="mt-4 text-sm leading-relaxed text-ink">
         {item.quote[locale]}
@@ -45,7 +45,7 @@ export function TestimonialCarousel({ locale }: { locale: Locale }) {
   const item = TESTIMONIALS[index]!;
 
   return (
-    <div className="border border-border bg-surface p-8 md:p-12">
+    <div className="surface-card surface-card--accent p-8 md:p-12">
       <Quote className="size-7 text-primary" aria-hidden />
       <blockquote className="mt-6 font-display text-xl leading-snug text-ink md:text-2xl">
         {item.quote[locale]}

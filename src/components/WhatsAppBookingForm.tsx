@@ -90,14 +90,14 @@ export function WhatsAppBookingForm({
   }
 
   const field =
-    "mt-2 w-full border border-border bg-surface px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-primary";
+    "mt-2 w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-primary";
   const fieldError = "border-destructive focus:border-destructive";
   const label = "block text-xs font-semibold tracking-wide text-ink-soft uppercase";
 
   return (
     <form
       onSubmit={onSubmit}
-      className="relative border border-border bg-surface p-5 sm:p-6 md:p-10"
+      className="surface-card surface-card--accent relative p-5 sm:p-6 md:p-10"
       noValidate
     >
       <h2 className="font-display text-xl font-semibold text-ink sm:text-2xl">

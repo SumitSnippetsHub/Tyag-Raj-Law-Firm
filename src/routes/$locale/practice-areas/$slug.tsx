@@ -153,7 +153,7 @@ function PracticeAreaPage() {
 
           <aside>
             <Reveal>
-              <div className="border border-border bg-surface p-7">
+              <div className="surface-card surface-card--accent p-7">
                 <h2 className="font-display text-lg font-semibold text-ink">
                   {t.practice.whyTitle}
                 </h2>

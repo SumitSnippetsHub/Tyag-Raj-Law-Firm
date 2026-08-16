@@ -24,11 +24,12 @@ export const DICT = {
     home: {
       eyebrow: "Advocate & Legal Consultant · Ghaziabad",
       h1: "Advocate Sumit Tyagi",
-      lead: "Strategic Legal Counsel. Trusted Representation, Proven Commitment. 13+ years of litigation in Delhi NCR — criminal, civil, family and commercial matters handled personally, from first hearing to final order.",
+      lead: "13+ years of litigation in Delhi NCR — criminal, civil, family and commercial matters handled personally, from first hearing to final order.",
+      valuesTagline: "Justice, Integrity, Excellence.",
       trust: [
         "Ghaziabad · Noida · Delhi NCR",
         "13+ Years Experience",
-        "Dedication · Integrity · Justice",
+        "Justice · Integrity · Excellence",
         "District & Session Court, Ghaziabad",
       ],
       aboutEyebrow: "About the Advocate",
@@ -118,9 +119,9 @@ export const DICT = {
           body: "Drafting, filing and arguments are handled by the advocate you met — with updates after each date of hearing.",
         },
       ],
-      valuesTitle: "Dedication · Integrity · Justice",
+      valuesTitle: "Justice · Integrity · Excellence",
       valuesBody:
-        "The three words on the firm's seal are also the working rules of the office: prepare completely, advise honestly, and pursue the matter to its end.",
+        "The three words that guide Tyag Raj Law Firm: prepare completely, advise honestly, and pursue the matter to its end.",
       chamberEyebrow: "Our Chamber",
       chamberTitle: "Inside the District & Session Court, Ghaziabad",
       chamberBody:
@@ -225,11 +226,12 @@ export const DICT = {
     home: {
       eyebrow: "अधिवक्ता एवं विधिक सलाहकार · गाज़ियाबाद",
       h1: "अधिवक्ता सुमित त्यागी",
-      lead: "सुदृढ़ विधिक परामर्श, विश्वसनीय पैरवी, सिद्ध प्रतिबद्धता। दिल्ली एनसीआर में 13+ वर्षों का अनुभव — आपराधिक, सिविल, पारिवारिक एवं व्यावसायिक मुकदमे पहली सुनवाई से अंतिम आदेश तक स्वयं देखे जाते हैं।",
+      lead: "दिल्ली एनसीआर में 13+ वर्षों का अनुभव — आपराधिक, सिविल, पारिवारिक एवं व्यावसायिक मुकदमे पहली सुनवाई से अंतिम आदेश तक स्वयं देखे जाते हैं।",
+      valuesTagline: "न्याय, ईमानदारी, उत्कृष्टता।",
       trust: [
         "गाज़ियाबाद · नोएडा · दिल्ली एनसीआर",
         "13+ वर्षों का अनुभव",
-        "समर्पण · ईमानदारी · न्याय",
+        "न्याय · ईमानदारी · उत्कृष्टता",
         "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद",
       ],
       aboutEyebrow: "अधिवक्ता का परिचय",
@@ -319,9 +321,9 @@ export const DICT = {
           body: "ड्राफ्टिंग, फाइलिंग और बहस उसी अधिवक्ता द्वारा होती है जिससे आप मिले — प्रत्येक तारीख के बाद अपडेट के साथ।",
         },
       ],
-      valuesTitle: "समर्पण · ईमानदारी · न्याय",
+      valuesTitle: "न्याय · ईमानदारी · उत्कृष्टता",
       valuesBody:
-        "फर्म की मुहर पर अंकित ये तीन शब्द कार्यालय के कार्य-नियम भी हैं: पूरी तैयारी, ईमानदार सलाह, और मुकदमे को अंत तक ले जाना।",
+        "त्याग राज लॉ फर्म के मार्गदर्शक तीन शब्द: पूरी तैयारी, ईमानदार सलाह, और मुकदमे को अंत तक ले जाना।",
       chamberEyebrow: "हमारा चैम्बर",
       chamberTitle: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद के अंदर",
       chamberBody:

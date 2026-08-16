@@ -6,8 +6,8 @@
 
 /*
  * Advocate Sumit Tyagi — Tyag Raj Law Firm
- * Light theme only. Warm cream paper, charcoal ink, deep maroon accent.
- * No gold / yellow anywhere in the UI (the logo image is the sole exception).
+ * Light theme. Warm off-white paper, charcoal ink, black + gold accent
+ * (gold matches the firm logo — confirmed client palette).
  */
 
 /*
@@ -78,48 +78,50 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  /* Warm cream paper, charcoal ink, deep maroon accent */
-  --ink: oklch(0.24 0.012 60);
-  --ink-soft: oklch(0.475 0.014 60);
-  --surface: oklch(0.995 0.004 85);
-  --dark-bg: oklch(0.205 0.014 45);
-  --dark-text: oklch(0.965 0.008 85);
-  /* Soft rose for brand text on dark panels (maroon is too low-contrast there) */
-  --primary-on-dark: oklch(0.82 0.07 22);
-  --accent-2: oklch(0.36 0.11 22);
-  --background: oklch(0.975 0.009 85);
+  --radius: 0.875rem;
+  /* Warm off-white paper, charcoal ink, black + gold accent */
+  --ink: oklch(0.18 0 0);
+  --ink-soft: oklch(0.42 0 0);
+  --surface: oklch(1 0 0);
+  --dark-bg: oklch(0.18 0 0);
+  --dark-text: oklch(0.965 0.008 90);
+  /* Bright gold for brand text on dark panels */
+  --primary-on-dark: oklch(0.86 0.11 92);
+  /* Lighter gold — hover / secondary accent */
+  --accent-2: oklch(0.84 0.11 92);
+  --background: oklch(0.978 0.008 90);
   --foreground: var(--ink);
   --card: var(--surface);
   --card-foreground: var(--ink);
   --popover: var(--surface);
   --popover-foreground: var(--ink);
-  --primary: oklch(0.44 0.135 20);
-  --primary-foreground: oklch(0.985 0.006 85);
-  --secondary: oklch(0.955 0.011 82);
+  /* Logo gold #C9A227 */
+  --primary: oklch(0.74 0.125 92);
+  --primary-foreground: oklch(0.18 0 0);
+  --secondary: oklch(0.96 0.01 90);
   --secondary-foreground: var(--ink);
-  --muted: oklch(0.94 0.012 82);
+  --muted: oklch(0.945 0.01 90);
   --muted-foreground: var(--ink-soft);
-  --accent: oklch(0.94 0.012 82);
+  --accent: oklch(0.96 0.012 90);
   --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.885 0.012 78);
-  --input: oklch(0.885 0.012 78);
-  --ring: oklch(0.44 0.135 20);
-  --chart-1: oklch(0.646 0.222 41.116);
+  --border: oklch(0.91 0.012 90);
+  --input: oklch(0.91 0.012 90);
+  --ring: oklch(0.74 0.125 92);
+  --chart-1: oklch(0.74 0.125 92);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-4: oklch(0.84 0.11 92);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.984 0.003 247.858);
   --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.74 0.125 92);
+  --sidebar-primary-foreground: oklch(0.18 0 0);
   --sidebar-accent: oklch(0.968 0.007 247.896);
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --sidebar-ring: oklch(0.74 0.125 92);
 }
 
 .dark {
@@ -220,37 +222,71 @@
   background:
     linear-gradient(
       to top,
-      oklch(0.16 0.01 45 / 0.96) 0%,
-      oklch(0.16 0.01 45 / 0.86) 42%,
-      oklch(0.16 0.01 45 / 0.66) 72%,
-      oklch(0.16 0.01 45 / 0.55) 100%
-    ),
-    radial-gradient(
-      120% 90% at 15% 90%,
-      oklch(0.14 0.02 25 / 0.6) 0%,
-      transparent 70%
+      oklch(0.14 0 0 / 0.88) 0%,
+      oklch(0.14 0 0 / 0.55) 38%,
+      oklch(0.14 0 0 / 0.22) 68%,
+      oklch(0.14 0 0 / 0.08) 100%
     );
 }
 
-/* Lighter overlay — photo stays visible; text still readable at the base */
+/* Lighter overlay — faces stay clear; text readable only at the base */
 .photo-scrim--soft::after {
-  background:
-    linear-gradient(
-      to top,
-      oklch(0.16 0.01 45 / 0.72) 0%,
-      oklch(0.16 0.01 45 / 0.38) 38%,
-      oklch(0.16 0.01 45 / 0.18) 68%,
-      oklch(0.16 0.01 45 / 0.1) 100%
-    ),
-    radial-gradient(
-      110% 80% at 20% 95%,
-      oklch(0.14 0.02 25 / 0.28) 0%,
-      transparent 72%
-    );
+  background: linear-gradient(
+    to top,
+    oklch(0.12 0 0 / 0.78) 0%,
+    oklch(0.12 0 0 / 0.42) 28%,
+    oklch(0.12 0 0 / 0.12) 55%,
+    transparent 78%
+  );
 }
 
 .text-shadow-hero {
-  text-shadow: 0 2px 18px oklch(0.14 0.01 45 / 0.7);
+  text-shadow: 0 2px 16px oklch(0.1 0 0 / 0.65);
+}
+
+/* Shared surface cards — rounded, soft depth, gold-ready */
+.surface-card {
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  border: 1px solid color-mix(in oklch, var(--border) 88%, transparent);
+  background: var(--surface);
+  box-shadow:
+    0 1px 2px oklch(0.18 0 0 / 0.04),
+    0 14px 32px -20px oklch(0.18 0 0 / 0.2);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.surface-card--accent {
+  border-top-width: 2px;
+  border-top-color: var(--primary);
+}
+
+.surface-card--rail {
+  border-left-width: 3px;
+  border-left-color: var(--primary);
+}
+
+.surface-card--interactive:is(:hover, :focus-visible) {
+  border-color: color-mix(in oklch, var(--primary) 50%, var(--border));
+  box-shadow:
+    0 2px 6px oklch(0.18 0 0 / 0.05),
+    0 20px 40px -18px oklch(0.18 0 0 / 0.24);
+  transform: translateY(-3px);
+}
+
+.surface-card--muted {
+  background: var(--secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surface-card,
+  .surface-card--interactive:is(:hover, :focus-visible) {
+    transition: none;
+    transform: none;
+  }
 }
 
 /* Section background photo, heavily washed so body copy stays readable */
@@ -275,8 +311,20 @@
   animation: marquee-scroll 48s linear infinite;
 }
 
-.marquee-track--fast {
-  animation-duration: 26s;
+.marquee-track--team {
+  animation-duration: 36s;
+}
+
+.marquee-track--team:hover,
+.marquee-track--team:focus-within {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track--team {
+    animation: none;
+  }
 }
 
 .marquee-track--reverse {
@@ -345,5 +393,5 @@
 }
 
 .name-mark--on-dark {
-  color: oklch(0.9 0.055 60);
+  color: var(--color-primary-on-dark);
 }

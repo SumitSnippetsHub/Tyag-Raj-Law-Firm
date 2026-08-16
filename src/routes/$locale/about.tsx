@@ -40,7 +40,7 @@ function FullPhoto({
   caption?: string;
 }) {
   return (
-    <figure className="overflow-hidden border border-border bg-secondary">
+    <figure className="surface-card surface-card--muted">
       <img
         src={src}
         alt={alt}
