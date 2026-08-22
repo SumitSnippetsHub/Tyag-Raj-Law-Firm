@@ -13,7 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { OG_IMAGE } from "../lib/seo";
-import { SITE, isLocale } from "../lib/site";
+import { SITE, formatServiceAreasAnd, isLocale } from "../lib/site";
 
 function NotFoundComponent() {
   return (
@@ -80,11 +80,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${SITE.firm} — Advocates in Ghaziabad, Noida & Delhi NCR` },
+      { title: `${SITE.firm} — Advocates across ${formatServiceAreasAnd("en")}` },
       {
         name: "description",
-        content:
-          "Tyag Raj Law Firm — Advocate Sumit Tyagi and Vishaw Pratap, 13+ years of litigation across Ghaziabad, Noida and Delhi NCR.",
+        content: `Tyag Raj Law Firm — Advocate Sumit Tyagi and Vishaw Pratap, 13+ years of litigation across ${formatServiceAreasAnd("en")}.`,
       },
       { name: "author", content: SITE.firm },
       {

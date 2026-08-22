@@ -8,7 +8,7 @@ import { TextMarquee } from "@/components/TextMarquee";
 import { FoundersGrid } from "@/components/TeamSection";
 import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
-import { SITE } from "@/lib/site";
+import { SITE, formatServiceAreasAnd } from "@/lib/site";
 import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { useT } from "@/lib/i18n";
@@ -21,8 +21,8 @@ export const Route = createFileRoute("/$locale/about")({
       ? "अधिवक्ता सुमित त्यागी एवं विशव प्रताप | त्याग राज लॉ फर्म, गाज़ियाबाद"
       : "About Advocate Sumit Tyagi & Vishaw Pratap | Tyag Raj Law Firm";
     const description = hi
-      ? "गाज़ियाबाद ज़िला एवं सेशन न्यायालय में 13+ वर्ष की वकालत — अधिवक्ता सुमित त्यागी, संस्थापक विशव प्रताप एवं टीम का परिचय।"
-      : "Meet Advocate Sumit Tyagi and Founder Vishaw Pratap — 13+ years of litigation at Tyag Raj Law Firm, Ghaziabad, Noida and Delhi NCR.";
+      ? `त्याग राज लॉ फर्म — ${formatServiceAreasAnd("hi")} में 13+ वर्ष की वकालत; अधिवक्ता सुमित त्यागी, संस्थापक विशव प्रताप एवं टीम।`
+      : `Meet Advocate Sumit Tyagi and Founder Vishaw Pratap — 13+ years of litigation at Tyag Raj Law Firm across ${formatServiceAreasAnd("en")}.`;
     return buildSeo({ locale, path: "about", title, description });
   },
   component: About,

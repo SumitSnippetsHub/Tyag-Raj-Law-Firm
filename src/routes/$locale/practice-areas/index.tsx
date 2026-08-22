@@ -11,6 +11,7 @@ import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, buildSeo, pageUrl, toLocale } from "@/lib/seo";
+import { formatServiceAreasAnd } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/practice-areas/")({
@@ -22,8 +23,8 @@ export const Route = createFileRoute("/$locale/practice-areas/")({
       ? "कार्यक्षेत्र | अधिवक्ता सुमित त्यागी, गाज़ियाबाद"
       : "Practice Areas | Advocate Sumit Tyagi, Ghaziabad & Noida";
     const description = hi
-      ? `आपराधिक, सिविल, वैवाहिक, एनडीपीएस, चेक बाउंस, साइबर, रेरा, उपभोक्ता एवं आईपीआर — ${count} कार्यक्षेत्रों में पैरवी।`
-      : `Criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR — ${count} focused litigation practice areas across Delhi NCR.`;
+      ? `आपराधिक, सिविल, वैवाहिक, एनडीपीएस, चेक बाउंस, साइबर, रेरा, उपभोक्ता एवं आईपीआर — ${formatServiceAreasAnd("hi")} में ${count} कार्यक्षेत्र।`
+      : `Criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR — ${count} focused litigation practice areas across ${formatServiceAreasAnd("en")}.`;
     return buildSeo({ locale, path: "practice-areas", title, description });
   },
   component: PracticeAreasIndex,

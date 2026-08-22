@@ -40,7 +40,7 @@ export const PROCESS: { step: Bi; title: Bi; body: Bi }[] = [
 export const STATS: { value: string; label: Bi }[] = [
   { value: "13+", label: { en: "Years in practice", hi: "वर्षों का अनुभव" } },
   { value: "09", label: { en: "Practice areas", hi: "कार्यक्षेत्र" } },
-  { value: "3", label: { en: "Districts covered", hi: "ज़िलों में पैरवी" } },
+  { value: "7", label: { en: "Service locations", hi: "सेवा स्थान" } },
   { value: "24×7", label: { en: "WhatsApp response", hi: "व्हाट्सएप उत्तर" } },
 ];
 
@@ -48,6 +48,13 @@ export const COURTS: Bi[] = [
   { en: "District & Session Court, Ghaziabad", hi: "ज़िला एवं सेशन न्यायालय, गाज़ियाबाद" },
   { en: "District Court, Gautam Buddh Nagar", hi: "ज़िला न्यायालय, गौतम बुद्ध नगर" },
   { en: "Delhi District Courts", hi: "दिल्ली ज़िला न्यायालय" },
+  { en: "District Court, Hapur", hi: "ज़िला न्यायालय, हापुड़" },
+  { en: "District Court, Meerut", hi: "ज़िला न्यायालय, मेरठ" },
+  {
+    en: "Prayagraj High Court (Allahabad High Court)",
+    hi: "प्रयागराज उच्च न्यायालय (इलाहाबाद उच्च न्यायालय)",
+  },
+  { en: "District Court, Dehradun", hi: "ज़िला न्यायालय, देहरादून" },
   { en: "UP RERA", hi: "यूपी रेरा" },
   { en: "Consumer Commissions", hi: "उपभोक्ता आयोग" },
   { en: "Family Courts", hi: "पारिवारिक न्यायालय" },
@@ -79,8 +86,8 @@ export const FAQ: { q: Bi; a: Bi }[] = [
       hi: "आप किन न्यायालयों में पेश होते हैं?",
     },
     a: {
-      en: "Ghaziabad District & Session Court as base, along with Gautam Buddh Nagar and Delhi district courts, UP RERA, consumer commissions and tribunals.",
-      hi: "मुख्य रूप से गाज़ियाबाद ज़िला एवं सेशन न्यायालय, साथ ही गौतम बुद्ध नगर व दिल्ली ज़िला न्यायालय, यूपी रेरा, उपभोक्ता आयोग एवं अधिकरण।",
+      en: "Ghaziabad District & Session Court as base, with appearances across Noida, Delhi NCR, Hapur, Meerut and Dehradun district courts, Prayagraj High Court (Allahabad High Court), UP RERA, consumer commissions and tribunals.",
+      hi: "मुख्य रूप से गाज़ियाबाद ज़िला एवं सेशन न्यायालय, साथ ही नोएडा, दिल्ली एनसीआर, हापुड़, मेरठ एवं देहरादून की ज़िला अदालतें, प्रयागराज उच्च न्यायालय (इलाहाबाद उच्च न्यायालय), यूपी रेरा, उपभोक्ता आयोग एवं अधिकरण।",
     },
   },
   {

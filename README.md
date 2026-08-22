@@ -18,7 +18,7 @@ Bilingual (English / Hindi) website for Tyag Raj Law Firm, Ghaziabad. This file 
 - **Second Office:** Ch. No. 33A, New Building, Second Floor, District & Session Court, Ghaziabad
 - **Phone / WhatsApp series:** `8860600368` (primary WhatsApp), `9910039006` (Founder), `9217620368`
 - **Working days:** Monday to Saturday · **Working hours:** 10:00 AM – 5:00 PM
-- **Service area:** Ghaziabad, Noida, Delhi NCR
+- **Service area:** Ghaziabad, Noida, Delhi NCR, Hapur, Meerut, Prayagraj High Court, Dehradun (centralized in `src/lib/site.ts` → `SERVICE_LOCATIONS`)
 
 ## 2. Practice areas (14)
 

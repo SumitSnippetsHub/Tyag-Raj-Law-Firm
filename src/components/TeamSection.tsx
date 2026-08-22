@@ -6,13 +6,36 @@ import { FOUNDERS, TEAM, telHref, type Locale } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 
 const FOUNDER_NAMES = new Set<string>(FOUNDERS.map((f) => f.name));
+const FOUNDERS_BY_NAME = new Map(FOUNDERS.map((f) => [f.name, f]));
 
 type TeamMember = (typeof TEAM)[number];
+type FounderContact = (typeof FOUNDERS)[number];
 
 function teamMembers(mode: "all" | "associates"): TeamMember[] {
   return mode === "associates"
     ? TEAM.filter((m) => !FOUNDER_NAMES.has(m.name))
     : [...TEAM];
+}
+
+function FounderContactLinks({ person }: { person: FounderContact }) {
+  return (
+    <div className="mt-5 flex flex-col gap-2 text-sm font-semibold">
+      <a
+        href={telHref(person.phoneTel)}
+        className="inline-flex items-center gap-2 text-primary"
+      >
+        <Phone className="size-4 shrink-0" aria-hidden />
+        {person.phone}
+      </a>
+      <a
+        href={`mailto:${person.email}`}
+        className="inline-flex items-center gap-2 text-primary break-all"
+      >
+        <Mail className="size-4 shrink-0" aria-hidden />
+        {person.email}
+      </a>
+    </div>
+  );
 }
 
 export function TeamGrid({
@@ -26,41 +49,46 @@ export function TeamGrid({
   const members = teamMembers(mode);
 
   return (
-    <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {members.map((member, i) => (
-        <Reveal as="li" key={member.name} delay={(i % 3) * 0.08}>
-          <article className="surface-card surface-card--accent surface-card--interactive flex h-full flex-col">
-            {member.image ? (
-              <div className="bg-secondary">
-                <img
-                  src={IMAGES[member.image]}
-                  alt={`${member.name} — ${member.role[locale]}`}
-                  loading="lazy"
-                  className="mx-auto h-auto w-full object-contain object-top"
-                />
-              </div>
-            ) : (
-              /* TODO: client to provide photo for this team member */
-              <div className="flex aspect-4/5 w-full items-center justify-center bg-secondary">
-                <User className="size-14 text-ink-soft/40" aria-hidden />
-              </div>
-            )}
-            <div className="flex flex-1 flex-col border-t border-border/70 p-4 sm:p-5">
-              <h3 className="font-display text-lg font-semibold text-ink">
-                {member.name}
-              </h3>
-              <p className="mt-1 text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">
-                {member.role[locale]}
-              </p>
-              {member.detail ? (
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {member.detail[locale]}
+    <ul className="grid items-start gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {members.map((member, i) => {
+        const founder = FOUNDERS_BY_NAME.get(member.name);
+
+        return (
+          <Reveal as="li" key={member.name} delay={(i % 3) * 0.08}>
+            <article className="surface-card surface-card--accent surface-card--interactive flex flex-col">
+              {member.image ? (
+                <div className="bg-secondary">
+                  <img
+                    src={IMAGES[member.image]}
+                    alt={`${member.name} — ${member.role[locale]}`}
+                    loading="lazy"
+                    className="mx-auto h-auto w-full object-contain object-top"
+                  />
+                </div>
+              ) : (
+                /* TODO: client to provide photo for this team member */
+                <div className="flex aspect-4/5 w-full items-center justify-center bg-secondary">
+                  <User className="size-14 text-ink-soft/40" aria-hidden />
+                </div>
+              )}
+              <div className="border-t border-border/70 p-4 sm:p-5">
+                <h3 className="font-display text-lg font-semibold text-ink">
+                  {member.name}
+                </h3>
+                <p className="mt-1 text-[0.6875rem] font-display font-semibold tracking-[0.18em] uppercase text-primary">
+                  {member.role[locale]}
                 </p>
-              ) : null}
-            </div>
-          </article>
-        </Reveal>
-      ))}
+                {member.detail ? (
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {member.detail[locale]}
+                  </p>
+                ) : null}
+                {founder ? <FounderContactLinks person={founder} /> : null}
+              </div>
+            </article>
+          </Reveal>
+        );
+      })}
     </ul>
   );
 }
@@ -275,22 +303,7 @@ export function FoundersGrid({ locale }: { locale: Locale }) {
                   <dd>{person.focus[locale]}</dd>
                 </div>
               </dl>
-              <div className="mt-5 flex flex-col gap-2 text-sm font-semibold">
-                <a
-                  href={telHref(person.phoneTel)}
-                  className="inline-flex items-center gap-2 text-primary"
-                >
-                  <Phone className="size-4 shrink-0" aria-hidden />
-                  {person.phone}
-                </a>
-                <a
-                  href={`mailto:${person.email}`}
-                  className="inline-flex items-center gap-2 text-primary break-all"
-                >
-                  <Mail className="size-4 shrink-0" aria-hidden />
-                  {person.email}
-                </a>
-              </div>
+              <FounderContactLinks person={person} />
             </div>
           </article>
         </Reveal>

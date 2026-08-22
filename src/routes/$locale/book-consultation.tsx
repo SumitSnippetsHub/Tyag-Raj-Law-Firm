@@ -5,7 +5,7 @@ import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
 import { TextMarquee } from "@/components/TextMarquee";
 import { COURTS } from "@/lib/content-extra";
 import { IMAGES } from "@/lib/images";
-import { SITE } from "@/lib/site";
+import { SITE, formatServiceAreasAnd } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
 import { useT } from "@/lib/i18n";
@@ -18,8 +18,8 @@ export const Route = createFileRoute("/$locale/book-consultation")({
       ? "परामर्श बुक करें | अधिवक्ता सुमित त्यागी, गाज़ियाबाद"
       : "Book a Consultation | Advocate Sumit Tyagi, Ghaziabad";
     const description = hi
-      ? "व्हाट्सएप पर अधिवक्ता सुमित त्यागी से परामर्श बुक करें — जमानत, चेक बाउंस, रेरा एवं वैवाहिक मामलों में शीघ्र सहायता।"
-      : "Book a WhatsApp consultation with Advocate Sumit Tyagi — fast help with bail, cheque bounce notices, RERA and matrimonial matters in Delhi NCR.";
+      ? `व्हाट्सएप पर अधिवक्ता सुमित त्यागी से परामर्श बुक करें — ${formatServiceAreasAnd("hi")} में जमानत, चेक बाउंस, रेरा एवं वैवाहिक मामलों में शीघ्र सहायता।`
+      : `Book a WhatsApp consultation with Advocate Sumit Tyagi — fast help with bail, cheque bounce notices, RERA and matrimonial matters across ${formatServiceAreasAnd("en")}.`;
     return buildSeo({ locale, path: "book-consultation", title, description });
   },
   component: BookConsultation,

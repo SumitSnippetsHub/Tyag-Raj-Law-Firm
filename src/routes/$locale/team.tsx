@@ -6,6 +6,7 @@ import { highlightName } from "@/components/NameMark";
 import { IMAGES } from "@/lib/images";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
+import { formatServiceAreasAnd } from "@/lib/site";
 import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/$locale/team")({
@@ -16,8 +17,8 @@ export const Route = createFileRoute("/$locale/team")({
       ? "हमारी टीम — अधिवक्ता सुमित त्यागी | त्याग राज लॉ फर्म"
       : "Our Team | Tyag Raj Law Firm, Ghaziabad";
     const description = hi
-      ? "त्याग राज लॉ फर्म की टीम — अधिवक्ता सुमित त्यागी (बीबीए, एमबीए, एलएलबी) एवं सहयोगी अधिवक्ता, गाज़ियाबाद।"
-      : "Meet the team at Tyag Raj Law Firm — Founder Sumit Tyagi, Founder Vishaw Pratap, and associates practising across Ghaziabad, Noida and Delhi NCR.";
+      ? `त्याग राज लॉ फर्म की टीम — अधिवक्ता सुमित त्यागी, संस्थापक विशव प्रताप एवं सहयोगी; ${formatServiceAreasAnd("hi")} में पैरवी।`
+      : `Meet the team at Tyag Raj Law Firm — Founder Sumit Tyagi, Founder Vishaw Pratap, and associates practising across ${formatServiceAreasAnd("en")}.`;
     return buildSeo({ locale, path: "team", title, description });
   },
   component: TeamPage,

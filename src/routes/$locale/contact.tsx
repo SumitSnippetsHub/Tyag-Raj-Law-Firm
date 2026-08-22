@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { WhatsAppBookingForm } from "@/components/WhatsAppBookingForm";
 import { IMAGES } from "@/lib/images";
-import { CHAMBERS, SITE, telHref, waLink } from "@/lib/site";
+import { CHAMBERS, SITE, formatServiceAreasAnd, telHref, waLink } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbSchema, buildSeo, toLocale } from "@/lib/seo";
 import { useT } from "@/lib/i18n";
@@ -19,8 +19,8 @@ export const Route = createFileRoute("/$locale/contact")({
       ? "संपर्क | अधिवक्ता सुमित त्यागी, ज़िला न्यायालय गाज़ियाबाद"
       : "Contact | Advocate Sumit Tyagi, District Court Ghaziabad";
     const description = hi
-      ? "दो चैम्बर पते, फोन एवं व्हाट्सएप — गाज़ियाबाद में अधिवक्ता सुमित त्यागी व अधिवक्ता विशव प्रताप से संपर्क करें।"
-      : "Two chamber addresses, phone and WhatsApp for Advocate Sumit Tyagi and Founder Vishaw Pratap in Ghaziabad — serving Noida and Delhi NCR.";
+      ? `दो चैम्बर पते, फोन एवं व्हाट्सएप — गाज़ियाबाद में अधिवक्ता सुमित त्यागी व अधिवक्ता विशव प्रताप; सेवा क्षेत्र: ${formatServiceAreasAnd("hi")}।`
+      : `Two chamber addresses, phone and WhatsApp for Advocate Sumit Tyagi and Founder Vishaw Pratap in Ghaziabad — serving ${formatServiceAreasAnd("en")}.`;
     return buildSeo({ locale, path: "contact", title, description });
   },
   component: Contact,

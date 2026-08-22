@@ -1,3 +1,47 @@
+/**
+ * Service / practice geography — cities and courts where the firm appears.
+ * Single bilingual source of truth for trust strips, about, SEO and schema.
+ * Do not invent chamber addresses for coverage-only locations.
+ */
+export const SERVICE_LOCATIONS = [
+  { en: "Ghaziabad", hi: "गाज़ियाबाद" },
+  { en: "Noida", hi: "नोएडा" },
+  { en: "Delhi NCR", hi: "दिल्ली एनसीआर" },
+  { en: "Hapur", hi: "हापुड़" },
+  { en: "Meerut", hi: "मेरठ" },
+  { en: "Prayagraj High Court", hi: "प्रयागराज उच्च न्यायालय" },
+  { en: "Dehradun", hi: "देहरादून" },
+] as const;
+
+export type Locale = "en" | "hi";
+
+export function serviceAreaNames(locale: Locale): string[] {
+  return SERVICE_LOCATIONS.map((loc) => loc[locale]);
+}
+
+/** Comma list: Ghaziabad, Noida, … */
+export function formatServiceAreasComma(locale: Locale): string {
+  return serviceAreaNames(locale).join(", ");
+}
+
+/** Trust / marquee style: Ghaziabad · Noida · … */
+export function formatServiceAreasMiddot(locale: Locale): string {
+  return serviceAreaNames(locale).join(" · ");
+}
+
+/** Prose list with and / एवं before the last item */
+export function formatServiceAreasAnd(locale: Locale): string {
+  const names = serviceAreaNames(locale);
+  if (names.length === 0) return "";
+  if (names.length === 1) return names[0]!;
+  const head = names.slice(0, -1).join(", ");
+  const last = names[names.length - 1]!;
+  return locale === "hi" ? `${head} एवं ${last}` : `${head} and ${last}`;
+}
+
+/** English names for schema.org `areaServed` */
+export const AREAS_SERVED_EN = SERVICE_LOCATIONS.map((loc) => loc.en);
+
 export const SITE = {
   advocate: "Sumit Tyagi",
   cofounder: "Vishaw Pratap",
@@ -30,13 +74,14 @@ export const SITE = {
   phoneSecondaryTel: "+919217620368",
   /** wa.me digits only — primary WhatsApp */
   whatsapp: "918860600368",
-  areasServed: ["Ghaziabad", "Noida", "Delhi"],
+  /** @see SERVICE_LOCATIONS — English names for JSON-LD */
+  areasServed: AREAS_SERVED_EN,
   workingDays: "Monday to Saturday",
   workingHours: "10:00 AM – 5:00 PM",
   directions:
-    "https://www.google.com/maps/dir/?api=1&destination=Aditya%20Height%20Street%2C%20Lal%20Kuan%2C%20Ghaziabad",
+    "https://www.google.com/maps/place/Tyag+Raj+Law+Firm/@28.6349006,77.4572718,17z/data=!4m6!3m5!1s0x390cef000fa4d87d:0x2fe910d5bf8f8362!8m2!3d28.6349006!4d77.4572718!16s%2Fg%2F11nvdwns0k",
   mapEmbed:
-    "https://www.google.com/maps?q=Aditya%20Height%20Street%20Lal%20Kuan%20Ghaziabad&output=embed",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8!2d77.4572718!3d28.6349006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef000fa4d87d%3A0x2fe910d5bf8f8362!2sTyag%20Raj%20Law%20Firm!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
 } as const;
 
 export const CHAMBERS = [
@@ -46,9 +91,9 @@ export const CHAMBERS = [
     address:
       "Office No. 435, 4th Floor, Aditya Height Street, Lal Kuan, Ghaziabad",
     directions:
-      "https://www.google.com/maps/dir/?api=1&destination=Aditya%20Height%20Street%2C%20Lal%20Kuan%2C%20Ghaziabad",
+      "https://www.google.com/maps/place/Tyag+Raj+Law+Firm/@28.6349006,77.4572718,17z/data=!4m6!3m5!1s0x390cef000fa4d87d:0x2fe910d5bf8f8362!8m2!3d28.6349006!4d77.4572718!16s%2Fg%2F11nvdwns0k",
     mapEmbed:
-      "https://www.google.com/maps?q=Aditya%20Height%20Street%20Lal%20Kuan%20Ghaziabad&output=embed",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8!2d77.4572718!3d28.6349006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef000fa4d87d%3A0x2fe910d5bf8f8362!2sTyag%20Raj%20Law%20Firm!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin",
   },
   {
     id: "second",
@@ -73,8 +118,8 @@ export const FOUNDERS = [
       hi: "सिविल न्यायालय, गाज़ियाबाद",
     },
     focus: {
-      en: "Criminal, civil, matrimonial, RERA and commercial litigation across Delhi NCR.",
-      hi: "दिल्ली एनसीआर में आपराधिक, सिविल, वैवाहिक, रेरा एवं व्यावसायिक पैरवी।",
+      en: "Criminal, civil, matrimonial, RERA and commercial litigation across Delhi NCR, Western UP and Dehradun.",
+      hi: "दिल्ली एनसीआर, पश्चिमी उत्तर प्रदेश एवं देहरादून में आपराधिक, सिविल, वैवाहिक, रेरा एवं व्यावसायिक पैरवी।",
     },
     phone: SITE.phonePrimary,
     phoneTel: SITE.phonePrimaryTel,
@@ -106,8 +151,8 @@ export const TEAM = [
     name: "Sumit Tyagi",
     role: { en: "Founder", hi: "संस्थापक" },
     detail: {
-      en: "BBA, MBA, LLB · 13 years of litigation across Ghaziabad, Noida and Delhi NCR · Civil Court, Ghaziabad.",
-      hi: "बीबीए, एमबीए, एलएलबी · गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में 13 वर्षों की पैरवी · सिविल न्यायालय, गाज़ियाबाद।",
+      en: `BBA, MBA, LLB · 13 years of litigation across ${formatServiceAreasAnd("en")} · Civil Court, Ghaziabad.`,
+      hi: `बीबीए, एमबीए, एलएलबी · ${formatServiceAreasAnd("hi")} में 13 वर्षों की पैरवी · सिविल न्यायालय, गाज़ियाबाद।`,
     },
     image: "advocatePortrait" as const,
   },
@@ -115,8 +160,8 @@ export const TEAM = [
     name: "Vishaw Pratap",
     role: { en: "Founder", hi: "संस्थापक" },
     detail: {
-      en: "BA, LLB, LLM · 13 years of litigation practice at District & Session Court, Ghaziabad · 9910039006 · vishupratap786@yahoo.co.in",
-      hi: "बीए, एलएलबी, एलएलएम · ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में 13 वर्षों की पैरवी · 9910039006 · vishupratap786@yahoo.co.in",
+      en: "BA, LLB, LLM · 13 years of litigation practice at District & Session Court, Ghaziabad.",
+      hi: "बीए, एलएलबी, एलएलएम · ज़िला एवं सेशन न्यायालय, गाज़ियाबाद में 13 वर्षों की पैरवी।",
     },
     image: "teamVishaw" as const,
   },
@@ -144,7 +189,6 @@ export const TEAM = [
 ] as const;
 
 export const LOCALES = ["en", "hi"] as const;
-export type Locale = (typeof LOCALES)[number];
 
 export function isLocale(value: string): value is Locale {
   return (LOCALES as readonly string[]).includes(value);

@@ -29,7 +29,7 @@ export const Route = createFileRoute("/$locale/practice-areas/$slug")({
     const title =
       locale === "hi"
         ? `${name} वकील गाज़ियाबाद | अधिवक्ता सुमित त्यागी`
-        : `${name} Lawyer in Ghaziabad, Noida | Advocate Sumit Tyagi`;
+        : `${name} Lawyer in Ghaziabad, Noida & Delhi NCR | Advocate Sumit Tyagi`;
     return buildSeo({
       locale,
       path: `practice-areas/${area.slug}`,

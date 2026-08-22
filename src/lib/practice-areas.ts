@@ -19,18 +19,18 @@ export const PRACTICE_AREAS: PracticeArea[] = [
     image: "gavel",
     title: { en: "Criminal Law", hi: "आपराधिक कानून" },
     short: {
-      en: "Bail, FIR quashing, trial defence and appeals across Delhi NCR courts.",
-      hi: "जमानत, एफआईआर रद्दीकरण, ट्रायल पैरवी और अपील — दिल्ली एनसीआर की अदालतों में।",
+      en: "Bail, FIR quashing, trial defence and appeals across Delhi NCR, Western UP and Dehradun courts.",
+      hi: "जमानत, एफआईआर रद्दीकरण, ट्रायल पैरवी और अपील — दिल्ली एनसीआर, पश्चिमी उत्तर प्रदेश एवं देहरादून की अदालतों में।",
     },
     intro: {
       en: [
         "A criminal case affects far more than a court file — it affects your job, your family and your reputation. The first 48 hours after an FIR usually decide how difficult the rest of the case becomes.",
-        "Advocate Sumit Tyagi appears in bail applications, anticipatory bail, discharge, quashing petitions and full trial defence before Magistrate and Sessions Courts in Ghaziabad, Noida and Delhi.",
+        "Advocate Sumit Tyagi appears in bail applications, anticipatory bail, discharge, quashing petitions and full trial defence before Magistrate and Sessions Courts in Ghaziabad, Noida, Delhi, Hapur, Meerut and Dehradun — and related matters before Prayagraj High Court.",
         "You get a clear reading of your position, the realistic outcomes and the cost involved before any step is taken — no false promises.",
       ],
       hi: [
         "आपराधिक मामला केवल एक अदालती फाइल नहीं होता — यह आपकी नौकरी, परिवार और प्रतिष्ठा को प्रभावित करता है। एफआईआर के बाद के पहले 48 घंटे अक्सर पूरे मुकदमे की दिशा तय कर देते हैं।",
-        "अधिवक्ता सुमित त्यागी जमानत, अग्रिम जमानत, डिस्चार्ज, एफआईआर रद्द करने की याचिका और पूर्ण ट्रायल पैरवी में गाज़ियाबाद, नोएडा और दिल्ली की मजिस्ट्रेट व सेशन अदालतों में पेश होते हैं।",
+        "अधिवक्ता सुमित त्यागी जमानत, अग्रिम जमानत, डिस्चार्ज, एफआईआर रद्द करने की याचिका और पूर्ण ट्रायल पैरवी में गाज़ियाबाद, नोएडा, दिल्ली, हापुड़, मेरठ एवं देहरादून की मजिस्ट्रेट व सेशन अदालतों में — तथा संबंधित मामलों में प्रयागराज उच्च न्यायालय के समक्ष पेश होते हैं।",
         "किसी भी कदम से पहले आपको आपकी स्थिति, संभावित परिणाम और खर्च स्पष्ट रूप से बताया जाता है — कोई झूठा आश्वासन नहीं।",
       ],
     },

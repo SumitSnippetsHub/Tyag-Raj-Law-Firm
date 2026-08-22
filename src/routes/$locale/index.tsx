@@ -16,7 +16,14 @@ import { FoundersGrid, TeamSlider } from "@/components/TeamSection";
 import { JsonLd } from "@/components/JsonLd";
 import { IMAGES } from "@/lib/images";
 import { PRACTICE_AREAS } from "@/lib/practice-areas";
-import { CHAMBERS, FOUNDERS, SITE, telHref, waLink } from "@/lib/site";
+import {
+  CHAMBERS,
+  FOUNDERS,
+  SITE,
+  formatServiceAreasAnd,
+  telHref,
+  waLink,
+} from "@/lib/site";
 import { buildSeo, OG_IMAGE, pageUrl, SITE_URL, toLocale } from "@/lib/seo";
 import { DICT, useT } from "@/lib/i18n";
 
@@ -25,11 +32,11 @@ export const Route = createFileRoute("/$locale/")({
     const locale = toLocale(params.locale);
     const hi = locale === "hi";
     const title = hi
-      ? "अधिवक्ता सुमित त्यागी — गाज़ियाबाद, नोएडा, दिल्ली एनसीआर वकील"
+      ? "अधिवक्ता सुमित त्यागी — गाज़ियाबाद एवं दिल्ली एनसीआर वकील"
       : "Advocate in Ghaziabad | Sumit Tyagi, Advocate & Legal Consultant";
     const description = hi
-      ? "गाज़ियाबाद, नोएडा एवं दिल्ली एनसीआर में 13+ वर्ष अनुभवी अधिवक्ता सुमित त्यागी — आपराधिक, सिविल, वैवाहिक, रेरा व चेक बाउंस मामले।"
-      : "Advocate Sumit Tyagi — 13+ years handling criminal, civil, matrimonial, NDPS, cheque bounce, RERA and consumer matters in Ghaziabad, Noida and Delhi NCR.";
+      ? `${formatServiceAreasAnd("hi")} में 13+ वर्ष अनुभवी अधिवक्ता सुमित त्यागी — आपराधिक, सिविल, वैवाहिक, रेरा व चेक बाउंस मामले।`
+      : `Advocate Sumit Tyagi — 13+ years handling criminal, civil, matrimonial, NDPS, cheque bounce, RERA and consumer matters across ${formatServiceAreasAnd("en")}.`;
     return buildSeo({ locale, path: "", title, description });
   },
   component: Home,
@@ -48,8 +55,7 @@ function Home() {
           "@id": `${SITE_URL}/#organization`,
           name: SITE.firm,
           url: pageUrl(locale),
-          description:
-            "Advocate & Legal Consultant handling criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR matters in Delhi NCR.",
+          description: `Advocate & Legal Consultant handling criminal, civil, matrimonial, NDPS, cheque bounce, cyber, RERA, consumer and IPR matters across ${formatServiceAreasAnd("en")}.`,
           image: OG_IMAGE,
           logo: `${SITE_URL}/favicon.png`,
           telephone: [SITE.phonePrimaryTel, SITE.phoneCofounderTel, SITE.phoneSecondaryTel],
